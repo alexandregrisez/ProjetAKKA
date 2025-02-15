@@ -35,6 +35,8 @@ libraryDependencies ++= Seq(
     "com.typesafe.akka" %% "akka-cluster-sharding-typed" % AkkaVersion
 )
 
+libraryDependencies += "ch.qos.logback" % "logback-classic" % "1.4.14"
+
 lazy val root = (project in file("."))
   .settings(
     name := "akka",
