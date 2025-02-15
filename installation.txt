@@ -1,0 +1,9 @@
+Installer coursier :
+curl -fL https://github.com/coursier/coursier/releases/latest/download/cs-x86_64-pc-linux.gz | gzip -d > cs && chmod +x cs && ./cs setup
+
+Installer scala et sbt :
+cs install scala:2.13.15
+cs install sbt
+
+Lancer le projet : 
+sbt run (à la racine du projet)
