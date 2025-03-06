@@ -1,0 +1,14 @@
+.search-container{
+    position: relative;
+    width: 500px;
+}
+
+.search-popup{
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: #ffaadd;
+    border: 1px solid #ccc;
+    z-index: 10;
+}
