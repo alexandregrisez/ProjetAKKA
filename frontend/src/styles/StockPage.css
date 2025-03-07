@@ -1,0 +1,39 @@
+.main{
+    display: flex;
+    flex-direction: column;
+}
+
+h1{
+    text-align: center;
+}
+
+.main-content{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.chart-container{
+    width: 75%;
+}
+
+.details-asset {
+    width: 25%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    text-align: left;
+}
+
+.purchase-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+}
+
+
+
+

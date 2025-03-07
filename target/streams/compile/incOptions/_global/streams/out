@@ -1,0 +1,28 @@
+[0m[[0m[0mdebug[0m] [0m[0mCreated transactional ClassFileManager with tempDir = /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/target/scala-2.13/classes.bak[0m
+[0m[[0m[0mdebug[0m] [0m[0mAbout to delete class files:[0m
+[0m[[0m[0mdebug[0m] [0m[0mWe backup class files:[0m
+[0m[[0m[0mdebug[0m] [0m[0mCreated transactional ClassFileManager with tempDir = /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/target/scala-2.13/classes.bak[0m
+[0m[[0m[0mdebug[0m] [0m[0mAbout to delete class files:[0m
+[0m[[0m[0mdebug[0m] [0m[0mWe backup class files:[0m
+[0m[[0m[0mdebug[0m] [0m[0mRegistering generated classes:[0m
+[0m[[0m[0mdebug[0m] [0m[0m	Server.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	Main$delayedInit$body.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	CountActor$Increment$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	FinnhubActor$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	FinnhubActor$GetStockPrice.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	FinnhubActor$Command.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	FinnhubActor$anon$importedDecoder$macro$35$1$$anon$1.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	FinnhubActor$GetStockPrice$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	Main.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	CountActor$GetCount.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	FinnhubActor$anon$importedDecoder$macro$35$1.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	Main$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	CountActor$Command.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	CountActor$GetCount$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	FinnhubActor.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	FinnhubActor$StockQuote$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	CountActor.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	Server$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	FinnhubActor$StockQuote.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	CountActor$.class[0m
+[0m[[0m[0mdebug[0m] [0m[0mRemoving the temporary directory used for backing up class files: /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/target/scala-2.13/classes.bak[0m

@@ -5,32 +5,35 @@ function AssetDetails({ symbol }) {
     const [error, setError] = useState(null);
     const [loading, setLoading] = useState(false);
 
+    const API_KEY = "cv4nc6hr01qn2gab5ju0cv4nc6hr01qn2gab5jug";
+
     useEffect(() => {
         if (!symbol) {
-            setData(null); // Réinitialise les données si aucun symbole n'est sélectionné
+            setData(null);
             return;
         }
 
         const fetchData = async () => {
             setLoading(true);
-            setError(null); // Réinitialise l'erreur avant chaque requête
-
-            const API_KEY = "EPBFL2E6MA2KG765";
-            const url = `https://www.alphavantage.co/query?function=GLOBAL_QUOTE&symbol=${symbol}&apikey=${API_KEY}`;
+            setError(null);
 
             try {
-                const response = await fetch(url);
-                const result = await response.json();
-                const quote = result["Global Quote"];
+                // Récupérer les données de cotation
+                const quoteResponse = await fetch(`https://finnhub.io/api/v1/quote?symbol=${symbol}&token=${API_KEY}`);
+                const quoteData = await quoteResponse.json();
 
-                if (quote && quote["01. symbol"]) {
+                // Récupérer les informations de l'actif (nom, etc.)
+                const profileResponse = await fetch(`https://finnhub.io/api/v1/stock/profile2?symbol=${symbol}&token=${API_KEY}`);
+                const profileData = await profileResponse.json();
+
+                if (quoteData && quoteData.c && profileData && profileData.name) {
                     setData({
-                        symbol: quote["01. symbol"],
-                        price: parseFloat(quote["05. price"]).toLocaleString(),
-                        open: parseFloat(quote["02. open"]).toLocaleString(),
-                        high: parseFloat(quote["03. high"]).toLocaleString(),
-                        low: parseFloat(quote["04. low"]).toLocaleString(),
-                        volume: parseInt(quote["06. volume"]).toLocaleString(),
+                        name: profileData.name || symbol, // Nom de l'actif
+                        symbol,
+                        price: quoteData.c.toLocaleString(),
+                        open: quoteData.o.toLocaleString(),
+                        high: quoteData.h.toLocaleString(),
+                        low: quoteData.l.toLocaleString(),
                     });
                 } else {
                     setError("Données indisponibles.");
@@ -54,13 +57,12 @@ function AssetDetails({ symbol }) {
     if (!data) return <p>Aucune donnée disponible.</p>;
 
     return (
-        <div>
-            <h2>{data.symbol}</h2>
-            <p>Prix actuel : ${data.price}</p>
+        <div className="details-asset">
+            <h2>Dernières informations</h2>
+            <p>Prix actuel : <strong>${data.price}</strong></p>
             <p>Ouverture : ${data.open}</p>
             <p>Plus haut : ${data.high}</p>
-            <p>plus bas :  ${data.low}</p>
-            <p>Volume : {data.volume}</p>
+            <p>Plus bas : ${data.low}</p>
         </div>
     );
 }

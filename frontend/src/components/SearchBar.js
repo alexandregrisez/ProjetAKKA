@@ -1,13 +1,17 @@
 import { useState, useEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom";
-import '../styles/SearchBar.css';
+import "../styles/SearchBar.css";
 
 const SearchBar = () => {
     const [query, setQuery] = useState("");
     const [suggestions, setSuggestions] = useState([]);
     const [showPopup, setShowPopup] = useState(false);
+    const [error, setError] = useState(null);
     const navigate = useNavigate();
     const searchRef = useRef(null);
+
+    const API_KEY = "cv4nc6hr01qn2gab5ju0cv4nc6hr01qn2gab5jug";
+    const NUMBER_SUGGESTIONS = 5;
 
     useEffect(() => {
         if (query.length < 2) {
@@ -17,24 +21,26 @@ const SearchBar = () => {
         }
 
         const fetchSuggestions = async () => {
-            const API_KEY = "EPBFL2E6MA2KG765";
-            const url = `https://www.alphavantage.co/query?function=SYMBOL_SEARCH&keywords=${query}&apikey=${API_KEY}`;
-
+            setError(null);
             try {
-                const response = await fetch(url);
+                const response = await fetch(`https://finnhub.io/api/v1/search?q=${query}&token=${API_KEY}`);
                 const data = await response.json();
-                
-                if (data.bestMatches) {
+
+                if (data.result && data.result.length > 0) {
                     setSuggestions(
-                        data.bestMatches.map((item) => ({
-                            symbol: item["1. symbol"],
-                            name: item["2. name"],
+                        data.result.slice(0, NUMBER_SUGGESTIONS).map((item) => ({
+                            symbol: item.symbol,
+                            name: item.description,
                         }))
                     );
                     setShowPopup(true);
+                } else {
+                    setSuggestions([]);
+                    setShowPopup(true);
                 }
             } catch (error) {
-                console.error("Erreur", error);
+                console.error("Erreur lors de la récupération des suggestions :", error);
+                setError("Erreur lors du chargement des données.");
             }
         };
 
@@ -47,12 +53,33 @@ const SearchBar = () => {
         setShowPopup(false);
     };
 
+    // Fermer le popup si on clique en dehors
+    useEffect(() => {
+        const handleClickOutside = (event) => {
+            if (searchRef.current && !searchRef.current.contains(event.target)) {
+                setShowPopup(false);
+            }
+        };
+
+        document.addEventListener("mousedown", handleClickOutside);
+        return () => {
+            document.removeEventListener("mousedown", handleClickOutside);
+        };
+    }, []);
+
     return (
         <div className="search-container" ref={searchRef}>
-            <input type="text" value={query} onChange={(e) => setQuery(e.target.value)} placeholder="Rechercher un actif" />
+            <input
+                type="text"
+                value={query}
+                onChange={(e) => setQuery(e.target.value)}
+                placeholder="Rechercher un actif"
+            />
             {showPopup && (
                 <div className="search-popup">
                     <ul>
+                        {error && <li className="error-message">{error}</li>}
+                        {!error && suggestions.length === 0 && <li>Aucun résultat trouvé.</li>}
                         {suggestions.map((item) => (
                             <li key={item.symbol} onClick={() => handleSelect(item.symbol)}>
                                 {item.symbol} - {item.name}

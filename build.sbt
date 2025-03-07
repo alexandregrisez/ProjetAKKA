@@ -8,7 +8,12 @@ ThisBuild / organizationName := "example"
 resolvers += "Akka library repository".at("https://repo.akka.io/maven")
 
 val AkkaVersion = "2.10.1"
+val AkkaHttpVersion = "10.7.0"
+val circeVersion = "0.14.6"
+val circeExtrasVersion = "0.14.3"
+
 libraryDependencies ++= Seq(
+    // Akka
     "com.typesafe.akka" %% "akka-actor" % AkkaVersion,
     "com.typesafe.akka" %% "akka-cluster-tools" % AkkaVersion,
     "com.typesafe.akka" %% "akka-discovery" % AkkaVersion,
@@ -22,6 +27,7 @@ libraryDependencies ++= Seq(
     "com.typesafe.akka" %% "akka-remote" % AkkaVersion,
     "com.typesafe.akka" %% "akka-actor-testkit-typed" % AkkaVersion % Test,
     "com.typesafe.akka" %% "akka-slf4j" % AkkaVersion,
+    "com.typesafe.akka" %% "akka-http" % AkkaHttpVersion,
     "com.typesafe.akka" %% "akka-stream" % AkkaVersion % Test,
     "com.typesafe.akka" %% "akka-stream-testkit" % AkkaVersion,
     "com.typesafe.akka" %% "akka-stream-typed" % AkkaVersion,
@@ -32,7 +38,12 @@ libraryDependencies ++= Seq(
     "com.typesafe.akka" %% "akka-cluster-typed" % AkkaVersion,
     "com.typesafe.akka" %% "akka-cluster-metrics" % AkkaVersion,
     "com.typesafe.akka" %% "akka-cluster-sharding" % AkkaVersion,
-    "com.typesafe.akka" %% "akka-cluster-sharding-typed" % AkkaVersion
+    "com.typesafe.akka" %% "akka-cluster-sharding-typed" % AkkaVersion,
+    // Circe (JSON)
+    "io.circe" %% "circe-core" % circeVersion, 
+    "io.circe" %% "circe-generic" % circeVersion,
+    "io.circe" %% "circe-parser" % circeVersion, 
+    "io.circe" %% "circe-generic-extras" % circeExtrasVersion 
 )
 
 libraryDependencies += "ch.qos.logback" % "logback-classic" % "1.4.14"

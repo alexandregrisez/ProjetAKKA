@@ -372,3 +372,935 @@ Mar 06, 2025 3:49:37 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notif
 WARNING: Unsupported notification method: metals/windowStateDidChange
 Mar 06, 2025 3:49:58 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
 WARNING: Unsupported notification method: metals/windowStateDidChange
+2025.03.07 11:38:53 INFO  Started: Metals version 1.5.1 in folders '/data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA' for client Visual Studio Code 1.97.2.
+Mar 07, 2025 11:39:39 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 07, 2025 11:39:41 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 07, 2025 11:39:41 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 07, 2025 11:40:52 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 07, 2025 11:41:31 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 07, 2025 11:42:04 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFO: Unsupported notification method: $/setTrace
+Mar 07, 2025 11:42:31 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 07, 2025 11:43:20 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+2025.03.07 11:43:31 WARN  no build target for: /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/project/Dependencies.scala
+2025.03.07 11:43:31 INFO  no build target found for /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/project/Dependencies.scala. Using presentation compiler with project's scala-library version: 3.3.4
+2025.03.07 11:43:40 WARN  no build target for: /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/build.sbt
+2025.03.07 11:43:40 INFO  no build target found for /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/build.sbt. Using presentation compiler with project's scala-library version: 3.3.4
+Mar 07, 2025 11:44:02 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 07, 2025 11:44:02 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+2025.03.07 11:45:12 INFO  running '/usr/bin/sbt -Dbloop.export-jar-classifiers=sources bloopInstall'
+2025.03.07 11:45:12 WARN  no build target for: /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/project/metals.sbt
+2025.03.07 11:45:12 WARN  no build target for: /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/project/project/metals.sbt
+2025.03.07 11:45:12 INFO  no build target found for /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/project/project/metals.sbt. Using presentation compiler with project's scala-library version: 3.3.4
+2025.03.07 11:45:13 INFO  no build target found for /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/project/metals.sbt. Using presentation compiler with project's scala-library version: 3.3.4
+2025.03.07 11:45:15 INFO  [info] welcome to sbt 1.10.10 (Eclipse Adoptium Java 17.0.14)
+2025.03.07 11:45:19 INFO  [info] loading settings for project projetakka-build-build from metals.sbt...
+2025.03.07 11:45:20 INFO  [info] loading project definition from /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/project/project
+2025.03.07 11:45:23 INFO  [info] loading settings for project projetakka-build from metals.sbt...
+2025.03.07 11:45:23 INFO  [info] loading project definition from /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/project
+2025.03.07 11:45:28 INFO  [success] Generated .bloop/projetakka-build.json
+2025.03.07 11:45:28 INFO  [info] compiling 1 Scala source to /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/project/target/scala-2.12/sbt-1.0/classes ...
+2025.03.07 11:45:28 INFO  [info] Non-compiled module 'compiler-bridge_2.12' for Scala 2.12.20. Compiling...
+Mar 07, 2025 11:45:40 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 07, 2025 11:45:40 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+2025.03.07 11:45:46 INFO  [info]   Compilation completed in 17.817s.
+2025.03.07 11:45:46 INFO  [info] done compiling
+2025.03.07 11:45:48 INFO  [success] Total time: 25 s, completed Mar 7, 2025, 11:45:48 AM
+2025.03.07 11:45:48 INFO  [info] compiling 1 Scala source to /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/project/target/scala-2.12/sbt-1.0/classes ...
+2025.03.07 11:45:48 INFO  [info] done compiling
+2025.03.07 11:45:50 INFO  [error] java.nio.file.FileSystemException: /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/project/target/scala-2.12/sbt-1.0/zinc/inc_compile_2.12.zip: Operation not permitted
+2025.03.07 11:45:50 INFO  [error] 	at java.base/sun.nio.fs.UnixException.translateToIOException(UnixException.java:100)
+2025.03.07 11:45:50 INFO  [error] 	at java.base/sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:106)
+2025.03.07 11:45:50 INFO  [error] 	at java.base/sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:111)
+2025.03.07 11:45:50 INFO  [error] 	at java.base/sun.nio.fs.UnixCopyFile.copyFile(UnixCopyFile.java:286)
+2025.03.07 11:45:50 INFO  [error] 	at java.base/sun.nio.fs.UnixCopyFile.move(UnixCopyFile.java:492)
+2025.03.07 11:45:50 INFO  [error] 	at java.base/sun.nio.fs.UnixFileSystemProvider.move(UnixFileSystemProvider.java:266)
+2025.03.07 11:45:50 INFO  [error] 	at java.base/java.nio.file.Files.move(Files.java:1432)
+2025.03.07 11:45:50 INFO  [error] 	at sbt.io.IO$.$anonfun$move$2(IO.scala:1128)
+2025.03.07 11:45:50 INFO  [error] 	at sbt.internal.io.Retry$.apply(Retry.scala:47)
+2025.03.07 11:45:50 INFO  [error] 	at sbt.internal.io.Retry$.apply(Retry.scala:29)
+2025.03.07 11:45:50 INFO  [error] 	at sbt.internal.io.Retry$.apply(Retry.scala:24)
+2025.03.07 11:45:50 INFO  [error] 	at sbt.io.IO$.move(IO.scala:1128)
+2025.03.07 11:45:50 INFO  [error] 	at sbt.io.IO$.move(IO.scala:1120)
+2025.03.07 11:45:50 INFO  [error] 	at sbt.internal.inc.FileAnalysisStore$BinaryFileStore.set(FileAnalysisStore.scala:107)
+2025.03.07 11:45:50 INFO  [error] 	at xsbti.compile.AnalysisStore$CachedAnalysisStore.set(AnalysisStore.java:126)
+2025.03.07 11:45:50 INFO  [error] 	at xsbti.compile.AnalysisStore$SyncedAnalysisStore.set(AnalysisStore.java:150)
+2025.03.07 11:45:50 INFO  [error] 	at sbt.Defaults$.$anonfun$compileTask$1(Defaults.scala:2402)
+2025.03.07 11:45:50 INFO  [error] 	at scala.Function1.$anonfun$compose$1(Function1.scala:49)
+2025.03.07 11:45:50 INFO  [error] 	at sbt.internal.util.$tilde$greater.$anonfun$$u2219$1(TypeFunctions.scala:63)
+2025.03.07 11:45:50 INFO  [error] 	at sbt.std.Transform$$anon$4.work(Transform.scala:69)
+2025.03.07 11:45:50 INFO  [error] 	at sbt.Execute.$anonfun$submit$2(Execute.scala:283)
+2025.03.07 11:45:50 INFO  [error] 	at sbt.internal.util.ErrorHandling$.wideConvert(ErrorHandling.scala:24)
+2025.03.07 11:45:50 INFO  [error] 	at sbt.Execute.work(Execute.scala:292)
+2025.03.07 11:45:50 INFO  [error] 	at sbt.Execute.$anonfun$submit$1(Execute.scala:283)
+2025.03.07 11:45:50 INFO  [error] 	at sbt.ConcurrentRestrictions$$anon$4.$anonfun$submitValid$1(ConcurrentRestrictions.scala:265)
+2025.03.07 11:45:50 INFO  [error] 	at sbt.CompletionService$$anon$2.call(CompletionService.scala:65)
+2025.03.07 11:45:50 INFO  [error] 	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+2025.03.07 11:45:50 INFO  [error] 	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+2025.03.07 11:45:50 INFO  [error] 	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+2025.03.07 11:45:50 INFO  [error] 	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+2025.03.07 11:45:50 INFO  [error] 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+2025.03.07 11:45:50 INFO  [error] 	at java.base/java.lang.Thread.run(Thread.java:840)
+2025.03.07 11:45:50 INFO  [error] (Compile / compile) java.nio.file.FileSystemException: /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/project/target/scala-2.12/sbt-1.0/zinc/inc_compile_2.12.zip: Operation not permitted
+2025.03.07 11:45:50 INFO  [warn] Project loading failed: (r)etry, (q)uit, (l)ast, or (i)gnore? (default: r)
+2025.03.07 11:45:51 INFO  time: ran 'sbt bloopInstall' in 38s
+2025.03.07 11:45:51 ERROR sbt command failed: /usr/bin/sbt -Dbloop.export-jar-classifiers=sources bloopInstall
+2025.03.07 11:45:56 INFO  sbt 1.10.10 found for workspace.
+2025.03.07 11:45:57 WARN  no build target for: /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/project/metals.sbt
+2025.03.07 11:45:57 WARN  no build target for: /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/project/project/metals.sbt
+2025.03.07 11:45:59 INFO  [info] welcome to sbt 1.10.10 (Eclipse Adoptium Java 17.0.14)
+2025.03.07 11:46:01 INFO  [info] loading project definition from /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/project/project
+2025.03.07 11:46:03 INFO  [info] loading project definition from /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/project
+2025.03.07 11:46:03 INFO  [info] compiling 1 Scala source to /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/project/target/scala-2.12/sbt-1.0/classes ...
+2025.03.07 11:46:06 INFO  [info] done compiling
+2025.03.07 11:46:08 INFO  [error] java.nio.file.FileSystemException: /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/project/target/scala-2.12/sbt-1.0/zinc/inc_compile_2.12.zip: Operation not permitted
+2025.03.07 11:46:08 INFO  [error] 	at java.base/sun.nio.fs.UnixException.translateToIOException(UnixException.java:100)
+2025.03.07 11:46:08 INFO  [error] 	at java.base/sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:106)
+2025.03.07 11:46:08 INFO  [error] 	at java.base/sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:111)
+2025.03.07 11:46:08 INFO  [error] 	at java.base/sun.nio.fs.UnixCopyFile.copyFile(UnixCopyFile.java:286)
+2025.03.07 11:46:08 INFO  [error] 	at java.base/sun.nio.fs.UnixCopyFile.move(UnixCopyFile.java:492)
+2025.03.07 11:46:08 INFO  [error] 	at java.base/sun.nio.fs.UnixFileSystemProvider.move(UnixFileSystemProvider.java:266)
+2025.03.07 11:46:08 INFO  [error] 	at java.base/java.nio.file.Files.move(Files.java:1432)
+2025.03.07 11:46:08 INFO  [error] 	at sbt.io.IO$.$anonfun$move$2(IO.scala:1128)
+2025.03.07 11:46:08 INFO  [error] 	at sbt.internal.io.Retry$.apply(Retry.scala:47)
+2025.03.07 11:46:08 INFO  [error] 	at sbt.internal.io.Retry$.apply(Retry.scala:29)
+2025.03.07 11:46:08 INFO  [error] 	at sbt.internal.io.Retry$.apply(Retry.scala:24)
+2025.03.07 11:46:08 INFO  [error] 	at sbt.io.IO$.move(IO.scala:1128)
+2025.03.07 11:46:08 INFO  [error] 	at sbt.io.IO$.move(IO.scala:1120)
+2025.03.07 11:46:08 INFO  [error] 	at sbt.internal.inc.FileAnalysisStore$BinaryFileStore.set(FileAnalysisStore.scala:107)
+2025.03.07 11:46:08 INFO  [error] 	at xsbti.compile.AnalysisStore$CachedAnalysisStore.set(AnalysisStore.java:126)
+2025.03.07 11:46:08 INFO  [error] 	at xsbti.compile.AnalysisStore$SyncedAnalysisStore.set(AnalysisStore.java:150)
+2025.03.07 11:46:08 INFO  [error] 	at sbt.Defaults$.$anonfun$compileTask$1(Defaults.scala:2402)
+2025.03.07 11:46:08 INFO  [error] 	at scala.Function1.$anonfun$compose$1(Function1.scala:49)
+2025.03.07 11:46:08 INFO  [error] 	at sbt.internal.util.$tilde$greater.$anonfun$$u2219$1(TypeFunctions.scala:63)
+2025.03.07 11:46:08 INFO  [error] 	at sbt.std.Transform$$anon$4.work(Transform.scala:69)
+2025.03.07 11:46:08 INFO  [error] 	at sbt.Execute.$anonfun$submit$2(Execute.scala:283)
+2025.03.07 11:46:08 INFO  [error] 	at sbt.internal.util.ErrorHandling$.wideConvert(ErrorHandling.scala:24)
+2025.03.07 11:46:08 INFO  [error] 	at sbt.Execute.work(Execute.scala:292)
+2025.03.07 11:46:08 INFO  [error] 	at sbt.Execute.$anonfun$submit$1(Execute.scala:283)
+2025.03.07 11:46:08 INFO  [error] 	at sbt.ConcurrentRestrictions$$anon$4.$anonfun$submitValid$1(ConcurrentRestrictions.scala:265)
+2025.03.07 11:46:08 INFO  [error] 	at sbt.CompletionService$$anon$2.call(CompletionService.scala:65)
+2025.03.07 11:46:08 INFO  [error] 	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+2025.03.07 11:46:08 INFO  [error] 	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+2025.03.07 11:46:08 INFO  [error] 	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+2025.03.07 11:46:08 INFO  [error] 	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+2025.03.07 11:46:08 INFO  [error] 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+2025.03.07 11:46:08 INFO  [error] 	at java.base/java.lang.Thread.run(Thread.java:840)
+2025.03.07 11:46:08 INFO  [error] (Compile / compile) java.nio.file.FileSystemException: /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/project/target/scala-2.12/sbt-1.0/zinc/inc_compile_2.12.zip: Operation not permitted
+2025.03.07 11:46:08 INFO  [warn] Project loading failed: (r)etry, (q)uit, (l)ast, or (i)gnore? (default: r)
+2025.03.07 11:46:08 INFO  time: ran 'sbt bspConfig' in 11s
+2025.03.07 11:46:08 ERROR Creation of .bsp/sbt failed with exit code: 1
+2025.03.07 11:46:41 INFO  Shutting down server
+2025.03.07 11:46:41 INFO  shutting down Metals
+2025.03.07 11:46:41 INFO  Exiting server
+2025.03.07 11:47:23 INFO  Started: Metals version 1.5.1 in folders '/data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA' for client Visual Studio Code 1.97.2.
+2025.03.07 11:47:25 INFO  sbt 1.10.10 found for workspace.
+2025.03.07 11:47:29 INFO  [info] welcome to sbt 1.10.10 (Eclipse Adoptium Java 17.0.14)
+2025.03.07 11:47:31 INFO  [info] loading project definition from /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/project/project
+2025.03.07 11:47:33 INFO  [info] loading project definition from /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/project
+2025.03.07 11:47:33 INFO  [info] compiling 1 Scala source to /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/project/target/scala-2.12/sbt-1.0/classes ...
+2025.03.07 11:47:38 INFO  [info] done compiling
+2025.03.07 11:47:39 INFO  [error] java.nio.file.FileSystemException: /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/project/target/scala-2.12/sbt-1.0/zinc/inc_compile_2.12.zip: Operation not permitted
+2025.03.07 11:47:39 INFO  [error] 	at java.base/sun.nio.fs.UnixException.translateToIOException(UnixException.java:100)
+2025.03.07 11:47:39 INFO  [error] 	at java.base/sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:106)
+2025.03.07 11:47:39 INFO  [error] 	at java.base/sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:111)
+2025.03.07 11:47:39 INFO  [error] 	at java.base/sun.nio.fs.UnixCopyFile.copyFile(UnixCopyFile.java:286)
+2025.03.07 11:47:39 INFO  [error] 	at java.base/sun.nio.fs.UnixCopyFile.move(UnixCopyFile.java:492)
+2025.03.07 11:47:39 INFO  [error] 	at java.base/sun.nio.fs.UnixFileSystemProvider.move(UnixFileSystemProvider.java:266)
+2025.03.07 11:47:39 INFO  [error] 	at java.base/java.nio.file.Files.move(Files.java:1432)
+2025.03.07 11:47:39 INFO  [error] 	at sbt.io.IO$.$anonfun$move$2(IO.scala:1128)
+2025.03.07 11:47:39 INFO  [error] 	at sbt.internal.io.Retry$.apply(Retry.scala:47)
+2025.03.07 11:47:39 INFO  [error] 	at sbt.internal.io.Retry$.apply(Retry.scala:29)
+2025.03.07 11:47:39 INFO  [error] 	at sbt.internal.io.Retry$.apply(Retry.scala:24)
+2025.03.07 11:47:39 INFO  [error] 	at sbt.io.IO$.move(IO.scala:1128)
+2025.03.07 11:47:39 INFO  [error] 	at sbt.io.IO$.move(IO.scala:1120)
+2025.03.07 11:47:39 INFO  [error] 	at sbt.internal.inc.FileAnalysisStore$BinaryFileStore.set(FileAnalysisStore.scala:107)
+2025.03.07 11:47:39 INFO  [error] 	at xsbti.compile.AnalysisStore$CachedAnalysisStore.set(AnalysisStore.java:126)
+2025.03.07 11:47:39 INFO  [error] 	at xsbti.compile.AnalysisStore$SyncedAnalysisStore.set(AnalysisStore.java:150)
+2025.03.07 11:47:39 INFO  [error] 	at sbt.Defaults$.$anonfun$compileTask$1(Defaults.scala:2402)
+2025.03.07 11:47:39 INFO  [error] 	at scala.Function1.$anonfun$compose$1(Function1.scala:49)
+2025.03.07 11:47:39 INFO  [error] 	at sbt.internal.util.$tilde$greater.$anonfun$$u2219$1(TypeFunctions.scala:63)
+2025.03.07 11:47:39 INFO  [error] 	at sbt.std.Transform$$anon$4.work(Transform.scala:69)
+2025.03.07 11:47:39 INFO  [error] 	at sbt.Execute.$anonfun$submit$2(Execute.scala:283)
+2025.03.07 11:47:39 INFO  [error] 	at sbt.internal.util.ErrorHandling$.wideConvert(ErrorHandling.scala:24)
+2025.03.07 11:47:39 INFO  [error] 	at sbt.Execute.work(Execute.scala:292)
+2025.03.07 11:47:39 INFO  [error] 	at sbt.Execute.$anonfun$submit$1(Execute.scala:283)
+2025.03.07 11:47:39 INFO  [error] 	at sbt.ConcurrentRestrictions$$anon$4.$anonfun$submitValid$1(ConcurrentRestrictions.scala:265)
+2025.03.07 11:47:39 INFO  [error] 	at sbt.CompletionService$$anon$2.call(CompletionService.scala:65)
+2025.03.07 11:47:39 INFO  [error] 	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+2025.03.07 11:47:39 INFO  [error] 	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+2025.03.07 11:47:39 INFO  [error] 	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+2025.03.07 11:47:39 INFO  [error] 	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+2025.03.07 11:47:39 INFO  [error] 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+2025.03.07 11:47:39 INFO  [error] 	at java.base/java.lang.Thread.run(Thread.java:840)
+2025.03.07 11:47:39 INFO  [error] (Compile / compile) java.nio.file.FileSystemException: /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/project/target/scala-2.12/sbt-1.0/zinc/inc_compile_2.12.zip: Operation not permitted
+2025.03.07 11:47:39 INFO  [warn] Project loading failed: (r)etry, (q)uit, (l)ast, or (i)gnore? (default: r)
+2025.03.07 11:47:39 INFO  time: ran 'sbt bspConfig' in 13s
+2025.03.07 11:47:39 ERROR Creation of .bsp/sbt failed with exit code: 1
+2025.03.07 11:47:55 INFO  sbt 1.10.10 found for workspace.
+2025.03.07 11:47:57 INFO  [info] welcome to sbt 1.10.10 (Eclipse Adoptium Java 17.0.14)
+2025.03.07 11:47:59 INFO  [info] loading project definition from /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/project/project
+2025.03.07 11:48:01 INFO  [info] loading project definition from /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/project
+2025.03.07 11:48:01 INFO  [info] compiling 1 Scala source to /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/project/target/scala-2.12/sbt-1.0/classes ...
+2025.03.07 11:48:04 INFO  [info] done compiling
+2025.03.07 11:48:05 INFO  [error] java.nio.file.FileSystemException: /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/project/target/scala-2.12/sbt-1.0/zinc/inc_compile_2.12.zip: Operation not permitted
+2025.03.07 11:48:05 INFO  [error] 	at java.base/sun.nio.fs.UnixException.translateToIOException(UnixException.java:100)
+2025.03.07 11:48:05 INFO  [error] 	at java.base/sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:106)
+2025.03.07 11:48:05 INFO  [error] 	at java.base/sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:111)
+2025.03.07 11:48:05 INFO  [error] 	at java.base/sun.nio.fs.UnixCopyFile.copyFile(UnixCopyFile.java:286)
+2025.03.07 11:48:05 INFO  [error] 	at java.base/sun.nio.fs.UnixCopyFile.move(UnixCopyFile.java:492)
+2025.03.07 11:48:05 INFO  [error] 	at java.base/sun.nio.fs.UnixFileSystemProvider.move(UnixFileSystemProvider.java:266)
+2025.03.07 11:48:05 INFO  [error] 	at java.base/java.nio.file.Files.move(Files.java:1432)
+2025.03.07 11:48:05 INFO  [error] 	at sbt.io.IO$.$anonfun$move$2(IO.scala:1128)
+2025.03.07 11:48:05 INFO  [error] 	at sbt.internal.io.Retry$.apply(Retry.scala:47)
+2025.03.07 11:48:05 INFO  [error] 	at sbt.internal.io.Retry$.apply(Retry.scala:29)
+2025.03.07 11:48:05 INFO  [error] 	at sbt.internal.io.Retry$.apply(Retry.scala:24)
+2025.03.07 11:48:05 INFO  [error] 	at sbt.io.IO$.move(IO.scala:1128)
+2025.03.07 11:48:05 INFO  [error] 	at sbt.io.IO$.move(IO.scala:1120)
+2025.03.07 11:48:05 INFO  [error] 	at sbt.internal.inc.FileAnalysisStore$BinaryFileStore.set(FileAnalysisStore.scala:107)
+2025.03.07 11:48:05 INFO  [error] 	at xsbti.compile.AnalysisStore$CachedAnalysisStore.set(AnalysisStore.java:126)
+2025.03.07 11:48:05 INFO  [error] 	at xsbti.compile.AnalysisStore$SyncedAnalysisStore.set(AnalysisStore.java:150)
+2025.03.07 11:48:05 INFO  [error] 	at sbt.Defaults$.$anonfun$compileTask$1(Defaults.scala:2402)
+2025.03.07 11:48:05 INFO  [error] 	at scala.Function1.$anonfun$compose$1(Function1.scala:49)
+2025.03.07 11:48:05 INFO  [error] 	at sbt.internal.util.$tilde$greater.$anonfun$$u2219$1(TypeFunctions.scala:63)
+2025.03.07 11:48:05 INFO  [error] 	at sbt.std.Transform$$anon$4.work(Transform.scala:69)
+2025.03.07 11:48:05 INFO  [error] 	at sbt.Execute.$anonfun$submit$2(Execute.scala:283)
+2025.03.07 11:48:05 INFO  [error] 	at sbt.internal.util.ErrorHandling$.wideConvert(ErrorHandling.scala:24)
+2025.03.07 11:48:05 INFO  [error] 	at sbt.Execute.work(Execute.scala:292)
+2025.03.07 11:48:05 INFO  [error] 	at sbt.Execute.$anonfun$submit$1(Execute.scala:283)
+2025.03.07 11:48:05 INFO  [error] 	at sbt.ConcurrentRestrictions$$anon$4.$anonfun$submitValid$1(ConcurrentRestrictions.scala:265)
+2025.03.07 11:48:05 INFO  [error] 	at sbt.CompletionService$$anon$2.call(CompletionService.scala:65)
+2025.03.07 11:48:05 INFO  [error] 	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+2025.03.07 11:48:05 INFO  [error] 	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+2025.03.07 11:48:05 INFO  [error] 	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+2025.03.07 11:48:05 INFO  [error] 	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+2025.03.07 11:48:05 INFO  [error] 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+2025.03.07 11:48:05 INFO  [error] 	at java.base/java.lang.Thread.run(Thread.java:840)
+2025.03.07 11:48:05 INFO  [error] (Compile / compile) java.nio.file.FileSystemException: /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/project/target/scala-2.12/sbt-1.0/zinc/inc_compile_2.12.zip: Operation not permitted
+2025.03.07 11:48:05 INFO  [warn] Project loading failed: (r)etry, (q)uit, (l)ast, or (i)gnore? (default: r)
+2025.03.07 11:48:06 INFO  time: ran 'sbt bspConfig' in 10s
+2025.03.07 11:48:06 ERROR Creation of .bsp/sbt failed with exit code: 1
+Mar 07, 2025 11:48:09 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 07, 2025 11:48:26 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 07, 2025 11:49:44 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 07, 2025 11:49:50 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 07, 2025 11:50:19 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 07, 2025 11:50:19 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 07, 2025 11:50:22 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 07, 2025 11:50:31 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 07, 2025 11:50:37 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 07, 2025 11:50:42 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 07, 2025 11:50:44 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 07, 2025 11:51:29 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 07, 2025 11:51:57 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 07, 2025 11:51:57 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+2025.03.07 11:52:14 INFO  no build target found for /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/src/main/scala/Main.scala. Using presentation compiler with project's scala-library version: 3.3.4
+2025.03.07 11:52:14 INFO  no build target found for /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/src/main/scala/Main.scala. Using presentation compiler with project's scala-library version: 3.3.4
+2025.03.07 11:52:16 INFO  no build target found for /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/src/main/scala/Main.scala. Using presentation compiler with project's scala-library version: 3.3.4
+2025.03.07 11:52:16 INFO  no build target found for /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/src/main/scala/Main.scala. Using presentation compiler with project's scala-library version: 3.3.4
+2025.03.07 11:52:18 INFO  time: code lens generation in 1.79s
+2025.03.07 11:52:20 INFO  no build target found for /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/src/main/scala/Main.scala. Using presentation compiler with project's scala-library version: 3.3.4
+2025.03.07 11:52:20 INFO  no build target found for /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/src/main/scala/Server.scala. Using presentation compiler with project's scala-library version: 3.3.4
+2025.03.07 11:52:20 INFO  no build target found for /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/src/main/scala/Server.scala. Using presentation compiler with project's scala-library version: 3.3.4
+2025.03.07 11:52:20 INFO  no build target found for /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/src/main/scala/Server.scala. Using presentation compiler with project's scala-library version: 3.3.4
+2025.03.07 11:52:21 INFO  no build target found for /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/src/main/scala/Server.scala. Using presentation compiler with project's scala-library version: 3.3.4
+Mar 07, 2025 11:52:32 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 07, 2025 11:53:07 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 07, 2025 11:53:31 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+2025.03.07 11:53:33 INFO  no build target found for /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/src/main/scala/Server.scala. Using presentation compiler with project's scala-library version: 3.3.4
+Mar 07, 2025 11:53:39 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+2025.03.07 11:53:39 INFO  no build target found for /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/src/main/scala/Server.scala. Using presentation compiler with project's scala-library version: 3.3.4
+2025.03.07 11:53:39 INFO  no build target found for /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/src/main/scala/CountActor.scala. Using presentation compiler with project's scala-library version: 3.3.4
+2025.03.07 11:53:39 INFO  no build target found for /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/src/main/scala/CountActor.scala. Using presentation compiler with project's scala-library version: 3.3.4
+2025.03.07 11:53:39 INFO  no build target found for /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/src/main/scala/CountActor.scala. Using presentation compiler with project's scala-library version: 3.3.4
+2025.03.07 11:53:39 INFO  no build target found for /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/src/main/scala/CountActor.scala. Using presentation compiler with project's scala-library version: 3.3.4
+2025.03.07 11:53:40 INFO  no build target found for /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/src/main/scala/CountActor.scala. Using presentation compiler with project's scala-library version: 3.3.4
+2025.03.07 11:53:41 INFO  no build target found for /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/src/main/scala/CountActor.scala. Using presentation compiler with project's scala-library version: 3.3.4
+2025.03.07 11:53:48 INFO  no build target found for /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/src/main/scala/CountActor.scala. Using presentation compiler with project's scala-library version: 3.3.4
+2025.03.07 11:53:48 INFO  no build target found for /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/src/main/scala/FinnhubAPI.scala. Using presentation compiler with project's scala-library version: 3.3.4
+2025.03.07 11:53:48 INFO  no build target found for /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/src/main/scala/FinnhubAPI.scala. Using presentation compiler with project's scala-library version: 3.3.4
+2025.03.07 11:53:52 INFO  no build target found for /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/src/main/scala/FinnhubAPI.scala. Using presentation compiler with project's scala-library version: 3.3.4
+2025.03.07 11:53:53 INFO  no build target found for /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/src/main/scala/FinnhubAPI.scala. Using presentation compiler with project's scala-library version: 3.3.4
+2025.03.07 11:53:53 INFO  no build target found for /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/src/main/scala/FinnhubAPI.scala. Using presentation compiler with project's scala-library version: 3.3.4
+2025.03.07 11:53:56 INFO  no build target found for /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/src/main/scala/FinnhubAPI.scala. Using presentation compiler with project's scala-library version: 3.3.4
+2025.03.07 11:53:58 INFO  no build target found for /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/src/main/scala/FinnhubAPI.scala. Using presentation compiler with project's scala-library version: 3.3.4
+2025.03.07 11:53:58 INFO  no build target found for /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/src/main/scala/FinnhubAPI.scala. Using presentation compiler with project's scala-library version: 3.3.4
+2025.03.07 11:53:59 INFO  no build target found for /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/src/main/scala/FinnhubAPI.scala. Using presentation compiler with project's scala-library version: 3.3.4
+Mar 07, 2025 11:54:02 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 07, 2025 11:54:49 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+2025.03.07 11:55:01 INFO  no build target found for /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/src/main/scala/FinnhubAPI.scala. Using presentation compiler with project's scala-library version: 3.3.4
+2025.03.07 11:55:27 INFO  no build target found for /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/src/main/scala/FinnhubAPI.scala. Using presentation compiler with project's scala-library version: 3.3.4
+Mar 07, 2025 11:55:44 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 07, 2025 11:55:44 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+2025.03.07 11:55:59 INFO  no build target found for /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/src/main/scala/FinnhubAPI.scala. Using presentation compiler with project's scala-library version: 3.3.4
+2025.03.07 11:56:05 INFO  no build target found for /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/src/main/scala/FinnhubAPI.scala. Using presentation compiler with project's scala-library version: 3.3.4
+2025.03.07 11:56:14 INFO  no build target found for /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/src/main/scala/FinnhubAPI.scala. Using presentation compiler with project's scala-library version: 3.3.4
+Mar 07, 2025 11:56:22 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 07, 2025 11:56:41 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+2025.03.07 11:56:41 INFO  no build target found for /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/src/main/scala/FinnhubAPI.scala. Using presentation compiler with project's scala-library version: 3.3.4
+2025.03.07 11:56:42 INFO  no build target found for /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/src/main/scala/Main.scala. Using presentation compiler with project's scala-library version: 3.3.4
+2025.03.07 11:56:41 INFO  no build target found for /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/src/main/scala/Main.scala. Using presentation compiler with project's scala-library version: 3.3.4
+2025.03.07 11:56:42 INFO  no build target found for /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/src/main/scala/Main.scala. Using presentation compiler with project's scala-library version: 3.3.4
+2025.03.07 11:56:42 INFO  no build target found for /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/src/main/scala/Main.scala. Using presentation compiler with project's scala-library version: 3.3.4
+2025.03.07 11:56:41 INFO  no build target found for /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/src/main/scala/Main.scala. Using presentation compiler with project's scala-library version: 3.3.4
+2025.03.07 11:56:44 INFO  no build target found for /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/src/main/scala/Main.scala. Using presentation compiler with project's scala-library version: 3.3.4
+2025.03.07 11:56:44 INFO  no build target found for /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/src/main/scala/Server.scala. Using presentation compiler with project's scala-library version: 3.3.4
+2025.03.07 11:56:44 INFO  no build target found for /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/src/main/scala/Server.scala. Using presentation compiler with project's scala-library version: 3.3.4
+2025.03.07 11:56:44 INFO  no build target found for /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/src/main/scala/Server.scala. Using presentation compiler with project's scala-library version: 3.3.4
+2025.03.07 11:56:45 INFO  no build target found for /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/src/main/scala/Server.scala. Using presentation compiler with project's scala-library version: 3.3.4
+2025.03.07 11:56:44 INFO  no build target found for /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/src/main/scala/Server.scala. Using presentation compiler with project's scala-library version: 3.3.4
+Mar 07, 2025 11:57:21 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 07, 2025 11:57:24 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 07, 2025 11:57:26 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 07, 2025 11:57:26 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+2025.03.07 11:57:34 INFO  no build target found for /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/src/main/scala/Server.scala. Using presentation compiler with project's scala-library version: 3.3.4
+Mar 07, 2025 11:57:36 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 07, 2025 11:58:10 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 07, 2025 11:58:13 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 07, 2025 11:58:49 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+2025.03.07 11:59:14 INFO  no build target found for /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/src/main/scala/Server.scala. Using presentation compiler with project's scala-library version: 3.3.4
+2025.03.07 11:59:19 INFO  no build target found for /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/src/main/scala/Server.scala. Using presentation compiler with project's scala-library version: 3.3.4
+Mar 07, 2025 11:59:44 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 07, 2025 12:00:06 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+2025.03.07 12:00:14 INFO  no build target found for /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/src/main/scala/Server.scala. Using presentation compiler with project's scala-library version: 3.3.4
+Mar 07, 2025 12:00:15 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 07, 2025 12:00:15 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 07, 2025 12:00:21 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 07, 2025 12:00:57 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+2025.03.07 12:01:03 INFO  no build target found for /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/src/main/scala/Server.scala. Using presentation compiler with project's scala-library version: 3.3.4
+Mar 07, 2025 12:01:11 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 07, 2025 12:01:16 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 07, 2025 12:01:24 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 07, 2025 12:01:27 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 07, 2025 12:02:11 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 07, 2025 12:02:55 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 07, 2025 12:04:54 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 07, 2025 12:04:54 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 07, 2025 12:05:01 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 07, 2025 12:05:30 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 07, 2025 12:05:35 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 07, 2025 12:06:34 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 07, 2025 12:07:15 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 07, 2025 12:07:15 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+2025.03.07 12:07:21 INFO  no build target found for /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/src/main/scala/FinnhubAPI.scala. Using presentation compiler with project's scala-library version: 3.3.4
+2025.03.07 12:07:21 INFO  no build target found for /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/src/main/scala/FinnhubAPI.scala. Using presentation compiler with project's scala-library version: 3.3.4
+2025.03.07 12:07:21 INFO  no build target found for /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/src/main/scala/FinnhubAPI.scala. Using presentation compiler with project's scala-library version: 3.3.4
+2025.03.07 12:07:21 INFO  no build target found for /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/src/main/scala/FinnhubAPI.scala. Using presentation compiler with project's scala-library version: 3.3.4
+2025.03.07 12:07:23 INFO  no build target found for /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/src/main/scala/FinnhubAPI.scala. Using presentation compiler with project's scala-library version: 3.3.4
+Mar 07, 2025 12:07:28 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 07, 2025 12:07:45 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+2025.03.07 12:07:46 INFO  no build target found for /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/src/main/scala/FinnhubAPI.scala. Using presentation compiler with project's scala-library version: 3.3.4
+Mar 07, 2025 12:07:49 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 07, 2025 12:08:30 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+2025.03.07 12:09:28 INFO  no build target found for /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/src/main/scala/FinnhubAPI.scala. Using presentation compiler with project's scala-library version: 3.3.4
+2025.03.07 12:09:32 INFO  no build target found for /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/src/main/scala/FinnhubAPI.scala. Using presentation compiler with project's scala-library version: 3.3.4
+2025.03.07 12:09:32 INFO  no build target found for /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/src/main/scala/FinnhubAPI.scala. Using presentation compiler with project's scala-library version: 3.3.4
+2025.03.07 12:09:32 INFO  no build target found for /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/src/main/scala/FinnhubAPI.scala. Using presentation compiler with project's scala-library version: 3.3.4
+2025.03.07 12:09:33 INFO  no build target found for /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/src/main/scala/FinnhubAPI.scala. Using presentation compiler with project's scala-library version: 3.3.4
+2025.03.07 12:09:33 INFO  no build target found for /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/src/main/scala/FinnhubAPI.scala. Using presentation compiler with project's scala-library version: 3.3.4
+2025.03.07 12:09:33 INFO  no build target found for /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/src/main/scala/FinnhubAPI.scala. Using presentation compiler with project's scala-library version: 3.3.4
+2025.03.07 12:09:33 INFO  no build target found for /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/src/main/scala/FinnhubAPI.scala. Using presentation compiler with project's scala-library version: 3.3.4
+2025.03.07 12:09:33 INFO  no build target found for /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/src/main/scala/FinnhubAPI.scala. Using presentation compiler with project's scala-library version: 3.3.4
+2025.03.07 12:09:33 INFO  no build target found for /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/src/main/scala/FinnhubAPI.scala. Using presentation compiler with project's scala-library version: 3.3.4
+Mar 07, 2025 12:10:03 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 07, 2025 12:10:50 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+2025.03.07 12:10:50 INFO  no build target found for /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/src/main/scala/FinnhubAPI.scala. Using presentation compiler with project's scala-library version: 3.3.4
+2025.03.07 12:10:50 INFO  no build target found for /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/src/main/scala/FinnhubAPI.scala. Using presentation compiler with project's scala-library version: 3.3.4
+2025.03.07 12:10:50 INFO  no build target found for /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/src/main/scala/FinnhubAPI.scala. Using presentation compiler with project's scala-library version: 3.3.4
+2025.03.07 12:10:50 INFO  no build target found for /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/src/main/scala/FinnhubAPI.scala. Using presentation compiler with project's scala-library version: 3.3.4
+Mar 07, 2025 12:11:07 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 07, 2025 12:11:28 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 07, 2025 12:11:41 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 07, 2025 12:12:30 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 07, 2025 12:13:02 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 07, 2025 12:13:02 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+2025.03.07 12:13:02 INFO  no build target found for /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/src/main/scala/FinnhubAPI.scala. Using presentation compiler with project's scala-library version: 3.3.4
+Mar 07, 2025 12:13:06 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 07, 2025 12:13:44 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 07, 2025 12:14:06 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 07, 2025 12:15:12 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 07, 2025 12:15:24 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 07, 2025 12:15:24 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 07, 2025 12:15:31 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 07, 2025 12:16:34 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 07, 2025 12:16:59 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 07, 2025 12:16:59 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 07, 2025 12:17:18 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 07, 2025 12:17:33 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+2025.03.07 12:17:34 INFO  no build target found for /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/src/main/scala/FinnhubAPI.scala. Using presentation compiler with project's scala-library version: 3.3.4
+2025.03.07 12:17:34 INFO  no build target found for /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/src/main/scala/FinnhubAPI.scala. Using presentation compiler with project's scala-library version: 3.3.4
+2025.03.07 12:17:34 INFO  no build target found for /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/src/main/scala/FinnhubAPI.scala. Using presentation compiler with project's scala-library version: 3.3.4
+2025.03.07 12:17:34 INFO  no build target found for /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/src/main/scala/FinnhubAPI.scala. Using presentation compiler with project's scala-library version: 3.3.4
+2025.03.07 12:17:34 INFO  no build target found for /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/src/main/scala/FinnhubAPI.scala. Using presentation compiler with project's scala-library version: 3.3.4
+Mar 07, 2025 12:18:41 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 07, 2025 12:18:47 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 07, 2025 12:18:55 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 07, 2025 12:19:01 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 07, 2025 12:19:06 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 07, 2025 12:19:39 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 07, 2025 12:19:56 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 07, 2025 12:20:08 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 07, 2025 12:20:15 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 07, 2025 12:20:53 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+2025.03.07 12:21:11 INFO  no build target found for /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/src/main/scala/FinnhubAPI.scala. Using presentation compiler with project's scala-library version: 3.3.4
+2025.03.07 12:21:11 INFO  no build target found for /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/src/main/scala/FinnhubAPI.scala. Using presentation compiler with project's scala-library version: 3.3.4
+2025.03.07 12:21:11 INFO  no build target found for /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/src/main/scala/FinnhubAPI.scala. Using presentation compiler with project's scala-library version: 3.3.4
+2025.03.07 12:21:12 INFO  no build target found for /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/src/main/scala/FinnhubAPI.scala. Using presentation compiler with project's scala-library version: 3.3.4
+2025.03.07 12:21:12 INFO  no build target found for /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/src/main/scala/FinnhubAPI.scala. Using presentation compiler with project's scala-library version: 3.3.4
+2025.03.07 12:21:14 INFO  no build target found for /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/src/main/scala/FinnhubAPI.scala. Using presentation compiler with project's scala-library version: 3.3.4
+2025.03.07 12:21:15 INFO  no build target found for /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/src/main/scala/FinnhubAPI.scala. Using presentation compiler with project's scala-library version: 3.3.4
+2025.03.07 12:21:15 INFO  no build target found for /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/src/main/scala/FinnhubAPI.scala. Using presentation compiler with project's scala-library version: 3.3.4
+2025.03.07 12:21:15 INFO  no build target found for /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/src/main/scala/FinnhubAPI.scala. Using presentation compiler with project's scala-library version: 3.3.4
+Mar 07, 2025 12:21:26 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 07, 2025 12:21:33 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 07, 2025 12:22:09 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 07, 2025 12:22:19 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 07, 2025 12:23:02 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 07, 2025 12:23:02 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 07, 2025 12:23:17 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 07, 2025 12:24:12 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 07, 2025 12:24:58 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 07, 2025 12:24:58 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 07, 2025 12:25:14 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 07, 2025 12:26:08 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 07, 2025 12:26:22 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 07, 2025 12:26:22 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+2025.03.07 12:26:24 INFO  no build target found for /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/src/main/scala/FinnhubAPI.scala. Using presentation compiler with project's scala-library version: 3.3.4
+Mar 07, 2025 12:27:17 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 07, 2025 12:28:00 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 07, 2025 12:28:10 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 07, 2025 12:28:14 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 07, 2025 12:28:28 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 07, 2025 12:29:06 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 07, 2025 12:30:12 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 07, 2025 12:30:16 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 07, 2025 12:31:40 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 07, 2025 12:31:41 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 07, 2025 12:31:56 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 07, 2025 12:32:16 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 07, 2025 12:33:20 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 07, 2025 12:34:16 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 07, 2025 12:34:36 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 07, 2025 12:34:53 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 07, 2025 12:34:55 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 07, 2025 12:35:56 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 07, 2025 12:37:48 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 07, 2025 12:37:48 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 07, 2025 12:40:30 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 07, 2025 12:40:30 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 07, 2025 12:42:23 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 07, 2025 12:43:04 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 07, 2025 12:43:08 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 07, 2025 12:43:17 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 07, 2025 12:43:35 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 07, 2025 12:44:28 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 07, 2025 12:44:39 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 07, 2025 12:44:39 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 07, 2025 12:45:02 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 07, 2025 12:45:35 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 07, 2025 12:45:46 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 07, 2025 12:46:39 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 07, 2025 12:46:41 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 07, 2025 12:47:07 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 07, 2025 12:48:45 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 07, 2025 12:49:49 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 07, 2025 1:12:04 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 07, 2025 1:12:04 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 07, 2025 1:12:10 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 07, 2025 1:13:14 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 07, 2025 1:15:25 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 07, 2025 1:15:25 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 07, 2025 1:27:08 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 07, 2025 1:27:32 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 07, 2025 1:27:48 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 07, 2025 1:27:53 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 07, 2025 1:28:03 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 07, 2025 1:28:05 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 07, 2025 1:28:07 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 07, 2025 1:28:56 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 07, 2025 1:28:59 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 07, 2025 1:29:03 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 07, 2025 1:29:06 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 07, 2025 1:29:54 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 07, 2025 1:29:59 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 07, 2025 1:30:26 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 07, 2025 1:31:00 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 07, 2025 1:31:32 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 07, 2025 1:31:42 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 07, 2025 1:31:46 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 07, 2025 1:31:48 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 07, 2025 1:32:36 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 07, 2025 1:32:50 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 07, 2025 1:32:50 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 07, 2025 1:33:10 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 07, 2025 1:33:11 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 07, 2025 1:33:34 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 07, 2025 1:34:21 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 07, 2025 1:34:32 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 07, 2025 1:34:42 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 07, 2025 1:35:00 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 07, 2025 1:35:32 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 07, 2025 1:35:57 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 07, 2025 1:36:08 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 07, 2025 1:38:21 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 07, 2025 1:39:01 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 07, 2025 1:45:00 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 07, 2025 1:45:00 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 07, 2025 1:45:34 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 07, 2025 1:45:39 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 07, 2025 1:45:51 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 07, 2025 1:46:40 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 07, 2025 1:46:53 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 07, 2025 1:46:53 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 07, 2025 1:47:23 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 07, 2025 1:47:56 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 07, 2025 1:49:04 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 07, 2025 1:49:19 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 07, 2025 1:49:24 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 07, 2025 1:49:41 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 07, 2025 1:49:50 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 07, 2025 1:49:58 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 07, 2025 1:50:19 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 07, 2025 1:50:24 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 07, 2025 1:50:30 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 07, 2025 1:50:41 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 07, 2025 1:51:24 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 07, 2025 1:51:38 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 07, 2025 1:52:04 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 07, 2025 1:52:32 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 07, 2025 1:52:38 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 07, 2025 1:52:42 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 07, 2025 1:53:25 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 07, 2025 1:53:30 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 07, 2025 1:53:32 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 07, 2025 1:54:17 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 07, 2025 1:54:22 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 07, 2025 1:54:26 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 07, 2025 1:54:42 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 07, 2025 1:54:51 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 07, 2025 1:54:57 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 07, 2025 1:55:20 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 07, 2025 1:55:22 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 07, 2025 1:56:06 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 07, 2025 1:56:21 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 07, 2025 1:56:21 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 07, 2025 1:56:42 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 07, 2025 1:57:31 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 07, 2025 1:58:12 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 07, 2025 1:58:12 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 07, 2025 1:58:29 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 07, 2025 1:59:22 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 07, 2025 2:05:45 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 07, 2025 2:05:45 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 07, 2025 2:09:25 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 07, 2025 2:09:41 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 07, 2025 2:10:37 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 07, 2025 2:10:50 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 07, 2025 2:11:08 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 07, 2025 2:11:11 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 07, 2025 2:12:49 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 07, 2025 2:12:53 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 07, 2025 2:13:04 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 07, 2025 2:13:53 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 07, 2025 2:13:58 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 07, 2025 2:14:36 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 07, 2025 2:18:01 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 07, 2025 2:18:18 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 07, 2025 2:19:16 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 07, 2025 2:19:25 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 07, 2025 2:19:51 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 07, 2025 2:20:13 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 07, 2025 2:20:26 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 07, 2025 2:20:32 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 07, 2025 2:21:12 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 07, 2025 2:21:52 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 07, 2025 2:21:57 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 07, 2025 2:22:43 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 07, 2025 2:22:59 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 07, 2025 2:23:15 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 07, 2025 2:23:22 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 07, 2025 2:23:41 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 07, 2025 2:24:33 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 07, 2025 2:28:18 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 07, 2025 2:29:18 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 07, 2025 2:29:18 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 07, 2025 2:29:25 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 07, 2025 2:29:38 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 07, 2025 2:31:07 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 07, 2025 2:31:28 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 07, 2025 3:00:15 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 07, 2025 3:00:15 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 07, 2025 3:00:20 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 07, 2025 3:00:48 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 07, 2025 3:01:10 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 07, 2025 3:01:53 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 07, 2025 3:02:24 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 07, 2025 3:03:03 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 07, 2025 3:03:20 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 07, 2025 3:03:20 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 07, 2025 3:03:23 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 07, 2025 3:03:30 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 07, 2025 3:03:36 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 07, 2025 3:04:29 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 07, 2025 3:04:34 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 07, 2025 3:04:40 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 07, 2025 3:04:44 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 07, 2025 3:05:22 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 07, 2025 3:05:31 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 07, 2025 3:05:40 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 07, 2025 3:05:49 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 07, 2025 3:06:29 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 07, 2025 3:06:35 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 07, 2025 3:06:41 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 07, 2025 3:07:09 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 07, 2025 3:07:38 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 07, 2025 3:07:44 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 07, 2025 3:07:47 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 07, 2025 3:08:46 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 07, 2025 3:09:26 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 07, 2025 3:10:36 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 07, 2025 3:10:39 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 07, 2025 3:11:34 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 07, 2025 3:12:10 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 07, 2025 3:14:48 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 07, 2025 3:14:48 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 07, 2025 3:14:52 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 07, 2025 3:15:58 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 07, 2025 3:17:30 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 07, 2025 3:17:30 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 07, 2025 3:18:16 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 07, 2025 3:18:20 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 07, 2025 3:24:25 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 07, 2025 3:24:30 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 07, 2025 3:27:21 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 07, 2025 3:27:28 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 07, 2025 3:28:25 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 07, 2025 3:28:41 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 07, 2025 3:30:10 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 07, 2025 3:30:10 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+2025.03.07 15:30:15 INFO  Shutting down server
+2025.03.07 15:30:15 INFO  shutting down Metals
+2025.03.07 15:30:15 INFO  Exiting server
