@@ -1304,3 +1304,639 @@ WARNING: Unsupported notification method: metals/windowStateDidChange
 2025.03.07 15:30:15 INFO  Shutting down server
 2025.03.07 15:30:15 INFO  shutting down Metals
 2025.03.07 15:30:15 INFO  Exiting server
+2025.03.08 11:04:44 INFO  Started: Metals version 1.5.1 in folders '/data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA' for client Visual Studio Code 1.98.0.
+2025.03.08 11:04:45 INFO  sbt 1.10.10 found for workspace.
+2025.03.08 11:04:46 INFO  [info] welcome to sbt 1.10.10 (Eclipse Adoptium Java 17.0.14)
+Mar 08, 2025 11:04:46 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFO: Unsupported notification method: $/setTrace
+2025.03.08 11:04:48 INFO  [info] loading project definition from /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/project/project
+2025.03.08 11:04:49 INFO  [info] loading project definition from /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/project
+2025.03.08 11:04:49 INFO  [info] compiling 1 Scala source to /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/project/target/scala-2.12/sbt-1.0/classes ...
+2025.03.08 11:04:51 INFO  [info] done compiling
+2025.03.08 11:04:52 INFO  [error] java.nio.file.FileSystemException: /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/project/target/scala-2.12/sbt-1.0/zinc/inc_compile_2.12.zip: Operation not permitted
+2025.03.08 11:04:52 INFO  [error] 	at java.base/sun.nio.fs.UnixException.translateToIOException(UnixException.java:100)
+2025.03.08 11:04:52 INFO  [error] 	at java.base/sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:106)
+2025.03.08 11:04:52 INFO  [error] 	at java.base/sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:111)
+2025.03.08 11:04:52 INFO  [error] 	at java.base/sun.nio.fs.UnixCopyFile.copyFile(UnixCopyFile.java:286)
+2025.03.08 11:04:52 INFO  [error] 	at java.base/sun.nio.fs.UnixCopyFile.move(UnixCopyFile.java:492)
+2025.03.08 11:04:52 INFO  [error] 	at java.base/sun.nio.fs.UnixFileSystemProvider.move(UnixFileSystemProvider.java:266)
+2025.03.08 11:04:52 INFO  [error] 	at java.base/java.nio.file.Files.move(Files.java:1432)
+2025.03.08 11:04:52 INFO  [error] 	at sbt.io.IO$.$anonfun$move$2(IO.scala:1128)
+2025.03.08 11:04:52 INFO  [error] 	at sbt.internal.io.Retry$.apply(Retry.scala:47)
+2025.03.08 11:04:52 INFO  [error] 	at sbt.internal.io.Retry$.apply(Retry.scala:29)
+2025.03.08 11:04:52 INFO  [error] 	at sbt.internal.io.Retry$.apply(Retry.scala:24)
+2025.03.08 11:04:52 INFO  [error] 	at sbt.io.IO$.move(IO.scala:1128)
+2025.03.08 11:04:52 INFO  [error] 	at sbt.io.IO$.move(IO.scala:1120)
+2025.03.08 11:04:52 INFO  [error] 	at sbt.internal.inc.FileAnalysisStore$BinaryFileStore.set(FileAnalysisStore.scala:107)
+2025.03.08 11:04:52 INFO  [error] 	at xsbti.compile.AnalysisStore$CachedAnalysisStore.set(AnalysisStore.java:126)
+2025.03.08 11:04:52 INFO  [error] 	at xsbti.compile.AnalysisStore$SyncedAnalysisStore.set(AnalysisStore.java:150)
+2025.03.08 11:04:52 INFO  [error] 	at sbt.Defaults$.$anonfun$compileTask$1(Defaults.scala:2402)
+2025.03.08 11:04:52 INFO  [error] 	at scala.Function1.$anonfun$compose$1(Function1.scala:49)
+2025.03.08 11:04:52 INFO  [error] 	at sbt.internal.util.$tilde$greater.$anonfun$$u2219$1(TypeFunctions.scala:63)
+2025.03.08 11:04:52 INFO  [error] 	at sbt.std.Transform$$anon$4.work(Transform.scala:69)
+2025.03.08 11:04:52 INFO  [error] 	at sbt.Execute.$anonfun$submit$2(Execute.scala:283)
+2025.03.08 11:04:52 INFO  [error] 	at sbt.internal.util.ErrorHandling$.wideConvert(ErrorHandling.scala:24)
+2025.03.08 11:04:52 INFO  [error] 	at sbt.Execute.work(Execute.scala:292)
+2025.03.08 11:04:52 INFO  [error] 	at sbt.Execute.$anonfun$submit$1(Execute.scala:283)
+2025.03.08 11:04:52 INFO  [error] 	at sbt.ConcurrentRestrictions$$anon$4.$anonfun$submitValid$1(ConcurrentRestrictions.scala:265)
+2025.03.08 11:04:52 INFO  [error] 	at sbt.CompletionService$$anon$2.call(CompletionService.scala:65)
+2025.03.08 11:04:52 INFO  [error] 	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+2025.03.08 11:04:52 INFO  [error] 	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+2025.03.08 11:04:52 INFO  [error] 	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+2025.03.08 11:04:52 INFO  [error] 	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+2025.03.08 11:04:52 INFO  [error] 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+2025.03.08 11:04:52 INFO  [error] 	at java.base/java.lang.Thread.run(Thread.java:840)
+2025.03.08 11:04:52 INFO  [error] (Compile / compile) java.nio.file.FileSystemException: /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/project/target/scala-2.12/sbt-1.0/zinc/inc_compile_2.12.zip: Operation not permitted
+2025.03.08 11:04:52 INFO  [warn] Project loading failed: (r)etry, (q)uit, (l)ast, or (i)gnore? (default: r)
+2025.03.08 11:04:52 INFO  time: ran 'sbt bspConfig' in 7.55s
+2025.03.08 11:04:52 ERROR Creation of .bsp/sbt failed with exit code: 1
+2025.03.08 11:06:29 INFO  no build target found for /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/src/main/scala/CountActor.scala. Using presentation compiler with project's scala-library version: 3.3.4
+2025.03.08 11:06:29 INFO  no build target found for /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/src/main/scala/CountActor.scala. Using presentation compiler with project's scala-library version: 3.3.4
+2025.03.08 11:06:30 INFO  no build target found for /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/src/main/scala/CountActor.scala. Using presentation compiler with project's scala-library version: 3.3.4
+2025.03.08 11:06:30 INFO  no build target found for /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/src/main/scala/CountActor.scala. Using presentation compiler with project's scala-library version: 3.3.4
+2025.03.08 11:06:31 INFO  time: code lens generation in 1.25s
+2025.03.08 11:06:34 INFO  no build target found for /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/src/main/scala/CountActor.scala. Using presentation compiler with project's scala-library version: 3.3.4
+Mar 08, 2025 11:06:36 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 08, 2025 11:06:51 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+2025.03.08 11:06:53 INFO  no build target found for /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/src/main/scala/CountActor.scala. Using presentation compiler with project's scala-library version: 3.3.4
+2025.03.08 11:06:55 INFO  no build target found for /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/src/main/scala/CountActor.scala. Using presentation compiler with project's scala-library version: 3.3.4
+2025.03.08 11:06:55 INFO  no build target found for /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/src/main/scala/FinnhubAPI.scala. Using presentation compiler with project's scala-library version: 3.3.4
+2025.03.08 11:06:55 INFO  no build target found for /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/src/main/scala/FinnhubAPI.scala. Using presentation compiler with project's scala-library version: 3.3.4
+2025.03.08 11:06:55 INFO  no build target found for /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/src/main/scala/FinnhubAPI.scala. Using presentation compiler with project's scala-library version: 3.3.4
+2025.03.08 11:06:55 INFO  no build target found for /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/src/main/scala/FinnhubAPI.scala. Using presentation compiler with project's scala-library version: 3.3.4
+2025.03.08 11:06:57 INFO  no build target found for /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/src/main/scala/FinnhubAPI.scala. Using presentation compiler with project's scala-library version: 3.3.4
+2025.03.08 11:07:03 INFO  no build target found for /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/src/main/scala/FinnhubAPI.scala. Using presentation compiler with project's scala-library version: 3.3.4
+2025.03.08 11:07:06 INFO  no build target found for /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/src/main/scala/FinnhubAPI.scala. Using presentation compiler with project's scala-library version: 3.3.4
+2025.03.08 11:07:06 INFO  no build target found for /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/src/main/scala/Server.scala. Using presentation compiler with project's scala-library version: 3.3.4
+2025.03.08 11:07:06 INFO  no build target found for /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/src/main/scala/Server.scala. Using presentation compiler with project's scala-library version: 3.3.4
+2025.03.08 11:07:06 INFO  no build target found for /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/src/main/scala/Server.scala. Using presentation compiler with project's scala-library version: 3.3.4
+2025.03.08 11:07:19 INFO  no build target found for /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/src/main/scala/Server.scala. Using presentation compiler with project's scala-library version: 3.3.4
+2025.03.08 11:07:19 INFO  no build target found for /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/src/main/scala/Server.scala. Using presentation compiler with project's scala-library version: 3.3.4
+2025.03.08 11:07:20 INFO  no build target found for /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/src/main/scala/Server.scala. Using presentation compiler with project's scala-library version: 3.3.4
+2025.03.08 11:07:36 INFO  no build target found for /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/src/main/scala/Server.scala. Using presentation compiler with project's scala-library version: 3.3.4
+2025.03.08 11:07:36 INFO  no build target found for /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/src/main/scala/FinnhubAPI.scala. Using presentation compiler with project's scala-library version: 3.3.4
+2025.03.08 11:07:36 INFO  no build target found for /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/src/main/scala/FinnhubAPI.scala. Using presentation compiler with project's scala-library version: 3.3.4
+2025.03.08 11:07:36 INFO  no build target found for /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/src/main/scala/FinnhubAPI.scala. Using presentation compiler with project's scala-library version: 3.3.4
+2025.03.08 11:07:37 INFO  no build target found for /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/src/main/scala/FinnhubAPI.scala. Using presentation compiler with project's scala-library version: 3.3.4
+2025.03.08 11:07:36 INFO  no build target found for /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/src/main/scala/FinnhubAPI.scala. Using presentation compiler with project's scala-library version: 3.3.4
+2025.03.08 11:07:38 INFO  no build target found for /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/src/main/scala/FinnhubAPI.scala. Using presentation compiler with project's scala-library version: 3.3.4
+2025.03.08 11:07:41 INFO  no build target found for /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/src/main/scala/FinnhubAPI.scala. Using presentation compiler with project's scala-library version: 3.3.4
+2025.03.08 11:07:41 INFO  no build target found for /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/src/main/scala/FinnhubAPI.scala. Using presentation compiler with project's scala-library version: 3.3.4
+2025.03.08 11:07:42 INFO  no build target found for /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/src/main/scala/FinnhubAPI.scala. Using presentation compiler with project's scala-library version: 3.3.4
+2025.03.08 11:07:46 INFO  no build target found for /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/src/main/scala/FinnhubAPI.scala. Using presentation compiler with project's scala-library version: 3.3.4
+2025.03.08 11:07:50 INFO  no build target found for /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/src/main/scala/FinnhubAPI.scala. Using presentation compiler with project's scala-library version: 3.3.4
+2025.03.08 11:07:50 INFO  no build target found for /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/src/main/scala/FinnhubAPI.scala. Using presentation compiler with project's scala-library version: 3.3.4
+2025.03.08 11:07:51 INFO  no build target found for /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/src/main/scala/FinnhubAPI.scala. Using presentation compiler with project's scala-library version: 3.3.4
+2025.03.08 11:07:53 INFO  no build target found for /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/src/main/scala/FinnhubAPI.scala. Using presentation compiler with project's scala-library version: 3.3.4
+2025.03.08 11:07:53 INFO  no build target found for /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/src/main/scala/FinnhubAPI.scala. Using presentation compiler with project's scala-library version: 3.3.4
+2025.03.08 11:07:57 INFO  no build target found for /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/src/main/scala/FinnhubAPI.scala. Using presentation compiler with project's scala-library version: 3.3.4
+2025.03.08 11:08:09 INFO  no build target found for /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/src/main/scala/FinnhubAPI.scala. Using presentation compiler with project's scala-library version: 3.3.4
+2025.03.08 11:08:25 INFO  no build target found for /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/src/main/scala/FinnhubAPI.scala. Using presentation compiler with project's scala-library version: 3.3.4
+2025.03.08 11:08:25 INFO  no build target found for /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/src/main/scala/Main.scala. Using presentation compiler with project's scala-library version: 3.3.4
+2025.03.08 11:08:25 INFO  no build target found for /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/src/main/scala/Main.scala. Using presentation compiler with project's scala-library version: 3.3.4
+2025.03.08 11:08:26 INFO  no build target found for /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/src/main/scala/Main.scala. Using presentation compiler with project's scala-library version: 3.3.4
+2025.03.08 11:08:26 INFO  no build target found for /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/src/main/scala/Main.scala. Using presentation compiler with project's scala-library version: 3.3.4
+2025.03.08 11:08:27 INFO  no build target found for /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/src/main/scala/Main.scala. Using presentation compiler with project's scala-library version: 3.3.4
+2025.03.08 11:08:27 INFO  no build target found for /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/src/main/scala/Server.scala. Using presentation compiler with project's scala-library version: 3.3.4
+2025.03.08 11:08:27 INFO  no build target found for /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/src/main/scala/Server.scala. Using presentation compiler with project's scala-library version: 3.3.4
+2025.03.08 11:08:27 INFO  no build target found for /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/src/main/scala/Server.scala. Using presentation compiler with project's scala-library version: 3.3.4
+2025.03.08 11:08:28 INFO  no build target found for /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/src/main/scala/Server.scala. Using presentation compiler with project's scala-library version: 3.3.4
+2025.03.08 11:08:29 INFO  no build target found for /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/src/main/scala/Server.scala. Using presentation compiler with project's scala-library version: 3.3.4
+2025.03.08 11:08:29 INFO  no build target found for /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/src/main/scala/Main.scala. Using presentation compiler with project's scala-library version: 3.3.4
+2025.03.08 11:08:29 INFO  no build target found for /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/src/main/scala/Main.scala. Using presentation compiler with project's scala-library version: 3.3.4
+2025.03.08 11:08:30 INFO  no build target found for /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/src/main/scala/Main.scala. Using presentation compiler with project's scala-library version: 3.3.4
+2025.03.08 11:08:30 INFO  no build target found for /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/src/main/scala/Main.scala. Using presentation compiler with project's scala-library version: 3.3.4
+2025.03.08 11:08:32 INFO  no build target found for /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/src/main/scala/Main.scala. Using presentation compiler with project's scala-library version: 3.3.4
+2025.03.08 11:08:34 INFO  no build target found for /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/src/main/scala/Main.scala. Using presentation compiler with project's scala-library version: 3.3.4
+2025.03.08 11:08:34 INFO  no build target found for /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/src/main/scala/Server.scala. Using presentation compiler with project's scala-library version: 3.3.4
+2025.03.08 11:08:34 INFO  no build target found for /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/src/main/scala/Server.scala. Using presentation compiler with project's scala-library version: 3.3.4
+2025.03.08 11:08:34 INFO  no build target found for /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/src/main/scala/Server.scala. Using presentation compiler with project's scala-library version: 3.3.4
+2025.03.08 11:08:34 INFO  no build target found for /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/src/main/scala/Server.scala. Using presentation compiler with project's scala-library version: 3.3.4
+2025.03.08 11:08:51 INFO  no build target found for /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/src/main/scala/Server.scala. Using presentation compiler with project's scala-library version: 3.3.4
+2025.03.08 11:08:52 INFO  no build target found for /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/src/main/scala/Server.scala. Using presentation compiler with project's scala-library version: 3.3.4
+2025.03.08 11:08:53 INFO  no build target found for /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/src/main/scala/FinnhubAPI.scala. Using presentation compiler with project's scala-library version: 3.3.4
+2025.03.08 11:08:53 INFO  no build target found for /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/src/main/scala/FinnhubAPI.scala. Using presentation compiler with project's scala-library version: 3.3.4
+2025.03.08 11:08:52 INFO  no build target found for /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/src/main/scala/FinnhubAPI.scala. Using presentation compiler with project's scala-library version: 3.3.4
+2025.03.08 11:08:53 INFO  no build target found for /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/src/main/scala/FinnhubAPI.scala. Using presentation compiler with project's scala-library version: 3.3.4
+2025.03.08 11:09:00 INFO  no build target found for /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/src/main/scala/FinnhubAPI.scala. Using presentation compiler with project's scala-library version: 3.3.4
+2025.03.08 11:09:04 INFO  no build target found for /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/src/main/scala/FinnhubAPI.scala. Using presentation compiler with project's scala-library version: 3.3.4
+2025.03.08 11:09:04 INFO  no build target found for /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/src/main/scala/FinnhubAPI.scala. Using presentation compiler with project's scala-library version: 3.3.4
+2025.03.08 11:09:04 INFO  no build target found for /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/src/main/scala/FinnhubAPI.scala. Using presentation compiler with project's scala-library version: 3.3.4
+2025.03.08 11:09:05 INFO  no build target found for /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/src/main/scala/FinnhubAPI.scala. Using presentation compiler with project's scala-library version: 3.3.4
+2025.03.08 11:09:05 INFO  no build target found for /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/src/main/scala/FinnhubAPI.scala. Using presentation compiler with project's scala-library version: 3.3.4
+2025.03.08 11:09:05 INFO  no build target found for /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/src/main/scala/FinnhubAPI.scala. Using presentation compiler with project's scala-library version: 3.3.4
+2025.03.08 11:09:05 INFO  no build target found for /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/src/main/scala/FinnhubAPI.scala. Using presentation compiler with project's scala-library version: 3.3.4
+2025.03.08 11:09:07 INFO  no build target found for /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/src/main/scala/FinnhubAPI.scala. Using presentation compiler with project's scala-library version: 3.3.4
+2025.03.08 11:09:23 INFO  no build target found for /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/src/main/scala/FinnhubAPI.scala. Using presentation compiler with project's scala-library version: 3.3.4
+2025.03.08 11:09:38 INFO  no build target found for /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/src/main/scala/FinnhubAPI.scala. Using presentation compiler with project's scala-library version: 3.3.4
+2025.03.08 11:09:44 INFO  no build target found for /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/src/main/scala/FinnhubAPI.scala. Using presentation compiler with project's scala-library version: 3.3.4
+2025.03.08 11:09:44 INFO  no build target found for /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/src/main/scala/CountActor.scala. Using presentation compiler with project's scala-library version: 3.3.4
+2025.03.08 11:09:44 INFO  no build target found for /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/src/main/scala/CountActor.scala. Using presentation compiler with project's scala-library version: 3.3.4
+2025.03.08 11:09:44 INFO  no build target found for /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/src/main/scala/CountActor.scala. Using presentation compiler with project's scala-library version: 3.3.4
+2025.03.08 11:09:44 INFO  no build target found for /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/src/main/scala/CountActor.scala. Using presentation compiler with project's scala-library version: 3.3.4
+2025.03.08 11:09:46 INFO  no build target found for /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/src/main/scala/CountActor.scala. Using presentation compiler with project's scala-library version: 3.3.4
+2025.03.08 11:09:46 INFO  no build target found for /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/src/main/scala/Main.scala. Using presentation compiler with project's scala-library version: 3.3.4
+2025.03.08 11:09:46 INFO  no build target found for /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/src/main/scala/Main.scala. Using presentation compiler with project's scala-library version: 3.3.4
+2025.03.08 11:09:46 INFO  no build target found for /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/src/main/scala/Main.scala. Using presentation compiler with project's scala-library version: 3.3.4
+2025.03.08 11:09:46 INFO  no build target found for /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/src/main/scala/Main.scala. Using presentation compiler with project's scala-library version: 3.3.4
+2025.03.08 11:09:48 INFO  no build target found for /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/src/main/scala/Main.scala. Using presentation compiler with project's scala-library version: 3.3.4
+2025.03.08 11:09:49 INFO  no build target found for /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/src/main/scala/Server.scala. Using presentation compiler with project's scala-library version: 3.3.4
+2025.03.08 11:09:48 INFO  no build target found for /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/src/main/scala/Server.scala. Using presentation compiler with project's scala-library version: 3.3.4
+2025.03.08 11:09:49 INFO  no build target found for /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/src/main/scala/Server.scala. Using presentation compiler with project's scala-library version: 3.3.4
+2025.03.08 11:09:49 INFO  no build target found for /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/src/main/scala/Server.scala. Using presentation compiler with project's scala-library version: 3.3.4
+2025.03.08 11:09:52 INFO  no build target found for /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/src/main/scala/Server.scala. Using presentation compiler with project's scala-library version: 3.3.4
+2025.03.08 11:09:54 INFO  no build target found for /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/src/main/scala/Server.scala. Using presentation compiler with project's scala-library version: 3.3.4
+2025.03.08 11:09:55 INFO  no build target found for /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/src/main/scala/Server.scala. Using presentation compiler with project's scala-library version: 3.3.4
+2025.03.08 11:10:03 INFO  no build target found for /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/src/main/scala/Server.scala. Using presentation compiler with project's scala-library version: 3.3.4
+2025.03.08 11:10:04 INFO  no build target found for /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/src/main/scala/Server.scala. Using presentation compiler with project's scala-library version: 3.3.4
+Mar 08, 2025 11:11:15 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 08, 2025 11:11:37 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+2025.03.08 11:11:37 INFO  no build target found for /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/src/main/scala/Server.scala. Using presentation compiler with project's scala-library version: 3.3.4
+2025.03.08 11:11:48 INFO  no build target found for /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/src/main/scala/FinnhubAPI.scala. Using presentation compiler with project's scala-library version: 3.3.4
+2025.03.08 11:11:48 INFO  no build target found for /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/src/main/scala/FinnhubAPI.scala. Using presentation compiler with project's scala-library version: 3.3.4
+2025.03.08 11:11:48 INFO  no build target found for /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/src/main/scala/FinnhubAPI.scala. Using presentation compiler with project's scala-library version: 3.3.4
+2025.03.08 11:11:48 INFO  no build target found for /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/src/main/scala/FinnhubAPI.scala. Using presentation compiler with project's scala-library version: 3.3.4
+2025.03.08 11:11:54 INFO  no build target found for /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/src/main/scala/FinnhubAPI.scala. Using presentation compiler with project's scala-library version: 3.3.4
+2025.03.08 11:11:54 INFO  no build target found for /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/src/main/scala/FinnhubAPI.scala. Using presentation compiler with project's scala-library version: 3.3.4
+2025.03.08 11:11:55 INFO  no build target found for /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/src/main/scala/FinnhubAPI.scala. Using presentation compiler with project's scala-library version: 3.3.4
+2025.03.08 11:11:55 INFO  no build target found for /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/src/main/scala/FinnhubAPI.scala. Using presentation compiler with project's scala-library version: 3.3.4
+2025.03.08 11:11:57 INFO  no build target found for /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/src/main/scala/FinnhubAPI.scala. Using presentation compiler with project's scala-library version: 3.3.4
+2025.03.08 11:11:59 INFO  no build target found for /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/src/main/scala/FinnhubAPI.scala. Using presentation compiler with project's scala-library version: 3.3.4
+2025.03.08 11:12:02 INFO  no build target found for /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/src/main/scala/FinnhubAPI.scala. Using presentation compiler with project's scala-library version: 3.3.4
+Mar 08, 2025 11:12:42 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 08, 2025 11:13:15 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+2025.03.08 11:13:15 INFO  no build target found for /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/src/main/scala/Server.scala. Using presentation compiler with project's scala-library version: 3.3.4
+2025.03.08 11:13:15 INFO  no build target found for /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/src/main/scala/Server.scala. Using presentation compiler with project's scala-library version: 3.3.4
+2025.03.08 11:13:15 INFO  no build target found for /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/src/main/scala/Server.scala. Using presentation compiler with project's scala-library version: 3.3.4
+2025.03.08 11:13:16 INFO  no build target found for /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/src/main/scala/Server.scala. Using presentation compiler with project's scala-library version: 3.3.4
+2025.03.08 11:13:20 INFO  no build target found for /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/src/main/scala/Server.scala. Using presentation compiler with project's scala-library version: 3.3.4
+2025.03.08 11:13:20 INFO  no build target found for /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/src/main/scala/Server.scala. Using presentation compiler with project's scala-library version: 3.3.4
+2025.03.08 11:13:22 INFO  no build target found for /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/src/main/scala/Server.scala. Using presentation compiler with project's scala-library version: 3.3.4
+2025.03.08 11:13:22 INFO  no build target found for /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/src/main/scala/Server.scala. Using presentation compiler with project's scala-library version: 3.3.4
+2025.03.08 11:13:22 INFO  no build target found for /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/src/main/scala/Server.scala. Using presentation compiler with project's scala-library version: 3.3.4
+2025.03.08 11:13:25 INFO  no build target found for /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/src/main/scala/Server.scala. Using presentation compiler with project's scala-library version: 3.3.4
+Mar 08, 2025 11:13:42 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 08, 2025 11:13:58 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 08, 2025 11:14:09 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 08, 2025 11:15:01 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFO: Unsupported notification method: $/setTrace
+Mar 08, 2025 11:16:12 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 08, 2025 11:16:46 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+2025.03.08 11:16:46 INFO  no build target found for /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/src/main/scala/Server.scala. Using presentation compiler with project's scala-library version: 3.3.4
+Mar 08, 2025 11:16:46 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+2025.03.08 11:16:46 INFO  no build target found for /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/src/main/scala/Server.scala. Using presentation compiler with project's scala-library version: 3.3.4
+2025.03.08 11:16:46 INFO  no build target found for /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/src/main/scala/Server.scala. Using presentation compiler with project's scala-library version: 3.3.4
+2025.03.08 11:16:47 INFO  no build target found for /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/src/main/scala/Server.scala. Using presentation compiler with project's scala-library version: 3.3.4
+2025.03.08 11:16:47 INFO  no build target found for /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/src/main/scala/Server.scala. Using presentation compiler with project's scala-library version: 3.3.4
+2025.03.08 11:16:47 INFO  no build target found for /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/src/main/scala/Server.scala. Using presentation compiler with project's scala-library version: 3.3.4
+2025.03.08 11:16:47 INFO  no build target found for /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/src/main/scala/Server.scala. Using presentation compiler with project's scala-library version: 3.3.4
+2025.03.08 11:16:48 INFO  no build target found for /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/src/main/scala/Server.scala. Using presentation compiler with project's scala-library version: 3.3.4
+Mar 08, 2025 11:16:51 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+2025.03.08 11:17:33 INFO  no build target found for /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/src/main/scala/Server.scala. Using presentation compiler with project's scala-library version: 3.3.4
+2025.03.08 11:17:33 INFO  no build target found for /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/src/main/scala/Server.scala. Using presentation compiler with project's scala-library version: 3.3.4
+Mar 08, 2025 11:17:35 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 08, 2025 11:17:44 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 08, 2025 11:18:09 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+2025.03.08 11:18:18 INFO  no build target found for /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/src/main/scala/Server.scala. Using presentation compiler with project's scala-library version: 3.3.4
+Mar 08, 2025 11:18:34 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 08, 2025 11:18:35 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 08, 2025 11:18:40 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 08, 2025 11:18:44 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 08, 2025 11:18:48 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 08, 2025 11:18:53 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 08, 2025 11:19:09 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 08, 2025 11:19:25 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 08, 2025 11:19:28 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 08, 2025 11:20:15 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 08, 2025 11:21:04 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 08, 2025 11:21:15 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+2025.03.08 11:21:15 INFO  no build target found for /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/src/main/scala/Server.scala. Using presentation compiler with project's scala-library version: 3.3.4
+2025.03.08 11:21:15 INFO  no build target found for /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/src/main/scala/Server.scala. Using presentation compiler with project's scala-library version: 3.3.4
+2025.03.08 11:21:15 INFO  no build target found for /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/src/main/scala/Server.scala. Using presentation compiler with project's scala-library version: 3.3.4
+2025.03.08 11:21:15 INFO  no build target found for /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/src/main/scala/Server.scala. Using presentation compiler with project's scala-library version: 3.3.4
+2025.03.08 11:21:15 INFO  no build target found for /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/src/main/scala/Server.scala. Using presentation compiler with project's scala-library version: 3.3.4
+2025.03.08 11:21:16 INFO  no build target found for /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/src/main/scala/Server.scala. Using presentation compiler with project's scala-library version: 3.3.4
+Mar 08, 2025 11:21:18 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+2025.03.08 11:21:52 INFO  no build target found for /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/src/main/scala/Server.scala. Using presentation compiler with project's scala-library version: 3.3.4
+Mar 08, 2025 11:21:55 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+2025.03.08 11:21:55 INFO  no build target found for /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/src/main/scala/Server.scala. Using presentation compiler with project's scala-library version: 3.3.4
+Mar 08, 2025 11:21:59 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 08, 2025 11:22:02 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 08, 2025 11:22:14 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 08, 2025 11:22:29 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 08, 2025 11:23:06 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 08, 2025 11:24:05 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 08, 2025 11:24:39 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 08, 2025 11:24:39 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+2025.03.08 11:24:47 INFO  no build target found for /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/src/main/scala/Server.scala. Using presentation compiler with project's scala-library version: 3.3.4
+2025.03.08 11:24:47 INFO  no build target found for /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/src/main/scala/Server.scala. Using presentation compiler with project's scala-library version: 3.3.4
+2025.03.08 11:24:47 INFO  no build target found for /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/src/main/scala/Server.scala. Using presentation compiler with project's scala-library version: 3.3.4
+2025.03.08 11:25:16 INFO  no build target found for /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/src/main/scala/Server.scala. Using presentation compiler with project's scala-library version: 3.3.4
+Mar 08, 2025 11:26:19 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 08, 2025 11:26:22 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 08, 2025 11:27:54 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 08, 2025 11:27:54 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+2025.03.08 11:29:01 INFO  no build target found for /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/src/main/scala/CountActor.scala. Using presentation compiler with project's scala-library version: 3.3.4
+2025.03.08 11:29:01 INFO  no build target found for /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/src/main/scala/CountActor.scala. Using presentation compiler with project's scala-library version: 3.3.4
+2025.03.08 11:29:01 INFO  no build target found for /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/src/main/scala/CountActor.scala. Using presentation compiler with project's scala-library version: 3.3.4
+2025.03.08 11:29:01 INFO  no build target found for /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/src/main/scala/CountActor.scala. Using presentation compiler with project's scala-library version: 3.3.4
+2025.03.08 11:29:01 INFO  no build target found for /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/src/main/scala/CountActor.scala. Using presentation compiler with project's scala-library version: 3.3.4
+2025.03.08 11:29:07 INFO  no build target found for /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/src/main/scala/CountActor.scala. Using presentation compiler with project's scala-library version: 3.3.4
+2025.03.08 11:29:10 INFO  no build target found for /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/src/main/scala/CountActor.scala. Using presentation compiler with project's scala-library version: 3.3.4
+2025.03.08 11:29:12 INFO  no build target found for /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/src/main/scala/CountActor.scala. Using presentation compiler with project's scala-library version: 3.3.4
+2025.03.08 11:29:13 INFO  no build target found for /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/src/main/scala/CountActor.scala. Using presentation compiler with project's scala-library version: 3.3.4
+2025.03.08 11:29:16 INFO  no build target found for /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/src/main/scala/CountActor.scala. Using presentation compiler with project's scala-library version: 3.3.4
+2025.03.08 11:29:16 INFO  no build target found for /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/src/main/scala/FinnhubAPI.scala. Using presentation compiler with project's scala-library version: 3.3.4
+2025.03.08 11:29:16 INFO  no build target found for /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/src/main/scala/FinnhubAPI.scala. Using presentation compiler with project's scala-library version: 3.3.4
+2025.03.08 11:29:16 INFO  no build target found for /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/src/main/scala/FinnhubAPI.scala. Using presentation compiler with project's scala-library version: 3.3.4
+2025.03.08 11:29:18 INFO  no build target found for /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/src/main/scala/FinnhubAPI.scala. Using presentation compiler with project's scala-library version: 3.3.4
+2025.03.08 11:29:18 INFO  no build target found for /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/src/main/scala/FinnhubAPI.scala. Using presentation compiler with project's scala-library version: 3.3.4
+Mar 08, 2025 11:29:38 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 08, 2025 11:30:04 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+2025.03.08 11:30:23 INFO  no build target found for /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/src/main/scala/FinnhubAPI.scala. Using presentation compiler with project's scala-library version: 3.3.4
+2025.03.08 11:30:25 INFO  no build target found for /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/src/main/scala/FinnhubAPI.scala. Using presentation compiler with project's scala-library version: 3.3.4
+Mar 08, 2025 11:30:33 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 08, 2025 11:30:33 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 08, 2025 11:31:08 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 08, 2025 11:31:30 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 08, 2025 11:31:45 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 08, 2025 11:31:46 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+2025.03.08 11:31:48 INFO  no build target found for /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/src/main/scala/FinnhubAPI.scala. Using presentation compiler with project's scala-library version: 3.3.4
+2025.03.08 11:31:48 WARN  no build target for: /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/src/main/scala/FinnhubAPI.scala
+2025.03.08 11:31:48 INFO  no build target found for /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/src/main/scala/FinnhubAPI.scala. Using presentation compiler with project's scala-library version: 3.3.4
+Mar 08, 2025 11:32:43 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 08, 2025 11:47:52 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 08, 2025 11:47:53 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 08, 2025 11:47:56 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 08, 2025 11:47:56 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 08, 2025 11:48:00 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 08, 2025 11:48:00 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 08, 2025 11:48:08 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+2025.03.08 11:48:08 INFO  no build target found for /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/src/main/scala/FinnhubAPI.scala. Using presentation compiler with project's scala-library version: 3.3.4
+2025.03.08 11:48:08 INFO  no build target found for /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/src/main/scala/FinnhubAPI.scala. Using presentation compiler with project's scala-library version: 3.3.4
+2025.03.08 11:48:13 INFO  no build target found for /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/src/main/scala/FinnhubAPI.scala. Using presentation compiler with project's scala-library version: 3.3.4
+Mar 08, 2025 11:48:15 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 08, 2025 11:49:18 AM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 08, 2025 12:48:13 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+2025.03.08 12:48:13 INFO  no build target found for /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/src/main/scala/FinnhubAPI.scala. Using presentation compiler with project's scala-library version: 3.3.4
+Mar 08, 2025 12:48:13 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+2025.03.08 12:48:13 INFO  no build target found for /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/src/main/scala/FinnhubAPI.scala. Using presentation compiler with project's scala-library version: 3.3.4
+Mar 08, 2025 12:48:14 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 08, 2025 12:49:23 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 08, 2025 12:50:41 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+2025.03.08 12:50:41 INFO  no build target found for /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/src/main/scala/FinnhubAPI.scala. Using presentation compiler with project's scala-library version: 3.3.4
+Mar 08, 2025 12:54:54 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 08, 2025 12:54:54 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+2025.03.08 12:54:54 INFO  no build target found for /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/src/main/scala/FinnhubAPI.scala. Using presentation compiler with project's scala-library version: 3.3.4
+2025.03.08 12:57:01 INFO  Started: Metals version 1.5.1 in folders '/data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA' for client Visual Studio Code 1.98.0.
+2025.03.08 12:57:05 INFO  no build target found for /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/src/main/scala/FinnhubAPI.scala. Using presentation compiler with project's scala-library version: 3.3.4
+2025.03.08 12:57:06 INFO  sbt 1.10.10 found for workspace.
+2025.03.08 12:57:07 INFO  no build target found for /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/src/main/scala/FinnhubAPI.scala. Using presentation compiler with project's scala-library version: 3.3.4
+2025.03.08 12:57:07 INFO  [info] welcome to sbt 1.10.10 (Eclipse Adoptium Java 17.0.14)
+2025.03.08 12:57:08 INFO  [info] loading project definition from /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/project/project
+2025.03.08 12:57:10 INFO  [info] loading project definition from /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/project
+2025.03.08 12:57:10 INFO  [info] compiling 1 Scala source to /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/project/target/scala-2.12/sbt-1.0/classes ...
+2025.03.08 12:57:12 INFO  [info] done compiling
+2025.03.08 12:57:13 INFO  [error] java.nio.file.FileSystemException: /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/project/target/scala-2.12/sbt-1.0/zinc/inc_compile_2.12.zip: Operation not permitted
+2025.03.08 12:57:13 INFO  [error] 	at java.base/sun.nio.fs.UnixException.translateToIOException(UnixException.java:100)
+2025.03.08 12:57:13 INFO  [error] 	at java.base/sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:106)
+2025.03.08 12:57:13 INFO  [error] 	at java.base/sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:111)
+2025.03.08 12:57:13 INFO  [error] 	at java.base/sun.nio.fs.UnixCopyFile.copyFile(UnixCopyFile.java:286)
+2025.03.08 12:57:13 INFO  [error] 	at java.base/sun.nio.fs.UnixCopyFile.move(UnixCopyFile.java:492)
+2025.03.08 12:57:13 INFO  [error] 	at java.base/sun.nio.fs.UnixFileSystemProvider.move(UnixFileSystemProvider.java:266)
+2025.03.08 12:57:13 INFO  [error] 	at java.base/java.nio.file.Files.move(Files.java:1432)
+2025.03.08 12:57:13 INFO  [error] 	at sbt.io.IO$.$anonfun$move$2(IO.scala:1128)
+2025.03.08 12:57:13 INFO  [error] 	at sbt.internal.io.Retry$.apply(Retry.scala:47)
+2025.03.08 12:57:13 INFO  [error] 	at sbt.internal.io.Retry$.apply(Retry.scala:29)
+2025.03.08 12:57:13 INFO  [error] 	at sbt.internal.io.Retry$.apply(Retry.scala:24)
+2025.03.08 12:57:13 INFO  [error] 	at sbt.io.IO$.move(IO.scala:1128)
+2025.03.08 12:57:13 INFO  [error] 	at sbt.io.IO$.move(IO.scala:1120)
+2025.03.08 12:57:13 INFO  [error] 	at sbt.internal.inc.FileAnalysisStore$BinaryFileStore.set(FileAnalysisStore.scala:107)
+2025.03.08 12:57:13 INFO  [error] 	at xsbti.compile.AnalysisStore$CachedAnalysisStore.set(AnalysisStore.java:126)
+2025.03.08 12:57:13 INFO  [error] 	at xsbti.compile.AnalysisStore$SyncedAnalysisStore.set(AnalysisStore.java:150)
+2025.03.08 12:57:13 INFO  [error] 	at sbt.Defaults$.$anonfun$compileTask$1(Defaults.scala:2402)
+2025.03.08 12:57:13 INFO  [error] 	at scala.Function1.$anonfun$compose$1(Function1.scala:49)
+2025.03.08 12:57:13 INFO  [error] 	at sbt.internal.util.$tilde$greater.$anonfun$$u2219$1(TypeFunctions.scala:63)
+2025.03.08 12:57:13 INFO  [error] 	at sbt.std.Transform$$anon$4.work(Transform.scala:69)
+2025.03.08 12:57:13 INFO  [error] 	at sbt.Execute.$anonfun$submit$2(Execute.scala:283)
+2025.03.08 12:57:13 INFO  [error] 	at sbt.internal.util.ErrorHandling$.wideConvert(ErrorHandling.scala:24)
+2025.03.08 12:57:13 INFO  [error] 	at sbt.Execute.work(Execute.scala:292)
+2025.03.08 12:57:13 INFO  [error] 	at sbt.Execute.$anonfun$submit$1(Execute.scala:283)
+2025.03.08 12:57:13 INFO  [error] 	at sbt.ConcurrentRestrictions$$anon$4.$anonfun$submitValid$1(ConcurrentRestrictions.scala:265)
+2025.03.08 12:57:13 INFO  [error] 	at sbt.CompletionService$$anon$2.call(CompletionService.scala:65)
+2025.03.08 12:57:13 INFO  [error] 	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+2025.03.08 12:57:13 INFO  [error] 	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+2025.03.08 12:57:13 INFO  [error] 	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+2025.03.08 12:57:13 INFO  [error] 	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+2025.03.08 12:57:13 INFO  [error] 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+2025.03.08 12:57:13 INFO  [error] 	at java.base/java.lang.Thread.run(Thread.java:840)
+2025.03.08 12:57:13 INFO  [error] (Compile / compile) java.nio.file.FileSystemException: /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/project/target/scala-2.12/sbt-1.0/zinc/inc_compile_2.12.zip: Operation not permitted
+2025.03.08 12:57:13 INFO  [warn] Project loading failed: (r)etry, (q)uit, (l)ast, or (i)gnore? (default: r)
+2025.03.08 12:57:13 INFO  time: ran 'sbt bspConfig' in 7.89s
+2025.03.08 12:57:13 ERROR Creation of .bsp/sbt failed with exit code: 1
+2025.03.08 12:57:13 INFO  no build target found for /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/src/main/scala/FinnhubAPI.scala. Using presentation compiler with project's scala-library version: 3.3.4
+2025.03.08 12:57:14 INFO  no build target found for /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/src/main/scala/FinnhubAPI.scala. Using presentation compiler with project's scala-library version: 3.3.4
+2025.03.08 12:57:21 INFO  no build target found for /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/src/main/scala/FinnhubAPI.scala. Using presentation compiler with project's scala-library version: 3.3.4
+2025.03.08 12:57:23 INFO  no build target found for /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/src/main/scala/FinnhubAPI.scala. Using presentation compiler with project's scala-library version: 3.3.4
+Mar 08, 2025 12:57:29 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 08, 2025 12:58:04 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 08, 2025 1:00:09 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 08, 2025 1:00:14 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 08, 2025 1:00:14 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFO: Unsupported notification method: $/setTrace
+Mar 08, 2025 1:00:21 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFO: Unsupported notification method: $/setTrace
+2025.03.08 13:00:27 INFO  no build target found for /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/src/main/scala/FinnhubAPI.scala. Using presentation compiler with project's scala-library version: 3.3.4
+2025.03.08 13:00:43 INFO  no build target found for /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/src/main/scala/FinnhubAPI.scala. Using presentation compiler with project's scala-library version: 3.3.4
+2025.03.08 13:00:52 INFO  no build target found for /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/src/main/scala/FinnhubAPI.scala. Using presentation compiler with project's scala-library version: 3.3.4
+2025.03.08 13:00:55 INFO  no build target found for /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/src/main/scala/FinnhubAPI.scala. Using presentation compiler with project's scala-library version: 3.3.4
+2025.03.08 13:01:17 INFO  no build target found for /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/src/main/scala/FinnhubAPI.scala. Using presentation compiler with project's scala-library version: 3.3.4
+2025.03.08 13:01:20 INFO  no build target found for /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/src/main/scala/FinnhubAPI.scala. Using presentation compiler with project's scala-library version: 3.3.4
+2025.03.08 13:01:24 INFO  no build target found for /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/src/main/scala/FinnhubAPI.scala. Using presentation compiler with project's scala-library version: 3.3.4
+Mar 08, 2025 1:01:24 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+2025.03.08 13:01:24 INFO  no build target found for /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/src/main/scala/FinnhubAPI.scala. Using presentation compiler with project's scala-library version: 3.3.4
+2025.03.08 13:01:26 INFO  no build target found for /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/src/main/scala/FinnhubAPI.scala. Using presentation compiler with project's scala-library version: 3.3.4
+2025.03.08 13:01:27 INFO  no build target found for /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/src/main/scala/FinnhubAPI.scala. Using presentation compiler with project's scala-library version: 3.3.4
+2025.03.08 13:01:29 INFO  no build target found for /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/src/main/scala/FinnhubAPI.scala. Using presentation compiler with project's scala-library version: 3.3.4
+2025.03.08 13:01:29 INFO  no build target found for /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/src/main/scala/FinnhubAPI.scala. Using presentation compiler with project's scala-library version: 3.3.4
+2025.03.08 13:01:40 INFO  no build target found for /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/src/main/scala/FinnhubAPI.scala. Using presentation compiler with project's scala-library version: 3.3.4
+Mar 08, 2025 1:01:43 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 08, 2025 1:01:48 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 08, 2025 1:01:50 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 08, 2025 1:03:00 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 08, 2025 1:04:52 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+2025.03.08 13:05:32 INFO  no build target found for /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/src/main/scala/FinnhubAPI.scala. Using presentation compiler with project's scala-library version: 3.3.4
+2025.03.08 13:05:49 INFO  no build target found for /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/src/main/scala/FinnhubAPI.scala. Using presentation compiler with project's scala-library version: 3.3.4
+2025.03.08 13:05:50 INFO  no build target found for /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/src/main/scala/FinnhubAPI.scala. Using presentation compiler with project's scala-library version: 3.3.4
+Mar 08, 2025 1:06:32 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 08, 2025 1:44:53 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 08, 2025 1:44:53 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+2025.03.08 13:45:08 INFO  no build target found for /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/src/main/scala/FinnhubAPI.scala. Using presentation compiler with project's scala-library version: 3.3.4
+2025.03.08 13:45:08 INFO  no build target found for /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/src/main/scala/FinnhubAPI.scala. Using presentation compiler with project's scala-library version: 3.3.4
+2025.03.08 13:45:09 INFO  no build target found for /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/src/main/scala/FinnhubAPI.scala. Using presentation compiler with project's scala-library version: 3.3.4
+2025.03.08 13:45:16 INFO  no build target found for /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/src/main/scala/FinnhubAPI.scala. Using presentation compiler with project's scala-library version: 3.3.4
+2025.03.08 13:45:18 INFO  no build target found for /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/src/main/scala/FinnhubAPI.scala. Using presentation compiler with project's scala-library version: 3.3.4
+2025.03.08 13:45:21 INFO  no build target found for /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/src/main/scala/FinnhubAPI.scala. Using presentation compiler with project's scala-library version: 3.3.4
+2025.03.08 13:45:21 INFO  no build target found for /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/src/main/scala/FinnhubAPI.scala. Using presentation compiler with project's scala-library version: 3.3.4
+2025.03.08 13:45:22 INFO  no build target found for /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/src/main/scala/FinnhubAPI.scala. Using presentation compiler with project's scala-library version: 3.3.4
+2025.03.08 13:45:24 INFO  no build target found for /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/src/main/scala/FinnhubAPI.scala. Using presentation compiler with project's scala-library version: 3.3.4
+2025.03.08 13:45:24 INFO  no build target found for /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/src/main/scala/FinnhubAPI.scala. Using presentation compiler with project's scala-library version: 3.3.4
+2025.03.08 13:45:24 INFO  no build target found for /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/src/main/scala/FinnhubAPI.scala. Using presentation compiler with project's scala-library version: 3.3.4
+2025.03.08 13:45:27 INFO  no build target found for /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/src/main/scala/FinnhubAPI.scala. Using presentation compiler with project's scala-library version: 3.3.4
+2025.03.08 13:45:27 INFO  no build target found for /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/src/main/scala/FinnhubAPI.scala. Using presentation compiler with project's scala-library version: 3.3.4
+2025.03.08 13:45:27 INFO  no build target found for /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/src/main/scala/FinnhubAPI.scala. Using presentation compiler with project's scala-library version: 3.3.4
+2025.03.08 13:45:33 INFO  no build target found for /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/src/main/scala/FinnhubAPI.scala. Using presentation compiler with project's scala-library version: 3.3.4
+2025.03.08 13:45:33 INFO  no build target found for /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/src/main/scala/FinnhubAPI.scala. Using presentation compiler with project's scala-library version: 3.3.4
+2025.03.08 13:45:34 INFO  no build target found for /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/src/main/scala/FinnhubAPI.scala. Using presentation compiler with project's scala-library version: 3.3.4
+2025.03.08 13:45:59 INFO  no build target found for /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/src/main/scala/FinnhubAPI.scala. Using presentation compiler with project's scala-library version: 3.3.4
+2025.03.08 13:45:59 INFO  no build target found for /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/src/main/scala/FinnhubAPI.scala. Using presentation compiler with project's scala-library version: 3.3.4
+Mar 08, 2025 1:46:01 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 08, 2025 1:46:14 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 08, 2025 1:46:14 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 08, 2025 1:46:18 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 08, 2025 1:46:18 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+2025.03.08 13:47:17 INFO  no build target found for /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/src/main/scala/Server.scala. Using presentation compiler with project's scala-library version: 3.3.4
+2025.03.08 13:47:17 INFO  no build target found for /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/src/main/scala/Server.scala. Using presentation compiler with project's scala-library version: 3.3.4
+2025.03.08 13:47:17 INFO  no build target found for /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/src/main/scala/Server.scala. Using presentation compiler with project's scala-library version: 3.3.4
+2025.03.08 13:47:17 INFO  no build target found for /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/src/main/scala/Server.scala. Using presentation compiler with project's scala-library version: 3.3.4
+2025.03.08 13:47:17 INFO  no build target found for /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/src/main/scala/Server.scala. Using presentation compiler with project's scala-library version: 3.3.4
+2025.03.08 13:47:17 INFO  no build target found for /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/src/main/scala/Server.scala. Using presentation compiler with project's scala-library version: 3.3.4
+2025.03.08 13:47:18 INFO  no build target found for /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/src/main/scala/Server.scala. Using presentation compiler with project's scala-library version: 3.3.4
+2025.03.08 13:47:18 INFO  no build target found for /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/src/main/scala/Server.scala. Using presentation compiler with project's scala-library version: 3.3.4
+2025.03.08 13:47:21 INFO  no build target found for /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/src/main/scala/Server.scala. Using presentation compiler with project's scala-library version: 3.3.4
+2025.03.08 13:47:22 INFO  no build target found for /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/src/main/scala/Server.scala. Using presentation compiler with project's scala-library version: 3.3.4
+Mar 08, 2025 1:47:24 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+2025.03.08 13:47:33 INFO  no build target found for /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/src/main/scala/Server.scala. Using presentation compiler with project's scala-library version: 3.3.4
+Mar 08, 2025 1:47:35 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 08, 2025 1:48:02 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 08, 2025 1:48:41 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 08, 2025 1:48:55 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 08, 2025 1:48:56 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+2025.03.08 13:48:58 INFO  no build target found for /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/src/main/scala/FinnhubAPI.scala. Using presentation compiler with project's scala-library version: 3.3.4
+Mar 08, 2025 1:49:44 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 08, 2025 1:50:35 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 08, 2025 1:55:24 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 08, 2025 1:55:24 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+2025.03.08 13:55:27 INFO  no build target found for /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/src/main/scala/Server.scala. Using presentation compiler with project's scala-library version: 3.3.4
+Mar 08, 2025 1:55:29 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 08, 2025 1:55:30 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 08, 2025 1:55:36 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 08, 2025 1:55:37 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 08, 2025 1:56:20 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 08, 2025 1:57:02 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 08, 2025 1:57:04 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 08, 2025 1:57:05 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 08, 2025 1:57:39 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 08, 2025 1:58:12 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 08, 2025 1:58:25 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 08, 2025 1:58:25 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 08, 2025 1:59:01 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 08, 2025 2:00:05 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 08, 2025 2:00:16 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 08, 2025 2:00:16 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 08, 2025 2:00:27 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 08, 2025 2:01:16 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 08, 2025 2:01:24 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 08, 2025 2:01:31 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 08, 2025 2:01:41 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 08, 2025 2:02:23 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 08, 2025 2:02:33 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 08, 2025 2:02:43 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 08, 2025 2:02:49 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 08, 2025 2:03:08 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 08, 2025 2:03:22 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 08, 2025 2:03:54 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 08, 2025 2:04:37 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 08, 2025 2:04:44 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 08, 2025 2:05:09 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 08, 2025 2:05:18 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 08, 2025 2:05:21 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 08, 2025 2:06:04 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 08, 2025 2:06:08 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 08, 2025 2:06:09 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 08, 2025 2:07:06 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 08, 2025 2:07:08 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 08, 2025 2:07:30 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 08, 2025 2:07:59 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 08, 2025 2:08:01 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 08, 2025 2:08:01 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+2025.03.08 14:09:01 INFO  no build target found for /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/src/main/scala/CountActor.scala. Using presentation compiler with project's scala-library version: 3.3.4
+2025.03.08 14:09:01 INFO  no build target found for /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/src/main/scala/CountActor.scala. Using presentation compiler with project's scala-library version: 3.3.4
+2025.03.08 14:09:02 INFO  no build target found for /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/src/main/scala/CountActor.scala. Using presentation compiler with project's scala-library version: 3.3.4
+2025.03.08 14:09:20 INFO  no build target found for /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/src/main/scala/CountActor.scala. Using presentation compiler with project's scala-library version: 3.3.4
+Mar 08, 2025 2:10:57 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 08, 2025 2:11:09 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 08, 2025 2:12:08 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 08, 2025 2:12:39 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 08, 2025 2:12:50 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 08, 2025 2:12:55 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 08, 2025 2:12:58 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 08, 2025 2:13:01 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+2025.03.08 14:13:19 INFO  no build target found for /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/src/main/scala/CountActor.scala. Using presentation compiler with project's scala-library version: 3.3.4
+2025.03.08 14:13:19 INFO  no build target found for /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/src/main/scala/CountActor.scala. Using presentation compiler with project's scala-library version: 3.3.4
+2025.03.08 14:13:19 INFO  no build target found for /data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/src/main/scala/CountActor.scala. Using presentation compiler with project's scala-library version: 3.3.4
+Mar 08, 2025 2:14:19 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 08, 2025 2:15:23 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 08, 2025 2:16:27 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 08, 2025 2:16:27 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 08, 2025 2:16:36 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 08, 2025 2:16:39 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 08, 2025 2:16:39 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 08, 2025 2:16:47 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 08, 2025 2:16:50 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
+Mar 08, 2025 2:16:52 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+WARNING: Unsupported notification method: metals/windowStateDidChange
