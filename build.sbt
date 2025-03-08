@@ -48,6 +48,9 @@ libraryDependencies ++= Seq(
 
 libraryDependencies += "ch.qos.logback" % "logback-classic" % "1.4.14"
 
+libraryDependencies += "ch.megard" %% "akka-http-cors" % "1.1.2"
+
+
 lazy val root = (project in file("."))
   .settings(
     name := "akka",

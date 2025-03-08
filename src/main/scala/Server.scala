@@ -1,5 +1,3 @@
-// --------------------------------------------------- Imports
-
 import akka.actor.typed.ActorSystem
 import akka.actor.typed.{ActorRef, Behavior}
 import akka.actor.typed.scaladsl.Behaviors
@@ -11,8 +9,7 @@ import scala.concurrent.Future
 import akka.actor.typed.scaladsl.AskPattern._
 import akka.actor.typed.Scheduler
 import scala.io.StdIn
-
-// --------------------------------------------------- AKKA Server for communication with frontend
+import ch.megard.akka.http.cors.scaladsl.CorsDirectives._
 
 object Server {
 
@@ -22,7 +19,6 @@ object Server {
     val system: ActorSystem[Nothing] = ActorSystem(Behaviors.empty, "GlobalSystem")
     val finnhub: ActorRef[FinnhubActor.Command] = system.systemActorOf(FinnhubActor(), "FinnhubActor")
     implicit val classicSystem: akka.actor.ClassicActorSystemProvider = system.classicSystem
-
 
     implicit val executionContext = system.executionContext
     implicit val timeout: Timeout = Timeout(5.seconds)
@@ -39,8 +35,13 @@ object Server {
         }
       }
 
+    // Utilisation explicite de la méthode cors depuis ch.megard.akka.http.cors.scaladsl.CorsDirectives
+    val corsRoute = ch.megard.akka.http.cors.scaladsl.CorsDirectives.cors() {
+      route
+    }
+
     // Démarrage du serveur
-    val bindingFuture = Http().newServerAt("localhost", 8080).bind(route)
+    val bindingFuture = Http().newServerAt("localhost", 8080).bind(corsRoute)
     println("Serveur en ligne sur http://localhost:8080/\nAppuyez sur ENTER pour arrêter...")
 
     StdIn.readLine()
@@ -49,4 +50,3 @@ object Server {
       .onComplete(_ => system.terminate())
   }
 }
-

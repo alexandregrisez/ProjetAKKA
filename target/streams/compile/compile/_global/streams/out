@@ -1,0 +1,7 @@
+[0m[[0m[31merror[0m] [0m[0m/data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/src/main/scala/Server.scala:39:21: reference to cors is ambiguous;[0m
+[0m[[0m[31merror[0m] [0m[0mit is imported twice in the same scope by[0m
+[0m[[0m[31merror[0m] [0m[0mimport ch.megard.akka.http.cors.scaladsl.CorsDirectives._[0m
+[0m[[0m[31merror[0m] [0m[0mand import akka.http.scaladsl.server.Directives._[0m
+[0m[[0m[31merror[0m] [0m[0m    val corsRoute = cors() {[0m
+[0m[[0m[31merror[0m] [0m[0m                    ^[0m
+[0m[[0m[31merror[0m] [0m[0mone error found[0m

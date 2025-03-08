@@ -16,12 +16,12 @@ const StockPage = () => {
     useEffect(() => {
         //Récuperer le prix de l'actif
         const fetchPrice = async () => {
-            const url = `https://finnhub.io/api/v1/quote?symbol=${symbol}&token=${API_KEY}`;
+            const url = `http://localhost:8080/stock/${symbol}`;
             try {
                 const response = await fetch(url);
                 const data = await response.json();
-                if (data.c) {
-                    setPrice(data.c);
+                if (data.price) {
+                    setPrice(data.price);
                 } else {
                     console.error("Erreur lors de la récupération du prix");
                 }
