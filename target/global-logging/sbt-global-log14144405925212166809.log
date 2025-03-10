@@ -1,0 +1,14 @@
+[debug] > Exec(sbtStashOnFailure, None, None)
+[debug] > Exec(sbtMapExec 504 __a07591df-e48f-4739-94fb-218fc03dd599, None, None)
+[debug] > Exec(bspBuildTargetCompile , Some(__a07591df-e48f-4739-94fb-218fc03dd599), Some(CommandSource(network-1)))
+[debug] jsonRpcNotify: JsonRpcNotificationMessage(2.0, build/logMessage, {"type":4,"message":"Processing buildTarget/compile"})
+[debug] Evaluating tasks: bspBuildTargetCompile
+[debug] Running task... Cancel: Signal, check cycles: false, forcegc: true
+[success] Total time: 0 s, completed Mar 10, 2025, 8:00:08 PM
+[debug] > Exec(sbtCompleteExec 504, None, None)
+[debug] > Exec(resumeFromFailure, None, None)
+[debug] > Exec(sbtPopOnFailure, None, None)
+[debug] > Exec(sbtReportResult 504, Some(504), Some(CommandSource(network-1)))
+[debug] unmatched Processing event for requestId Some(504): None
+[debug] unmatched json response for requestId Some(504): {"status":"Done","channelName":"network-1","execId":"504","commandQueue":["shell"],"exitCode":0}
+[debug] > Exec(shell, None, None)

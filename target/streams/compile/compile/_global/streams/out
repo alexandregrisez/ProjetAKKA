@@ -1,7 +1,8 @@
-[0m[[0m[31merror[0m] [0m[0m/data/Documents/ING 2/ING2 S2/Prog Fonc/ProjetAKKA/src/main/scala/Server.scala:39:21: reference to cors is ambiguous;[0m
-[0m[[0m[31merror[0m] [0m[0mit is imported twice in the same scope by[0m
-[0m[[0m[31merror[0m] [0m[0mimport ch.megard.akka.http.cors.scaladsl.CorsDirectives._[0m
-[0m[[0m[31merror[0m] [0m[0mand import akka.http.scaladsl.server.Directives._[0m
-[0m[[0m[31merror[0m] [0m[0m    val corsRoute = cors() {[0m
-[0m[[0m[31merror[0m] [0m[0m                    ^[0m
-[0m[[0m[31merror[0m] [0m[0mone error found[0m
+[error] /home/cytech/akka/test/ProjetAKKA/src/main/scala/Server.scala:58:5: type mismatch;
+[error]  found   : (akka.actor.typed.ActorSystem[Nothing], akka.actor.typed.ActorRef[FinnhubActor.Command]) => akka.http.scaladsl.server.Route
+[error]     (which expands to)  (akka.actor.typed.ActorSystem[Nothing], akka.actor.typed.ActorRef[FinnhubActor.Command]) => akka.http.scaladsl.server.RequestContext => scala.concurrent.Future[akka.http.scaladsl.server.RouteResult]
+[error]  required: akka.http.scaladsl.server.Route
+[error]     (which expands to)  akka.http.scaladsl.server.RequestContext => scala.concurrent.Future[akka.http.scaladsl.server.RouteResult]
+[error]     stockRoute
+[error]     ^
+[error] one error found

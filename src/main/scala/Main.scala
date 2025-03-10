@@ -8,7 +8,6 @@ import akka.http.scaladsl.Http
 import scala.util.{Failure, Success}
 import akka.actor.typed.Scheduler
 
-
 object Main extends App {
 
   /* Utile pour débugger l'API directement via Scala pour l'instant, mais disparaîtra un moment
@@ -32,6 +31,12 @@ object Main extends App {
     case Failure(exception) =>
       println(s"Failed to fetch stock quote: ${exception.getMessage}")
   }
+  */
+
+  /*
+  // Test JSON Asset
+  val asset = Asset(1, "2024-03-10", 1500.0, AssetType.ETF)
+  println(asset.toJson) // {"id":1,"obtentionDate":"2024-03-10","invested":1500.0,"assetType":"ETF"}
   */
 
   // Lancer le serveur HTTP
