@@ -1,13 +1,12 @@
-
 // ------------------------------------------------- Imports
 
-import akka.actor.typed.{ActorRef, Behavior}
-import akka.actor.typed.scaladsl.Behaviors
-import akka.actor.ActorSystem
+import akka.actor.{Actor, ActorRef, ActorSystem, Props}
 import akka.stream.Materializer
 import akka.http.scaladsl.Http
 import akka.http.scaladsl.unmarshalling.Unmarshal
 import akka.http.scaladsl.model._
+import scala.concurrent.Future
+import scala.util.{Success, Failure}
 import scala.concurrent.duration._
 import scala.concurrent.ExecutionContext
 
@@ -19,12 +18,14 @@ import io.circe.parser._
 
 // ------------------------------------------------- Finnhub API Actor
 
-object FinnhubActor {
+object FinnhubActor{
+  case class GetStockPrice(symbol: String, replyTo: ActorRef)
+  case class GetStockPriceAlt(symbol: String)
+}
 
-  implicit val system: ActorSystem = ActorSystem("FinnhubActorSystem")
-  implicit val materializer: Materializer = Materializer(system)
-  implicit val executionContext: ExecutionContext = system.dispatcher
-
+class FinnhubActor extends Actor{
+  import context._
+  
   // Clé pour l'utilisation
   val apiKey = "cv4nc6hr01qn2gab5ju0cv4nc6hr01qn2gab5jug"
 
@@ -39,25 +40,23 @@ object FinnhubActor {
     pc: Double, // 'pc' - Prix de clôture précédent
     t: Long     // 't' - Timestamp UNIX
   )
-  
-  // Messages que l'actor peut recevoir
-  sealed trait Command
-  case class GetStockPrice(symbol:String, replyTo: ActorRef[Double]) extends Command
 
-  // apply() définit le comportement de l'acteur pour chaque message possible (ici 1 seul)
-  def apply(): Behavior[Command] = Behaviors.receive { (context, message) =>
-    message match {
-      case GetStockPrice(symbol, replyTo) =>
-        getPrice(symbol, replyTo)
-        Behaviors.same
-      case _ =>
-        Behaviors.ignore
-    }
+  def receive: Receive = {
+    case FinnhubActor.GetStockPrice(symbol, replyTo) =>
+      getPrice(symbol, replyTo)
+    case FinnhubActor.GetStockPriceAlt(symbol) =>
+      val priceFuture: Future[Double] = getPrice(symbol)
+      val requester = sender()
+      priceFuture.onComplete {
+        case Success(price) =>
+          requester ! price 
+        case Failure(exception) =>
+          requester ! -1.0
+      }
   }
 
   // Fonction pour faire appel à l'API
-  def getPrice(symbol: String, replyTo: ActorRef[Double]): Unit = {
-
+  def getPrice(symbol: String, replyTo: ActorRef): Unit = {
     // Requête
     val url = s"https://finnhub.io/api/v1/quote?symbol=$symbol&token=$apiKey"
     val request = HttpRequest(
@@ -65,36 +64,63 @@ object FinnhubActor {
       uri = Uri(url)
     )
 
-    // Exécution 
+    // Exécution
     Http().singleRequest(request).onComplete {
-        case scala.util.Success(response: HttpResponse) if response.status.isSuccess() =>
+      case scala.util.Success(response: HttpResponse) if response.status.isSuccess() =>
         // Réponse réussie, désérialisation du JSON
-        // println(s"Request successful. Status: ${response.status}")
         response.entity.toStrict(5.seconds).map { strictEntity =>
-            val jsonResponse = strictEntity.data.utf8String
-            // println(s"Raw JSON Response: $jsonResponse") 
-            decode[StockQuote](strictEntity.data.utf8String) match {
+          val jsonResponse = strictEntity.data.utf8String
+          decode[StockQuote](jsonResponse) match {
             case Right(stockQuote) =>
-                // println(s"Successfully decoded StockQuote")
-                replyTo ! stockQuote.c
+              replyTo ! stockQuote.pc
             case Left(error) =>
-                // println(s"Error decoding JSON: ${error.getMessage}")
-                replyTo ! -2.0
-            }
-      }
+              replyTo ! -2.0
+          }
+        }
 
-        case scala.util.Success(response) =>
+      case scala.util.Success(response) =>
         // Erreur HTTP (par exemple 404, 500)
-        //println(s"Request failed with HTTP status: ${response.status}")
         replyTo ! -3.0
 
-        case scala.util.Failure(exception) =>
+      case scala.util.Failure(exception) =>
         // En cas d'échec dans la requête HTTP elle-même
-        //println(s"Request failed with exception: ${exception.getMessage}")
         replyTo ! -1.0
     }
-  }    
+  }
+
+  // Version sans retourner un message à un autre acteur
+  def getPrice(symbol: String): Future[Double] = {
+    // Requête
+    val url = s"https://finnhub.io/api/v1/quote?symbol=$symbol&token=$apiKey"
+    val request = HttpRequest(
+      method = HttpMethods.GET,
+      uri = Uri(url)
+    )
+    
+    // Exécution de la requête HTTP
+    val futureResponse: Future[HttpResponse] = Http().singleRequest(request)
+
+    futureResponse.flatMap { response =>
+      if (response.status.isSuccess()) {
+        // Réponse réussie, désérialisation du JSON
+        response.entity.toStrict(5.seconds).map { strictEntity =>
+          val jsonResponse = strictEntity.data.utf8String
+          decode[StockQuote](jsonResponse) match {
+            case Right(stockQuote) =>
+              stockQuote.pc // On retourne le prix actuel
+            case Left(error) =>
+              -2.0 // En cas d'erreur de décodage, retourner une valeur par défaut
+          }
+        }
+      } 
+      else {
+        // Erreur HTTP (par exemple 404, 500)
+        Future.successful(-3.0) // Retourner une valeur par défaut pour une erreur HTTP
+      }
+    }.recover {
+      case _ => -1.0 // Si une exception se produit, on retourne -1.0
+    }
+  }
+
 }
-
-
 
