@@ -5,3 +5,17 @@
     background-color: #ffaadd;
     padding: 10px 30px;
 }
+
+.logo{
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.logo img {
+    height: 50px;
+}
+
+button {
+    cursor: pointer;
+}

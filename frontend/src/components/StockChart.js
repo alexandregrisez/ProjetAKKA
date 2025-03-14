@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import { Line } from "react-chartjs-2";
-import { Chart as ChartJS, LineElement, CategoryScale, LinearScale, PointElement, Legend } from "chart.js";
+import { Chart as ChartJS, LineElement, CategoryScale, LinearScale, PointElement, Legend, Tooltip } from "chart.js";
 
-ChartJS.register(LineElement, CategoryScale, LinearScale, PointElement, Legend);
+ChartJS.register(LineElement, CategoryScale, LinearScale, PointElement, Legend, Tooltip);
 
 const StockChart = ({ symbol }) => {
     const [chartData, setChartData] = useState(null);
@@ -119,6 +119,16 @@ const StockChart = ({ symbol }) => {
                             legend: {
                                 display: true,
                                 position: "top",
+                            },
+                            tooltip: {
+                                enabled: true, // Active l'affichage des valeurs au survol
+                                mode: "index",
+                                intersect: false,
+                                callbacks: {
+                                    label: (tooltipItem) => {
+                                        return `${tooltipItem.dataset.label}: $${tooltipItem.raw}`;
+                                    },
+                                },
                             },
                         },
                         scales: {

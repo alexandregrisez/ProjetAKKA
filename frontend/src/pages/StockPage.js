@@ -5,6 +5,7 @@ import Header from "../components/Header";
 import StockChart from "../components/StockChart";
 import '../styles/StockPage.css';
 import PurchaseBar from "../components/PurchaseBar";
+import Footer from "../components/Footer";
 
 const StockPage = () => {
     const { symbol } = useParams();
@@ -64,6 +65,7 @@ const StockPage = () => {
                     <Sellbar symbol={symbol} price={price} maxQuantity={maxQuantity} />
                 */}
             </main>
+            <Footer/> 
         </>
     );
 };

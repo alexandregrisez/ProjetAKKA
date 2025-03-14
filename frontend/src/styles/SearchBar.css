@@ -1,4 +1,6 @@
 .search-container{
+    display: flex;
+    justify-content: center;
     position: relative;
     width: 500px;
 }
