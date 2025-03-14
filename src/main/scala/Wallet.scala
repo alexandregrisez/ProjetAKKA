@@ -1,16 +1,18 @@
+import scala.concurrent.{Future,ExecutionContext}
 import AssetType._
 
 case class Wallet(val userId:Long,var userRawMoney:Double,var assets:List[Asset],val isVirtual:Boolean){
-    def getValue(date:String):Double = {
-        var total:Double = 0d;
-        assets.foreach( asset => total += asset.getValue(date))
-        total
+
+    implicit val ec : ExecutionContext = Global.system.dispatcher    
+    
+    def getValue(date: String): Future[Double] = {
+        val futures: List[Future[Double]] = assets.map(_.getValue(date))
+        Future.sequence(futures).map(_.sum)
     }
 
-    def getValueByType(date:String, atype:AssetType):Double = {
-        var total:Double = 0d;
-        assets.foreach( asset => if(asset.assetType == atype) total += asset.getValue(date))
-        total
+    def getValueByType(date: String, atype: AssetType): Future[Double] = {
+        val futures: List[Future[Double]] = assets.filter(_.assetType == atype).map(_.getValue(date))
+        Future.sequence(futures).map(_.sum)
     }
 
     def purchaseAsset(assetId:String, priceInvested:Double): Unit = {
