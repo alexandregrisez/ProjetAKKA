@@ -2,9 +2,6 @@
 .bsp/
 .bsp/*
 
-project/
-project/*
-
 target/
 target/*
 
