@@ -1,1 +1,0 @@
-[[{"${BASE}/src/main/resources/application.conf":["${BASE}/target/scala-2.13/classes/application.conf"]},{"${BASE}/target/scala-2.13/classes/application.conf":["${BASE}/src/main/resources/application.conf"]}],{"${BASE}/src/main/resources/application.conf":{"file":"file:///home/cytech/akka/test/ProjetAKKA/src/main/resources/application.conf","lastModified":1741455719033}}]

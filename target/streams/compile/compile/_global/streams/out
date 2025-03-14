@@ -1,8 +1,0 @@
-[error] /home/cytech/akka/test/ProjetAKKA/src/main/scala/Server.scala:58:5: type mismatch;
-[error]  found   : (akka.actor.typed.ActorSystem[Nothing], akka.actor.typed.ActorRef[FinnhubActor.Command]) => akka.http.scaladsl.server.Route
-[error]     (which expands to)  (akka.actor.typed.ActorSystem[Nothing], akka.actor.typed.ActorRef[FinnhubActor.Command]) => akka.http.scaladsl.server.RequestContext => scala.concurrent.Future[akka.http.scaladsl.server.RouteResult]
-[error]  required: akka.http.scaladsl.server.Route
-[error]     (which expands to)  akka.http.scaladsl.server.RequestContext => scala.concurrent.Future[akka.http.scaladsl.server.RouteResult]
-[error]     stockRoute
-[error]     ^
-[error] one error found
