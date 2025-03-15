@@ -1,3 +1,5 @@
+------------------------------------------------------------------- Scala, SBT
+
 Installer coursier :
 curl -fL https://github.com/coursier/coursier/releases/latest/download/cs-x86_64-pc-linux.gz | gzip -d > cs && chmod +x cs && ./cs setup
 
@@ -5,5 +7,49 @@ Installer scala et sbt :
 cs install scala:2.13.15
 cs install sbt
 
-Lancer le projet : 
-sbt run (à la racine du projet)
+
+
+-------------------------------------------------------------------- MongoDB
+
+Dans home :
+
+1) sudo apt-get install gnupg curl
+
+2) curl -fsSL https://www.mongodb.org/static/pgp/server-8.0.asc | \
+   sudo gpg -o /usr/share/keyrings/mongodb-server-8.0.gpg \
+   --dearmor
+
+3) 
+Si Ubuntu 24 :   
+echo "deb [ arch=amd64,arm64 signed-by=/usr/share/keyrings/mongodb-server-8.0.gpg ] https://repo.mongodb.org/apt/ubuntu noble/mongodb-org/8.0 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-8.0.list
+
+Si Ubuntu 22 :
+echo "deb [ arch=amd64,arm64 signed-by=/usr/share/keyrings/mongodb-server-8.0.gpg ] https://repo.mongodb.org/apt/ubuntu jammy/mongodb-org/8.0 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-8.0.list
+
+Si Ubuntu 20 :
+echo "deb [ arch=amd64,arm64 signed-by=/usr/share/keyrings/mongodb-server-8.0.gpg ] https://repo.mongodb.org/apt/ubuntu focal/mongodb-org/8.0 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-8.0.list
+
+4) sudo apt-get update
+
+5) sudo apt-get install -y mongodb-org
+
+6) sudo systemctl start mongod
+
+7) sudo systemctl enable mongod
+
+8) mongosh
+
+9) Dans l'interface créée par mongosh :
+use AkkaData
+
+-------------------------------------------------------------------- Serveur frontend
+
+Dans ./frontend :
+
+npm install
+npm start
+
+-------------------------------------------------------------------- Lancer le projet
+
+sbt run 
+(à la racine du projet)
