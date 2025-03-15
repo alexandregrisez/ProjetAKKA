@@ -45,12 +45,17 @@ libraryDependencies ++= Seq(
     "io.circe" %% "circe-parser" % circeVersion, 
     "io.circe" %% "circe-generic-extras" % circeExtrasVersion,
     //MongoDB
-    "org.mongodb.scala" %% "mongo-scala-driver" % "2.9.0"
+    "org.mongodb.scala" %% "mongo-scala-driver" % "2.9.0",
+    // Tokens web
+    "com.github.jwt-scala" %% "jwt-core" % "9.0.1"
+
 )
 
 libraryDependencies += "ch.qos.logback" % "logback-classic" % "1.4.14"
 
 libraryDependencies += "ch.megard" %% "akka-http-cors" % "1.1.2"
+
+logLevel := Level.Warn  // Ajuste cela à Level.Info ou Level.Error en fonction de tes besoins
 
 
 lazy val root = (project in file("."))

@@ -1,4 +1,4 @@
-
+/*
 // ---------------------------------------------- Imports
 import org.mongodb.scala._
 import org.mongodb.scala.SingleObservable
@@ -24,7 +24,11 @@ object AkkaData extends App{
   val results = collection.find(equal("userRawMoney", 500)).first().toFuture()
   val documents = Await.result(results, 10.seconds)
 
+  println("")
   println(documents.toJson())
+  println("")
 
   mongoClient.close()
 }
+
+*/

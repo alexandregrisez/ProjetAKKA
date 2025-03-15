@@ -1,4 +1,5 @@
 import scala.concurrent.{Future,ExecutionContext}
+import org.mongodb.scala.bson.BsonDocument
 import AssetType._
 
 case class Wallet(val userId:Long,var userRawMoney:Double,var assets:List[Asset],val isVirtual:Boolean){
@@ -23,5 +24,17 @@ case class Wallet(val userId:Long,var userRawMoney:Double,var assets:List[Asset]
 
     def sellAsset(assetId:String):Unit = {
         //TODO: Recupere l'asset si existant, l'enlever de la liste, recuperer sa valeur et l'ajouter au rawUserMoney
+    }
+
+}
+
+object Wallet{
+    def fromBson(doc: BsonDocument): Wallet = {
+        Wallet(
+            doc.get("userID").asInt64().longValue(),
+            doc.get("userRawMoney").asDouble().doubleValue(),
+            List.empty[Asset],
+            doc.get("isVirtual").asBoolean().getValue
+        )
     }
 }
