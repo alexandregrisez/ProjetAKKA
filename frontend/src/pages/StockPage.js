@@ -6,7 +6,6 @@ import StockChart from "../components/StockChart";
 import '../styles/StockPage.css';
 import PurchaseBar from "../components/PurchaseBar";
 import Footer from "../components/Footer";
-import SellBar from "../components/SellBar";
 
 const StockPage = () => {
     const { symbol } = useParams();
