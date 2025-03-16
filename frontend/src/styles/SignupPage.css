@@ -1,4 +1,4 @@
-/* Container for the entire signup page */
+
 .signup-container {
     display: flex;
     justify-content: center;
@@ -6,7 +6,6 @@
     background-color: #f9f9f9;
 }
 
-/* Auth box style */
 .signup-box {
     background: rgb(250, 250, 250);
     padding: 30px;
@@ -18,7 +17,7 @@
     margin: 30px auto;
 }
 
-/* Title and error text styles */
+
 .signup-box h2 {
     font-size: 24px;
     margin-bottom: 20px;
@@ -31,7 +30,7 @@
     margin-bottom: 15px;
 }
 
-/* Form input styles */
+
 .signup-box .form-group {
     margin-bottom: 20px;
 }
@@ -63,7 +62,7 @@
     outline: none;
 }
 
-/* Submit button styles */
+
 .signup-box button {
     width: 100%;
     padding: 12px;
@@ -80,7 +79,7 @@
     background-color: #ff52ff;
 }
 
-/* Links styles (for additional auth-related actions) */
+
 .auth-links {
     margin-top: 20px;
     display: flex;
