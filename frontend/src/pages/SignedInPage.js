@@ -53,7 +53,7 @@ const SignedInPage = () => {
     return (
         <>
         <Header/>
-        <div className="container">
+        <div className="container-signedin">
             <div className="side">
                 <div className="box1">
                     {loading ? (
@@ -62,8 +62,8 @@ const SignedInPage = () => {
                         <p className="error-message">{error}</p>
                     ) : user ? (
                         <div>
-                        <h1>Bienvenue {user.firstName} !</h1>
                         <div className="user-info">
+                            <h2 className="box-title">Profil</h2>
                             <p><strong>Nom :</strong> {user.lastName}</p>
                             <p><strong>Prénom :</strong> {user.firstName}</p>
                             <p><strong>Email :</strong> {user.email}</p>
@@ -82,7 +82,19 @@ const SignedInPage = () => {
                 </div>
             </div>
             <div className="main-content">
-
+                <div className="box2">
+                    {loading ? (
+                        <p>Chargement des informations...</p>
+                    ) : error ? (
+                        <p className="error-message">{error}</p>
+                    ) : user ? (
+                        <div>
+                        <div className="user-info">
+                            <h2 className="box-title">Visuel du portefeuille camembert</h2>
+                        </div>
+                        </div>
+                    ) : null}
+                </div>
             </div>
         </div>
         
