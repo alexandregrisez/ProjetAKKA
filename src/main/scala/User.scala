@@ -5,9 +5,12 @@ import org.mongodb.scala.model.Updates._
 import scala.concurrent.Await
 import scala.concurrent.duration._
 import scala.util.{Failure, Success, Try}
+import scala.concurrent.{Future,ExecutionContext}
 import pdi.jwt.{Jwt, JwtAlgorithm, JwtClaim}
 import org.mongodb.scala.model.Sorts._
 import Wallet._
+import io.circe.parser._
+import io.circe.generic.auto._
 
 
 case class User(val id:Long, val firstName:String, val lastName:String, val dateOfBirth:String, val email:String, val password:String, val realWallet:Wallet, val virtualWallet:Wallet){
@@ -27,6 +30,8 @@ case class User(val id:Long, val firstName:String, val lastName:String, val date
 }
 
 object UsersDB{
+
+    implicit val ec : ExecutionContext = Global.system.dispatcher  
 
     // Connexion à MongoDB
     val mongoClient: MongoClient = MongoClient("mongodb://localhost:27017")
@@ -64,6 +69,34 @@ object UsersDB{
                 false
         }
     }
+
+    def getUserByEmail(email: String): Future[Option[User]] = {
+        val futureResult = collection.find(equal("email", email)).first().toFuture()
+
+        futureResult.map { doc =>
+            if (doc != null) {
+                val id = doc.get("id").map(_.asInt64().longValue()).getOrElse(0L)
+                Some(User(
+                    id,
+                    doc.get("firstName").map(_.asString().getValue).getOrElse(""),
+                    doc.get("lastName").map(_.asString().getValue).getOrElse(""),
+                    doc.get("dateOfBirth").map(_.asString().getValue).getOrElse(""),
+                    doc.get("email").map(_.asString().getValue).getOrElse(""),
+                    doc.get("password").map(_.asString().getValue).getOrElse(""),
+                    new Wallet(id, 0L, List.empty[Asset], false), // Initialisation d'un wallet fictif
+                    new Wallet(id, 0L, List.empty[Asset], true)   // Initialisation d'un wallet fictif
+                ))
+            } 
+            else {
+                None
+            }
+        }.recover {
+            case ex: Throwable =>
+                println(s"Erreur lors de la récupération de l'utilisateur : ${ex.getMessage}")
+                None
+        }
+    }
+
 
     // Inscription
     def signup(user: User): Boolean = {
@@ -113,6 +146,7 @@ object UsersDB{
         result match {
             case Success(doc) if doc != null =>
                 val id = doc.get("id").map(_.asInt64().longValue()).getOrElse(0L)
+                println("Connexion réussie.")
                 Some(User(
                     id,
                     doc.get("firstName").map(_.asString().getValue).getOrElse(""),
@@ -153,8 +187,29 @@ object AuthService {
   // Vérifier un JWT
   def verifyJWT(token: String): Try[JwtClaim] = {
     Jwt.decode(token, secretKey, Seq(JwtAlgorithm.HS256)) match {
-      case Success(claim) => Success(claim)
-      case Failure(_) => Failure(new Exception("Invalid token"))
+      case Success(claim) => 
+        println("VerifyJWT : Valid token")
+        Success(claim)
+      case Failure(_) => 
+        println("VerifyJWT : Invalid token")
+        Failure(new Exception("Invalid token"))
+    }
+  }
+
+  def extractEmailFromToken(token: String): Option[String] = {
+    verifyJWT(token) match {
+      case Success(claim) => 
+        val claimContent = claim.content
+        parse(claimContent) match {
+            case Right(json) =>
+                json.hcursor.get[String]("sub").toOption
+            case Left(_) =>
+                println("Erreur lors du parsing du JSON du claim")
+                None
+        }
+      case Failure(_) => 
+        println("No e-mail found in token")
+        None
     }
   }
 }

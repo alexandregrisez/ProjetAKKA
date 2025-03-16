@@ -28,6 +28,10 @@ const SigninPage = () => {
         setMessage("Le couple email - mot de passe est incorrect.");
         setMessageType('error');
     }
+    if (message === '2') {
+        setMessage("Vous avez bien été déconnecté.");
+        setMessageType('success');
+    }
   }, [location.search]);
 
   // Fonction pour soumettre le formulaire
@@ -56,8 +60,11 @@ const SigninPage = () => {
       const data = await response.json();
       
       if (data.token) {
-        // Connexion réussie, redirection vers la page d'accueil ou une autre page
-        navigate('/signed-in');
+        localStorage.setItem("token", data.token);
+        console.log("Token ajouté au localStorage:", localStorage.getItem("token"));
+        setTimeout(() => {
+            navigate('/signed-in');
+        }, 100);
       } else {
         setError("Email ou mot de passe incorrect");
       }

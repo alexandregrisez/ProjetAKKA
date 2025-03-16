@@ -1,0 +1,80 @@
+/* Container for the signed-in page */
+.content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #f9f9f9;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+/* Box styling similar to signup page */
+.user-info {
+    background: rgb(250, 250, 250);
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 1px 4px 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    max-width: 600px;
+    width: 100%;
+    margin: 30px auto;
+}
+
+.side{
+    display:flex;
+    padding:10px;
+    width:30%;
+    margin-left: 0;
+}
+
+.main-content{
+    display:flex;
+    width:70%;
+    margin-left: 30%;
+}
+
+/* Title styling */
+.container h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #333;
+    text-align: center;
+}
+
+/* Error message styling */
+.error-message {
+    font-size: 14px;
+    color: #ff0000;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+/* User information text styling */
+.user-info p {
+    font-size: 16px;
+    color: #333;
+    margin: 10px 0;
+}
+
+.user-info strong {
+    color: #f942ff;
+}
+
+/* Logout button styling */
+.user-info button {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    background-color: hsl(313, 100%, 78%);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 20px;
+}
+
+.user-info button:hover {
+    background-color: #ff52ff;
+}

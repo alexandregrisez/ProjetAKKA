@@ -1,4 +1,5 @@
 // --------------------------------------------------- Imports
+
 import akka.actor.{Actor, ActorRef, ActorSystem, Props, PoisonPill}
 import akka.pattern.ask
 import akka.util.Timeout
@@ -7,6 +8,7 @@ import akka.http.scaladsl.server.Directives._
 import akka.http.scaladsl.server.Route
 import scala.io.StdIn
 import scala.concurrent.{Future,ExecutionContext}
+import scala.util.{Failure, Success, Try}
 import scala.concurrent.duration._
 import akka.http.scaladsl.model.FormData
 
@@ -46,21 +48,16 @@ object Routes {
     }
   }
 
-  def signupRoute(): Route = {
+  def signupRoute: Route = {
     path("signup") {
       post {
         entity(as[FormData]) { formData =>
-          println()
-          println("REQUETE")
-          println()
           val fields = formData.fields.toMap
           val email = fields.getOrElse("email", "") 
           val password = fields.getOrElse("password", "")
           val firstName = fields.getOrElse("firstName","")
           val lastName = fields.getOrElse("lastName","")
-          val dateOfBirth = fields.getOrElse("dateOfBirth","")
-
-          
+          val dateOfBirth = fields.getOrElse("dateOfBirth","")  
 
           if(UsersDB.emailExists(email)){
             complete("""{"status": -1}""")
@@ -71,14 +68,41 @@ object Routes {
           val user=new User(id, firstName, lastName, dateOfBirth, email, password, new Wallet(id,1000,List.empty[Asset],false), new Wallet(id,1000,List.empty[Asset],true))
 
           if(UsersDB.signup(user)){
-            println()
-            println("Received signup request with data: " + formData.fields)
-            println()
             complete("""{"status": 0}""")
           }
           else{
             complete("""{"status": -2}""")
           }
+        }
+      }
+    }
+  }
+
+  def userinfoRoute: Route = {
+    path("userinfo") {
+      get {
+        optionalHeaderValueByName("Authorization") {
+          case Some(tokenHeader) if tokenHeader.startsWith("Bearer ") =>
+            val token = tokenHeader.replace("Bearer ", "")
+            AuthService.extractEmailFromToken(token) match {
+              case Some(email) =>
+                onComplete(UsersDB.getUserByEmail(email)) {
+                  case Success(Some(user:User)) => 
+                  complete(s"""{
+                    "status": 0,
+                    "firstName": "${user.firstName}",
+                    "lastName": "${user.lastName}",
+                    "dateOfBirth": "${user.dateOfBirth}",
+                    "email": "${user.email}"
+                  }""")
+                  case Success(None)       => 
+                    complete("""{"status": -1}""")
+                  case Failure(ex)         => 
+                    complete("""{"status": -2}""")
+                }
+              case None => complete("""{"status": -3}""")
+            }
+          case _ => complete("""{"status": -4}""")
         }
       }
     }
@@ -119,6 +143,7 @@ object Routes {
   def allRoutes(finnhub: ActorRef): Route = ch.megard.akka.http.cors.scaladsl.CorsDirectives.cors() {
     signinRoute ~
     signupRoute ~
+    userinfoRoute ~
     assetRoute ~
     stockRoute(finnhub)
   }
