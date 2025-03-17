@@ -41,12 +41,12 @@ const StockPage = () => {
         };
         //Récuperer le nom de l'actif
         const fetchCompanyName = async () => {
-            const url = `https://finnhub.io/api/v1/stock/profile2?symbol=${symbol}&token=${API_KEY}`;
+            const url = `http://localhost:8080/company/${symbol}`;
             try {
                 const response = await fetch(url);
                 const data = await response.json();
-                if (data.name) {
-                    setCompanyName(data.name);
+                if (data.companyName) {
+                    setCompanyName(data.companyName);
                 } else {
                     console.error("Erreur lors de la récupération du nom de l'actif");
                 }

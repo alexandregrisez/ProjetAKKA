@@ -21,6 +21,7 @@ import io.circe.parser._
 object FinnhubActor{
   case class GetStockPrice(symbol: String, replyTo: ActorRef)
   case class GetStockPriceAlt(symbol: String)
+  case class GetCompanyName(symbol : String)
 }
 
 class FinnhubActor extends Actor{
@@ -41,6 +42,10 @@ class FinnhubActor extends Actor{
     t: Long     // 't' - Timestamp UNIX
   )
 
+  case class CompanyName(
+    name : String
+  )
+
   def receive: Receive = {
     case FinnhubActor.GetStockPrice(symbol, replyTo) =>
       getPrice(symbol, replyTo)
@@ -52,6 +57,15 @@ class FinnhubActor extends Actor{
           requester ! price 
         case Failure(exception) =>
           requester ! -1.0
+      }
+    case FinnhubActor.GetCompanyName(symbol) =>
+      val companyFuture : Future[String] = getCompanyName(symbol)
+      val requester = sender()
+      companyFuture.onComplete{
+        case Success(companyName) =>
+          requester ! companyName
+        case Failure(exception) =>
+          requester ! "Erreur interne"
       }
   }
 
@@ -122,5 +136,36 @@ class FinnhubActor extends Actor{
     }
   }
 
+  def getCompanyName(symbol : String) : Future[String] = {
+    //Requête
+    val url = s"https://finnhub.io/api/v1/stock/profile2?symbol=$symbol&token=$apiKey"
+    val request = HttpRequest(
+      method = HttpMethods.GET,
+      uri = Uri(url)
+    )
+
+    //Exécution de la requete HTTP
+    val futureResponse : Future[HttpResponse] = Http().singleRequest(request)
+
+    futureResponse.flatMap { response =>
+      if (response.status.isSuccess()) {
+        //Réponse réussite, désérialisation du json
+        response.entity.toStrict(5.seconds).map { strictEntity =>
+         val jsonResponse = strictEntity.data.utf8String
+         decode[CompanyName](jsonResponse) match {
+            case Right(companyName) =>
+              companyName.name //On retourne le nom de l'entreprise
+            case Left(error) =>
+              "Erreur de décodage"
+         } 
+        }
+      } 
+      else {
+        Future.successful("Erreur HTTP")
+      }
+      }.recover {
+        case _ => "Erreur interne"
+    }
+  }
 }
 
