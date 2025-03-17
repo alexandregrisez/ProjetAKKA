@@ -139,7 +139,8 @@ object Routes {
     }
   }
 
-  def companyRoute(finnhub : ActorRef): Route =
+  def companyRoute(finnhub : ActorRef): Route = 
+    // Exemple : http://localhost:8080/company/GOOG
     path("company" / Segment) { symbol =>
       get {
         val futureName: Future[String] = (finnhub ? FinnhubActor.GetCompanyName(symbol)).mapTo[String].recover {
@@ -152,6 +153,22 @@ object Routes {
         }
       }  
     }
+  
+  def detailsRoute(finnhub: ActorRef): Route =
+  // Exemple : http://localhost:8080/details/GOOG
+  path("details" / Segment) { symbol =>
+    get {
+      val futureDetails: Future[String] = (finnhub ? FinnhubActor.GetDetails(symbol)).mapTo[String].recover {
+        case ex =>
+          println(s"Erreur lors de l'appel API : ${ex.getMessage}")
+          "Erreur interne"
+      }
+      onSuccess(futureDetails) { details =>
+        complete(s"""{"symbol": "$symbol", "details": $details}""")
+      }
+    }
+  }
+
   // Route combinée
   def allRoutes(finnhub: ActorRef): Route = ch.megard.akka.http.cors.scaladsl.CorsDirectives.cors() {
     signinRoute ~
@@ -159,7 +176,8 @@ object Routes {
     userinfoRoute ~
     assetRoute ~
     stockRoute(finnhub) ~
-    companyRoute(finnhub)
+    companyRoute(finnhub) ~
+    detailsRoute(finnhub)
   }
 }
 

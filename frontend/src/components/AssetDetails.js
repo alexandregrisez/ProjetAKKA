@@ -12,32 +12,33 @@ function AssetDetails({ symbol }) {
             setData(null);
             return;
         }
-
+    
         const fetchData = async () => {
             setLoading(true);
             setError(null);
-
+    
             try {
-                // Récupérer les données de cotation
-                const quoteResponse = await fetch(`https://finnhub.io/api/v1/quote?symbol=${symbol}&token=${API_KEY}`);
-                const quoteData = await quoteResponse.json();
-
-                // Récupérer les informations de l'actif (nom, etc.)
-                const profileResponse = await fetch(`https://finnhub.io/api/v1/stock/profile2?symbol=${symbol}&token=${API_KEY}`);
+                // Récupérer les cotations (prix actuel, etc.)
+                const quoteResponse = await fetch(`http://localhost:8080/details/${symbol}`);
+                const quoteData = await quoteResponse.json()
+                console.log(quoteData.details)
+                // Récupérer les informations de l'entreprise (nom, etc.)
+                const profileResponse = await fetch(`http://localhost:8080/company/${symbol}`);
                 const profileData = await profileResponse.json();
-
-                if (quoteData && quoteData.c && profileData && profileData.name) {
+    
+                // Vérification si les données ont été récupérées
+                if (quoteData && quoteData.details && profileData && profileData.companyName) {
+    
                     setData({
-                        name: profileData.name || symbol, // Nom de l'actif
+                        name: profileData.companyName || symbol, // Nom de l'actif
                         symbol,
-                        price: quoteData.c.toLocaleString(),
-                        open: quoteData.o.toLocaleString(),
-                        high: quoteData.h.toLocaleString(),
-                        low: quoteData.l.toLocaleString(),
+                        price: quoteData.details.current.toFixed(2),
+                        open: quoteData.details.open.toFixed(2),
+                        high: quoteData.details.high.toFixed(2),
+                        low: quoteData.details.low.toFixed(2),
                     });
                 } else {
-                    setError("Données indisponibles.");
-                    setData(null);
+                    throw new Error("Données manquantes ou invalides.");
                 }
             } catch (err) {
                 console.error("Erreur lors du chargement des données :", err);
@@ -47,9 +48,10 @@ function AssetDetails({ symbol }) {
                 setLoading(false);
             }
         };
-
+    
         fetchData();
     }, [symbol]);
+    
 
     if (!symbol) return <p>Veuillez sélectionner un actif.</p>;
     if (loading) return <p>Chargement...</p>;

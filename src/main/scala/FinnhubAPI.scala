@@ -16,12 +16,15 @@ import io.circe._
 import io.circe.generic.auto._
 import io.circe.parser._
 
+import java.net.URLEncoder
+
 // ------------------------------------------------- Finnhub API Actor
 
 object FinnhubActor{
   case class GetStockPrice(symbol: String, replyTo: ActorRef)
   case class GetStockPriceAlt(symbol: String)
-  case class GetCompanyName(symbol : String)
+  case class GetCompanyName(symbol: String)
+  case class GetDetails(symbol: String)
 }
 
 class FinnhubActor extends Actor{
@@ -67,12 +70,23 @@ class FinnhubActor extends Actor{
         case Failure(exception) =>
           requester ! "Erreur interne"
       }
+    case FinnhubActor.GetDetails(symbol) =>
+      val detailsFuture : Future[String] = getDetails(symbol)
+      val requester = sender()
+      detailsFuture.onComplete{
+        case Success(details) =>
+          requester ! details
+        case Failure(exception) =>
+          requester ! "Erreur interne"
+      }
   }
 
   // Fonction pour faire appel à l'API
   def getPrice(symbol: String, replyTo: ActorRef): Unit = {
+    //Encodage des symbol pour la gestion des caractères spéciaux et chiffres
+    val encodedSymbol = URLEncoder.encode(symbol, "UTF-8")
     // Requête
-    val url = s"https://finnhub.io/api/v1/quote?symbol=$symbol&token=$apiKey"
+    val url = s"https://finnhub.io/api/v1/quote?symbol=$encodedSymbol&token=$apiKey"
     val request = HttpRequest(
       method = HttpMethods.GET,
       uri = Uri(url)
@@ -86,7 +100,7 @@ class FinnhubActor extends Actor{
           val jsonResponse = strictEntity.data.utf8String
           decode[StockQuote](jsonResponse) match {
             case Right(stockQuote) =>
-              replyTo ! stockQuote.pc
+              replyTo ! stockQuote.c
             case Left(error) =>
               replyTo ! -2.0
           }
@@ -104,8 +118,10 @@ class FinnhubActor extends Actor{
 
   // Version sans retourner un message à un autre acteur
   def getPrice(symbol: String): Future[Double] = {
+    //Encodage des symbol pour la gestion des caractères spéciaux et chiffres
+    val encodedSymbol = URLEncoder.encode(symbol, "UTF-8")
     // Requête
-    val url = s"https://finnhub.io/api/v1/quote?symbol=$symbol&token=$apiKey"
+    val url = s"https://finnhub.io/api/v1/quote?symbol=$encodedSymbol&token=$apiKey"
     val request = HttpRequest(
       method = HttpMethods.GET,
       uri = Uri(url)
@@ -121,7 +137,7 @@ class FinnhubActor extends Actor{
           val jsonResponse = strictEntity.data.utf8String
           decode[StockQuote](jsonResponse) match {
             case Right(stockQuote) =>
-              stockQuote.pc // On retourne le prix actuel
+              stockQuote.c // On retourne le prix actuel
             case Left(error) =>
               -2.0 // En cas d'erreur de décodage, retourner une valeur par défaut
           }
@@ -137,8 +153,11 @@ class FinnhubActor extends Actor{
   }
 
   def getCompanyName(symbol : String) : Future[String] = {
+    //Encodage des symbol pour la gestion des caractères spéciaux et chiffres
+    val encodedSymbol = URLEncoder.encode(symbol, "UTF-8")
+    
     //Requête
-    val url = s"https://finnhub.io/api/v1/stock/profile2?symbol=$symbol&token=$apiKey"
+    val url = s"https://finnhub.io/api/v1/stock/profile2?symbol=$encodedSymbol&token=$apiKey"
     val request = HttpRequest(
       method = HttpMethods.GET,
       uri = Uri(url)
@@ -164,8 +183,48 @@ class FinnhubActor extends Actor{
         Future.successful("Erreur HTTP")
       }
       }.recover {
-        case _ => "Erreur interne"
+        case _ => s"Erreur interne"
     }
   }
+
+  def getDetails(symbol: String): Future[String] = {
+  // Encodage des symbol pour la gestion des caractères spéciaux et chiffres
+  val encodedSymbol = URLEncoder.encode(symbol, "UTF-8")
+  // Requête
+  val url = s"https://finnhub.io/api/v1/quote?symbol=$encodedSymbol&token=$apiKey"
+  val request = HttpRequest(
+    method = HttpMethods.GET,
+    uri = Uri(url)
+  )
+  
+  // Exécution de la requête HTTP
+  val futureResponse: Future[HttpResponse] = Http().singleRequest(request)
+
+  futureResponse.flatMap { response =>
+    if (response.status.isSuccess()) {
+      // Réponse réussie, désérialisation du JSON
+      response.entity.toStrict(5.seconds).map { strictEntity =>
+        val jsonResponse = strictEntity.data.utf8String
+        decode[StockQuote](jsonResponse) match {
+          case Right(stockQuote) =>
+            // Formater la réponse avec toutes les informations
+            s"""{"current" : ${stockQuote.c},
+               |"open" : ${stockQuote.o},
+               |"high" : ${stockQuote.h},
+               |"low" : ${stockQuote.l}}""".stripMargin
+          case Left(error) =>
+            "Erreur de décodage"
+        }
+      }
+    } 
+    else {
+      // Erreur HTTP (par exemple 404, 500)
+      Future.successful("Erreur HTTP")
+    }
+  }.recover {
+    case _ => "Erreur interne"
+  }
+}
+
 }
 

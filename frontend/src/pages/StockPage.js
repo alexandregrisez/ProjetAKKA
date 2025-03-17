@@ -12,8 +12,7 @@ const StockPage = () => {
     const [price, setPrice] = useState(null);
     const [companyName, setCompanyName] = useState("");
     const [isAuthenticated, setIsAuthenticated] = useState(false);
-
-    const API_KEY = "cv4nc6hr01qn2gab5ju0cv4nc6hr01qn2gab5jug";
+    const [isLoading, setIsLoading] = useState(true)
     
     useEffect(() => {
         //Déterminer si un utilisateur est connecté
@@ -53,6 +52,7 @@ const StockPage = () => {
             } catch (error) {
                 console.error("Erreur de requête", error);
             }
+            setIsLoading(false)
         };
 
         fetchPrice();
@@ -63,7 +63,11 @@ const StockPage = () => {
         <>
             <Header />
             <main className="main">
-            <h1>Détails de {companyName} - ({symbol})</h1>
+                {isLoading ? (
+                    <h1>Chargement...</h1>
+                ) : (
+                    <h1>Détails de {companyName} - ({symbol})</h1>
+                )}
                 <div className="main-content">
                     <StockChart symbol={symbol} />
                     <AssetDetails symbol={symbol} />
