@@ -2,7 +2,8 @@
 
 
 ## Prérequis
-- Scala :  
+- ### Scala :
+
 Vous devez avoir coursier d'installé pour installer Scala sur votre machine, si je n'est pas le cas, taper les commandes suivantes dans un terminal :
 ```bash
 curl -fL https://github.com/coursier/coursier/releases/latest/download/cs-x86_64-pc-linux.gz | gzip -d > cs && chmod +x cs && ./
@@ -22,9 +23,27 @@ cs install scala:2.13.15
 ```bash
 cs install sbt
 ```
-- Node.js
-- npm
-- MongoBD :  
+- ### Node.js :
+
+Commencer par taper la commande dans un terminal :
+```bash
+sudo apt update
+```
+Ensuite saisir la commande suivante :
+```bash
+sudo apt install nodejs
+```
+
+Vous avez terminé, si vous souhaite vérifier si ```Node.js``` à bien été installé, vous pouvez taper la commande :
+```bash
+node -v
+```
+- ### npm : 
+Taper la commande suivante :
+```bash
+sudo apt install npm
+```
+- ### MongoBD :  
 Depuis un terminal, installer ```gnupg``` et ```curl``` si vous ne les avez pas sur votre machine
 
 Ensuite vous devez importer la clé public MongoDB, avec cette commande :
@@ -80,7 +99,7 @@ exit
 ```
 
 ## Démarrage de l'application
-
+### Serveur Backend
 Ouvrir un terminal (Raccourci clavier : ```Ctrl``` + ```Alt``` + ```T```)
 
 Pour démarrer le serveur Akka, dans la racine du projet, taper la commande :
@@ -88,9 +107,11 @@ Pour démarrer le serveur Akka, dans la racine du projet, taper la commande :
 sbt run
 ```
 >[!CAUTION]
->Attention : le serveur Akka n'est fonctionnelle que durant 15 minutes. Il faut le redémarrer pour accéder de nouveau à toutes les fonctionnalités de l'application.
+>Le serveur Akka n'est fonctionnelle que durant 15 minutes. Il faut le redémarrer pour accéder de nouveau à toutes les fonctionnalités de l'application.
 
-Ensuite, dans un nouveau terminal, rendez vous dans le dossier frontend :
+
+### Serveur Frontend
+Dans un nouveau terminal, rendez vous dans le dossier frontend :
 
 ```bash
 cd frontend
