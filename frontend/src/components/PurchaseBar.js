@@ -34,9 +34,9 @@ const PurchaseBar = ({ symbol, price }) => {
     };
 
     return (
-        <>
-        <h3>Acheter</h3>
         <div className="purchase-container">
+            <h2 className="box-title">Acheter</h2>
+            <div className="container">
             <div className="purchase-controls">
                 <button onClick={handleDecrease}>-</button>
                 <input
@@ -49,8 +49,9 @@ const PurchaseBar = ({ symbol, price }) => {
             </div>
             <p>Total : ${totalPrice}</p>
             <button className="buy-button" onClick={handleBuy}>Acheter</button>
+            </div>
         </div>
-        </>
+
     );
 };
 

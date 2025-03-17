@@ -1,11 +1,10 @@
 import { useEffect, useState } from "react";
+import '../styles/AssetDetails.css';
 
 function AssetDetails({ symbol }) {
     const [data, setData] = useState(null);
     const [error, setError] = useState(null);
     const [loading, setLoading] = useState(false);
-
-    const API_KEY = "cv4nc6hr01qn2gab5ju0cv4nc6hr01qn2gab5jug";
 
     useEffect(() => {
         if (!symbol) {
@@ -60,11 +59,11 @@ function AssetDetails({ symbol }) {
 
     return (
         <div className="details-asset">
-            <h2>Dernières informations</h2>
-            <p>Prix actuel : <strong>${data.price}</strong></p>
-            <p>Ouverture : ${data.open}</p>
-            <p>Plus haut : ${data.high}</p>
-            <p>Plus bas : ${data.low}</p>
+            <h2 className="box-title">Dernières informations</h2>
+            <p><strong>Prix actuel :</strong> ${data.price}</p>
+            <p><strong>Ouverture :</strong> ${data.open}</p>
+            <p><strong>Plus haut :</strong> ${data.high}</p>
+            <p><strong>Plus bas :</strong> ${data.low}</p>
         </div>
     );
 }

@@ -1,39 +1,60 @@
-.main{
-    display: flex;
-    flex-direction: column;
-}
-
-h1{
-    text-align: center;
-}
-
-.main-content{
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-}
-
-.chart-container{
-    width: 75%;
-}
-
-.details-asset {
-    width: 25%;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: center;
-    text-align: left;
-}
-
 .purchase-container{
+    background: rgb(250, 250, 250);
+    padding: 30px;
+    padding-top: 10px;
+    border-radius: 12px;
+    box-shadow: 1px 4px 10px rgba(0, 0, 0, 0.2);
+    
+    width: 95%;
+    margin: 30px auto;
+}
+
+.container {
     display: flex;
-    flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    padding: 10px;
+
+}
+.purchase-controls{
+    display: flex;
+    justify-content: space-around;
+    width: 30%;
+    text-align: center;
+    align-items: center;
 }
 
+input {
+    height: min-content;
+    text-align: center;
+}
+.box-title{
+    font-family:Arial, Helvetica, sans-serif;
+    text-align: left;
+    color: #f942ff;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-top: 10px;
+    font-size: 7;
+}
 
+.container button {
+    padding: 12px;
+    font-size: 16px;
+    background-color: hsl(313, 100%, 78%);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
 
+.purchase-controls button {
+    width: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
+.container button:hover{
+    background-color: #ff52ff;
+}
