@@ -87,8 +87,8 @@ Pour démarrer le serveur Akka, dans la racine du projet, taper la commande :
 ```bash
 sbt run
 ```
-
-!Attention : le serveur Akka n'est fonctionnelle que durant 15 minutes. Il faut le redémarrer pour accéder de nouveau à toutes les fonctionnalités de l'application.
+>[!CAUTION]
+>Attention : le serveur Akka n'est fonctionnelle que durant 15 minutes. Il faut le redémarrer pour accéder de nouveau à toutes les fonctionnalités de l'application.
 
 Ensuite, dans un nouveau terminal, rendez vous dans le dossier frontend :
 
