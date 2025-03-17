@@ -17,6 +17,8 @@ const SignedInPage = () => {
         if (!token) {
             setError("Le token n'a pas pu être récupéré.");
             setLoading(false);
+            //Redirection sur la page de connexion
+            navigate("/signin");
             return;
         }
 

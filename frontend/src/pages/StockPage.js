@@ -11,10 +11,19 @@ const StockPage = () => {
     const { symbol } = useParams();
     const [price, setPrice] = useState(null);
     const [companyName, setCompanyName] = useState("");
+    const [isAuthenticated, setIsAuthenticated] = useState(false);
 
     const API_KEY = "cv4nc6hr01qn2gab5ju0cv4nc6hr01qn2gab5jug";
     
     useEffect(() => {
+        //Déterminer si un utilisateur est connecté
+        const token = localStorage.getItem("token");
+        if(token){
+            setIsAuthenticated(true);
+        }else {
+            setIsAuthenticated(false);
+        }
+
         //Récuperer le prix de l'actif
         const fetchPrice = async () => {
             const url = `http://localhost:8080/stock/${symbol}`;
@@ -32,12 +41,12 @@ const StockPage = () => {
         };
         //Récuperer le nom de l'actif
         const fetchCompanyName = async () => {
-            const url = `https://finnhub.io/api/v1/stock/profile2?symbol=${symbol}&token=${API_KEY}`;
+            const url = `http://localhost:8080/company/${symbol}`;
             try {
                 const response = await fetch(url);
                 const data = await response.json();
-                if (data.name) {
-                    setCompanyName(data.name);
+                if (data.companyName) {
+                    setCompanyName(data.companyName);
                 } else {
                     console.error("Erreur lors de la récupération du nom de l'actif");
                 }
@@ -59,11 +68,16 @@ const StockPage = () => {
                     <StockChart symbol={symbol} />
                     <AssetDetails symbol={symbol} />
                 </div>
-                <PurchaseBar symbol={symbol} price={price} />
 
-                {/*Si l'utisateur a cet actif, Ajouter le composent de vente
-                    <Sellbar symbol={symbol} price={price} maxQuantity={maxQuantity} />
-                */}
+                {!isAuthenticated ? (
+                    <div className="login-message">
+                        <p>Pour acheter cet actif, vous devez d'abord vous connecter.</p>
+                    </div>
+                ) : (
+                    //Un utilisateur est connecté
+                    <PurchaseBar symbol={symbol} price={price} />
+                    //<SellBar symbol={symbol} price={price} maxQuantity={maxQuantity}/>
+                )}
             </main>
             <Footer/> 
         </>

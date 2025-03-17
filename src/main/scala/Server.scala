@@ -139,13 +139,27 @@ object Routes {
     }
   }
 
+  def companyRoute(finnhub : ActorRef): Route =
+    path("company" / Segment) { symbol =>
+      get {
+        val futureName: Future[String] = (finnhub ? FinnhubActor.GetCompanyName(symbol)).mapTo[String].recover {
+          case ex =>
+            println(s"Erreur lors de l'appel API : ${ex.getMessage}")
+            "Erreur interne"
+        }
+      onSuccess(futureName) { companyName =>
+          complete(s"""{"symbol": "$symbol", "companyName": "$companyName"}""")
+        }
+      }  
+    }
   // Route combinée
   def allRoutes(finnhub: ActorRef): Route = ch.megard.akka.http.cors.scaladsl.CorsDirectives.cors() {
     signinRoute ~
     signupRoute ~
     userinfoRoute ~
     assetRoute ~
-    stockRoute(finnhub)
+    stockRoute(finnhub) ~
+    companyRoute(finnhub)
   }
 }
 
