@@ -34,6 +34,7 @@ const SearchBar = () => {
                             name: item.description,
                         }))
                     );
+                    setError(null)
                 } else {
                     setSuggestions([]);
                 }

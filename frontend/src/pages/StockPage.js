@@ -12,47 +12,66 @@ const StockPage = () => {
     const [price, setPrice] = useState(null);
     const [companyName, setCompanyName] = useState("");
     const [isAuthenticated, setIsAuthenticated] = useState(false);
-    const [isLoading, setIsLoading] = useState(true)
-    
+    const [isLoading, setIsLoading] = useState(true);
+    const [errorMessage, setErrorMessage] = useState(""); // State pour le message d'erreur
+
     useEffect(() => {
-        //Déterminer si un utilisateur est connecté
+        // Déterminer si un utilisateur est connecté
         const token = localStorage.getItem("token");
-        if(token){
+        if (token) {
             setIsAuthenticated(true);
-        }else {
+        } else {
             setIsAuthenticated(false);
         }
 
-        //Récuperer le prix de l'actif
+        setErrorMessage("")
+        // Récupérer le prix de l'actif
         const fetchPrice = async () => {
             const url = `http://localhost:8080/stock/${symbol}`;
             try {
                 const response = await fetch(url);
+                console.log(response)
+                if (!response.ok) {
+                    // Si le serveur retourne une erreur HTTP, récupérez le message
+                    const errorData = await response.json();
+                    setErrorMessage(errorData.message || "Erreur lors de la récupération du prix.");
+                    return;
+                }
                 const data = await response.json();
                 if (data.price) {
                     setPrice(data.price);
                 } else {
-                    console.error("Erreur lors de la récupération du prix");
+                    setErrorMessage("Impossible de récupérer le prix de l'actif.");
                 }
             } catch (error) {
                 console.error("Erreur de requête", error);
+                setErrorMessage("Une erreur est survenue lors de la récupération des informations sur l'actif.");
             }
         };
-        //Récuperer le nom de l'actif
+
+        // Récupérer le nom de l'actif
         const fetchCompanyName = async () => {
             const url = `http://localhost:8080/company/${symbol}`;
             try {
                 const response = await fetch(url);
+                if (!response.ok) {
+                    // Si le serveur retourne une erreur HTTP, récupérez le message
+                    const errorData = await response.json();
+                    setErrorMessage(errorData.message || "Erreur lors de la récupération du nom de l'actif.");
+                    return;
+                }
                 const data = await response.json();
                 if (data.companyName) {
                     setCompanyName(data.companyName);
                 } else {
-                    console.error("Erreur lors de la récupération du nom de l'actif");
+                    setErrorMessage("Impossible de récupérer le nom de l'actif.");
                 }
+                setIsLoading(false);
             } catch (error) {
                 console.error("Erreur de requête", error);
+                setErrorMessage("Vous n'avez pas accès à cet actif, Veuillez en choisir un autre");
+                setIsLoading(false);
             }
-            setIsLoading(false)
         };
 
         fetchPrice();
@@ -62,30 +81,40 @@ const StockPage = () => {
     return (
         <>
             <Header />
-            <main className="main">
-                {isLoading ? (
-                    <h1>Chargement...</h1>
-                ) : (
-                    <h1 className="asset-title">Détails de {companyName} - ({symbol})</h1>
-                )}
-                <div className="main-content">
-                    <StockChart symbol={symbol} />
-                    <AssetDetails symbol={symbol} />
+            
+            {errorMessage ? (
+                <div className="error-container">
+                    <h1 className="error-message">{errorMessage}</h1>
                 </div>
-
-                {!isAuthenticated ? (
-                    <div className="login-message">
-                        <p>Pour acheter cet actif, vous devez d'abord vous connecter.</p>
+            ) : (
+                <main className="main">
+                    {isLoading ? (
+                        <h1>Chargement...</h1>
+                    ) : (
+                        <h1 className="asset-title">Détails de {companyName} - ({symbol})</h1>
+                    )}
+                    <div className="asset-content">
+                        <StockChart symbol={symbol} />
+                        <AssetDetails symbol={symbol} />
                     </div>
-                ) : (
-                    //Un utilisateur est connecté
-                    <PurchaseBar symbol={symbol} price={price} />
-                    //<SellBar symbol={symbol} price={price} maxQuantity={maxQuantity}/>
-                )}
-            </main>
-            <Footer/> 
+    
+                    {!isAuthenticated ? (
+                        <div className="login-message">
+                            <p>Pour acheter cet actif, vous devez d'abord vous connecter.</p>
+                        </div>
+                    ) : (
+                        // Un utilisateur est connecté
+                        <PurchaseBar symbol={symbol} price={price} />
+                        // <SellBar symbol={symbol} price={price} maxQuantity={maxQuantity}/>
+                    )}
+                </main>
+            )}
+            
+            <Footer />
         </>
     );
+    
+    
 };
 
 export default StockPage;

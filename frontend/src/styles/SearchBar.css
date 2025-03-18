@@ -15,6 +15,10 @@
     color : #000000;
 }
 
+.search-container input:focus{
+   border-color: #ff52ff ;
+}
+
 .search-popup{
     position: absolute;
     z-index: 10;

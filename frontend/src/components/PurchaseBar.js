@@ -36,7 +36,7 @@ const PurchaseBar = ({ symbol, price }) => {
     return (
         <div className="purchase-container">
             <h2 className="box-title">Acheter</h2>
-            <div className="container">
+            <div className="purchase-items">
             <div className="purchase-controls">
                 <button onClick={handleDecrease}>-</button>
                 <input
