@@ -66,7 +66,7 @@ const StockPage = () => {
                 {isLoading ? (
                     <h1>Chargement...</h1>
                 ) : (
-                    <h1>Détails de {companyName} - ({symbol})</h1>
+                    <h1 className="asset-title">Détails de {companyName} - ({symbol})</h1>
                 )}
                 <div className="main-content">
                     <StockChart symbol={symbol} />

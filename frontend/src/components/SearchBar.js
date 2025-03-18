@@ -7,10 +7,10 @@ const SearchBar = () => {
     const [suggestions, setSuggestions] = useState([]);
     const [showPopup, setShowPopup] = useState(false);
     const [error, setError] = useState(null);
+    const [loading, setLoading] = useState(true);
     const navigate = useNavigate();
     const searchRef = useRef(null);
 
-    const API_KEY = "cv4nc6hr01qn2gab5ju0cv4nc6hr01qn2gab5jug";
     const NUMBER_SUGGESTIONS = 5;
 
     useEffect(() => {
@@ -22,26 +22,28 @@ const SearchBar = () => {
 
         const fetchSuggestions = async () => {
             setError(null);
+            setLoading(true);
             try {
-                const response = await fetch(`https://finnhub.io/api/v1/search?q=${query}&token=${API_KEY}`);
+                const response = await fetch(`http://localhost:8080/suggestion/${query}`);
                 const data = await response.json();
-
-                if (data.result && data.result.length > 0) {
+                
+                if (data.details.result && data.details.result.length > 0) {
                     setSuggestions(
-                        data.result.slice(0, NUMBER_SUGGESTIONS).map((item) => ({
+                        data.details.result.slice(0, NUMBER_SUGGESTIONS).map((item) => ({
                             symbol: item.symbol,
                             name: item.description,
                         }))
                     );
-                    setShowPopup(true);
                 } else {
                     setSuggestions([]);
-                    setShowPopup(true);
                 }
+                setShowPopup(true);
             } catch (error) {
                 console.error("Erreur lors de la récupération des suggestions :", error);
                 setError("Erreur lors du chargement des données.");
+                setSuggestions([]);
             }
+            setLoading(false);
         };
 
         fetchSuggestions();
@@ -53,7 +55,6 @@ const SearchBar = () => {
         setShowPopup(false);
     };
 
-    // Fermer le popup si on clique en dehors
     useEffect(() => {
         const handleClickOutside = (event) => {
             if (searchRef.current && !searchRef.current.contains(event.target)) {
@@ -78,13 +79,17 @@ const SearchBar = () => {
             {showPopup && (
                 <div className="search-popup">
                     <ul>
+                        {loading && <li className="loading-message">Recherche en cours...</li>}
                         {error && <li className="error-message">{error}</li>}
-                        {!error && suggestions.length === 0 && <li>Aucun résultat trouvé.</li>}
-                        {suggestions.map((item) => (
-                            <li key={item.symbol} onClick={() => handleSelect(item.symbol)}>
-                                {item.symbol} - {item.name}
-                            </li>
-                        ))}
+                        {!loading && !error && suggestions.length === 0 && (
+                            <li className="no-results">Aucun actif correspond à votre recherche.</li>
+                        )}
+                        {!loading &&
+                            suggestions.map((item) => (
+                                <li key={item.symbol} onClick={() => handleSelect(item.symbol)}>
+                                    {item.symbol} - {item.name}
+                                </li>
+                            ))}
                     </ul>
                 </div>
             )}

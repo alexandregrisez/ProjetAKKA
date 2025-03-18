@@ -169,6 +169,21 @@ object Routes {
     }
   }
 
+  def suggestionsRoute(finnhub : ActorRef) : Route =
+    //Exemple : http://localhost:8080/suggestion/GOOG
+    path("suggestion" / Segment) { query =>
+      get {
+        val futureSuggestions : Future[String] = (finnhub ? FinnhubActor.GetSuggestions(query)).mapTo[String].recover {
+          case ex =>
+            println(s"Erreur lors de l'appel API : ${ex.getMessage}")
+            "Erreur interne"
+        }
+        onSuccess(futureSuggestions) { suggestions =>
+          complete(s"""{"query": "$query", "details": $suggestions}""")
+        }
+      }  
+    }
+
   // Route combinée
   def allRoutes(finnhub: ActorRef): Route = ch.megard.akka.http.cors.scaladsl.CorsDirectives.cors() {
     signinRoute ~
@@ -177,7 +192,8 @@ object Routes {
     assetRoute ~
     stockRoute(finnhub) ~
     companyRoute(finnhub) ~
-    detailsRoute(finnhub)
+    detailsRoute(finnhub) ~
+    suggestionsRoute(finnhub)
   }
 }
 

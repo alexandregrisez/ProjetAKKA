@@ -58,3 +58,7 @@ input {
 .container button:hover{
     background-color: #ff52ff;
 }
+
+.asset-title{
+    text-align: center;
+}

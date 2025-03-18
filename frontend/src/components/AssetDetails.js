@@ -20,7 +20,6 @@ function AssetDetails({ symbol }) {
                 // Récupérer les cotations (prix actuel, etc.)
                 const quoteResponse = await fetch(`http://localhost:8080/details/${symbol}`);
                 const quoteData = await quoteResponse.json()
-                console.log(quoteData.details)
                 // Récupérer les informations de l'entreprise (nom, etc.)
                 const profileResponse = await fetch(`http://localhost:8080/company/${symbol}`);
                 const profileData = await profileResponse.json();

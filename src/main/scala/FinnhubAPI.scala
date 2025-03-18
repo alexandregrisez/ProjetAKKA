@@ -25,6 +25,7 @@ object FinnhubActor{
   case class GetStockPriceAlt(symbol: String)
   case class GetCompanyName(symbol: String)
   case class GetDetails(symbol: String)
+  case class GetSuggestions(query : String)
 }
 
 class FinnhubActor extends Actor{
@@ -47,6 +48,15 @@ class FinnhubActor extends Actor{
 
   case class CompanyName(
     name : String
+  )
+
+  case class StockSuggestion(
+    symbol: String, 
+    description: String
+  )
+
+  case class SuggestionList(
+    result: List[StockSuggestion]
   )
 
   def receive: Receive = {
@@ -76,6 +86,15 @@ class FinnhubActor extends Actor{
       detailsFuture.onComplete{
         case Success(details) =>
           requester ! details
+        case Failure(exception) =>
+          requester ! "Erreur interne"
+      }
+    case FinnhubActor.GetSuggestions(query) =>
+      val suggestionFuture : Future[String] = getSuggestions(query)
+      val requester = sender()
+      suggestionFuture.onComplete{
+        case Success(result) =>
+          requester ! result
         case Failure(exception) =>
           requester ! "Erreur interne"
       }
@@ -224,7 +243,48 @@ class FinnhubActor extends Actor{
   }.recover {
     case _ => "Erreur interne"
   }
+  }
+
+  // Obtenir des suggestions d'actif
+  def getSuggestions(query: String): Future[String] = {
+  // Encodage de la recherche pour la gestion des caractères spéciaux et chiffres
+  val encodedQuery = URLEncoder.encode(query, "UTF-8")
+
+  // Requête
+  val url = s"https://finnhub.io/api/v1/search?q=$encodedQuery&token=$apiKey"
+  val request = HttpRequest(
+    method = HttpMethods.GET,
+    uri = Uri(url)
+  )
+
+  // Exécution de la requête HTTP
+  val futureResponse: Future[HttpResponse] = Http().singleRequest(request)
+
+  futureResponse.flatMap { response =>
+    if (response.status.isSuccess()) {
+      // Réponse réussie, désérialisation du JSON
+      response.entity.toStrict(5.seconds).map { strictEntity =>
+        val jsonResponse = strictEntity.data.utf8String
+        decode[SuggestionList](jsonResponse) match {
+          case Right(suggestionList) =>
+            // Extraire les symboles et la description (Nom de l'entreprise)
+            val filteredSuggestions = suggestionList.result.map { suggestion =>
+              s"""{"symbol": "${suggestion.symbol}", "description": "${suggestion.description}"}"""
+            }
+            s"""{"result": [${filteredSuggestions.mkString(",")}]}"""
+          case Left(error) =>
+            """{"result": []}"""
+        }
+      }
+    } else {
+      // Erreur HTTP (par exemple 404, 500)
+      Future.successful("""{"result": []}""")
+    }
+  }.recover {
+    case _ => """{"result": []}""" // Gestion des erreurs générales
+  }
 }
+
 
 }
 
