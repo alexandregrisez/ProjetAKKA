@@ -19,7 +19,7 @@ Pour terminer, taper la commande ci-dessous pour installer scala :
 ```bash
 cs install scala:2.13.15
 ```
-- sbt :
+- ### sbt :
 ```bash
 cs install sbt
 ```
