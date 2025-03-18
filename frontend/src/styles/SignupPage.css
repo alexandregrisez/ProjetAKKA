@@ -58,7 +58,7 @@
 .signup-box input[type="email"]:focus,
 .signup-box input[type="password"]:focus,
 .signup-box input[type="date"]:focus {
-    border-color: #007bff;
+    border-color: #ff52ff;
     outline: none;
 }
 

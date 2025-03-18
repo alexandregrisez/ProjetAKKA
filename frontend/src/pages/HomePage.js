@@ -8,7 +8,7 @@ const HomePage = ()=> {
         <>
             <Header/>
             <main className="main">
-                <h1>Bienvenue sur FinSight ! La plateforme d'investissement</h1>
+                <h1 className="slogan">Bienvenue sur FinSight ! La plateforme d'investissement</h1>
                 <div className="container">
                     <p>Que vous soyez un investisseur débutant ou expérimenté, <strong>FinSight</strong> vous offre une expérience unique pour acheter des actions, des ETF et des cryptomonnaies préférés.</p>
                 </div>

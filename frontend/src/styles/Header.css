@@ -4,11 +4,13 @@
     text-align: center;
     background-color: #ffaadd;
     padding: 10px 30px;
+    min-height: 10vh;
 }
 
 .logo{
     display: flex;
     align-items: center;
+    justify-content: center;
     cursor: pointer;
 }
 
@@ -16,6 +18,20 @@
     height: 50px;
 }
 
-button {
+.company-name{
+    color: black;
+    font-size: 40px;
+}
+
+.header button {
     cursor: pointer;
+    background-color: hsl(313, 100%, 78%);
+    border: 2px solid black;
+    color: white;
+    border-radius: 6px;
+    min-width: 50px;
+}
+
+.header button:hover {
+    background-color: #ff52ff;
 }

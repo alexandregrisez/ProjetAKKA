@@ -18,7 +18,7 @@ const Header = () => {
         <header className="header">
             <div className="logo" onClick={() => navigate("/")}>
                 <img src={logo} alt="logo"/>
-                <h1>FinSight</h1>
+                <h1 className="company-name">FinSight</h1>
             </div>
             <SearchBar />
             <button onClick={() => navigate(isAuthenticated ? "/signed-in" : "/signin")}>

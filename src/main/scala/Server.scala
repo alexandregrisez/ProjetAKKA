@@ -6,6 +6,9 @@ import akka.util.Timeout
 import akka.http.scaladsl.Http
 import akka.http.scaladsl.server.Directives._
 import akka.http.scaladsl.server.Route
+import akka.http.scaladsl.model.{HttpResponse, StatusCodes}
+import akka.http.scaladsl.server.Directives._
+import akka.http.scaladsl.server.Route
 import scala.io.StdIn
 import scala.concurrent.{Future,ExecutionContext}
 import scala.util.{Failure, Success, Try}
@@ -139,19 +142,58 @@ object Routes {
     }
   }
 
-  def companyRoute(finnhub : ActorRef): Route =
-    path("company" / Segment) { symbol =>
+  def companyRoute(finnhub: ActorRef): Route =
+    //Exemple : http://localhost:8080/company/GOOG
+  path("company" / Segment) { symbol =>
+    get {
+      val futureName: Future[String] = (finnhub ? FinnhubActor.GetCompanyName(symbol)).mapTo[String].recover {
+        case ex =>
+          println(s"Erreur lors de l'appel API : ${ex.getMessage}")
+          "Erreur interne"
+      }
+
+      onComplete(futureName) {
+        case Success(companyName) if companyName != "Erreur HTTP" =>
+          complete(s"""{"symbol": "$symbol", "companyName": "$companyName"}""")
+        case Success(_) =>
+          complete(HttpResponse(StatusCodes.NotFound, entity = "Entreprise non trouvée."))
+        case Failure(_) =>
+          complete(HttpResponse(StatusCodes.InternalServerError, entity = "Erreur interne dans le serveur."))
+      }
+    }
+  }
+
+  
+  def detailsRoute(finnhub: ActorRef): Route =
+  // Exemple : http://localhost:8080/details/GOOG
+  path("details" / Segment) { symbol =>
+    get {
+      val futureDetails: Future[String] = (finnhub ? FinnhubActor.GetDetails(symbol)).mapTo[String].recover {
+        case ex =>
+          println(s"Erreur lors de l'appel API : ${ex.getMessage}")
+          "Erreur interne"
+      }
+      onSuccess(futureDetails) { details =>
+        complete(s"""{"symbol": "$symbol", "details": $details}""")
+      }
+    }
+  }
+
+  def suggestionsRoute(finnhub : ActorRef) : Route =
+    //Exemple : http://localhost:8080/suggestion/GOOG
+    path("suggestion" / Segment) { query =>
       get {
-        val futureName: Future[String] = (finnhub ? FinnhubActor.GetCompanyName(symbol)).mapTo[String].recover {
+        val futureSuggestions : Future[String] = (finnhub ? FinnhubActor.GetSuggestions(query)).mapTo[String].recover {
           case ex =>
             println(s"Erreur lors de l'appel API : ${ex.getMessage}")
             "Erreur interne"
         }
-      onSuccess(futureName) { companyName =>
-          complete(s"""{"symbol": "$symbol", "companyName": "$companyName"}""")
+        onSuccess(futureSuggestions) { suggestions =>
+          complete(s"""{"query": "$query", "details": $suggestions}""")
         }
       }  
     }
+
   // Route combinée
   def allRoutes(finnhub: ActorRef): Route = ch.megard.akka.http.cors.scaladsl.CorsDirectives.cors() {
     signinRoute ~
@@ -159,7 +201,9 @@ object Routes {
     userinfoRoute ~
     assetRoute ~
     stockRoute(finnhub) ~
-    companyRoute(finnhub)
+    companyRoute(finnhub) ~
+    detailsRoute(finnhub) ~
+    suggestionsRoute(finnhub)
   }
 }
 

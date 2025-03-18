@@ -1,26 +1,36 @@
-main{
+.main{
     padding-bottom: 20px;
+    display: flex;
+    flex-direction: column;
 }
 .container {
     max-width: 1200px;
     margin: 0 auto;
     padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    align-items: start;
 }
 
-h1 {
+.container h1 {
     font-size: 2.5rem;
     text-align: center;
     margin-bottom: 20px;
 }
 
-h2 {
+.slogan {
+    text-align: center;
+    font-size: 3em;
+}
+.container h2 {
     font-size: 2rem;
     color: #333;
     margin-bottom: 10px;
     text-transform: uppercase;
 }
 
-p {
+.container p {
     font-size: 1.1rem;
     line-height: 1.6;
     color: #666;
