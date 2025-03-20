@@ -40,9 +40,9 @@ const AssetList = ({ userId }) => {
   if (error) {
     return (
       <div className="asset-list-container">
-        <h2 className="asset-list-title">Liste des actifs</h2>
+        <h2 className="box-title">Liste des actifs</h2>
         <div className="error-assets-container">
-          <p style={{ color: "red" }}>Erreur : {error}</p>
+          <p style={{ color: "red" }}>{error}</p>
         </div>
       </div>
     );
@@ -51,7 +51,7 @@ const AssetList = ({ userId }) => {
   if (assets.length === 0) {
     return (
       <div className="asset-list-container">
-        <h2 className="asset-list-title">Liste des actifs</h2>
+        <h2 className="box-title">Liste des actifs</h2>
         <div className="no-assets-container">
           <p>Aucun actif trouvé pour cet utilisateur.</p>
         </div>
@@ -61,7 +61,7 @@ const AssetList = ({ userId }) => {
 
   return (
     <div className="asset-list-container">
-      <h2 className="asset-list-title">Liste des actifs</h2>
+      <h2 className="box-title">Liste des actifs</h2>
       <div className="asset-items-container">
         {assets.map((asset, index) => (
           <div key={index} className="asset-item">
