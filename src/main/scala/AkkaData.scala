@@ -36,28 +36,27 @@ object AkkaData {
 
   // --------------------- User Data methods ----------------------
 
-  def createUser(id:Long, firstName:String, lastName:String, dateOfBirth:String, email:String, password:String):Option[User] = {
-    if(emailExists(email)){
-      None
-    }
-    else{
-      val newUser = Document("id" -> id, "firstName" -> firstName, "dateOfBirth" -> dateOfBirth, "email" -> email, 
-      "password" -> password)
+  def createUser(id:Long, firstName:String, lastName:String, dateOfBirth:String, email:String, password:String): Option[User] = {
+  if(emailExists(email)) {
+    None
+  } else {
+    val newUser = Document("id" -> id, "firstName" -> firstName, "lastName" -> lastName, "dateOfBirth" -> dateOfBirth, "email" -> email, "password" -> password)
 
-      users.insertOne(newUser).subscribe(
-        (_: Completed) => println(s"Nouvel utilisateur $id crée!") User(id,firstName,lastName,dateOfBirth,email,password),
-        (e: Throwable) => println(s"Erreur lors de la création de l'utilisateur: ${e.getMessage}") None,
-        () => println("Défault : Création de l'utilisateur avec succès (ou pas)!") None
-      )
+    try {
+      Await.result(users.insertOne(newUser).toFuture(), 5.seconds)
+      println(s"Nouvel utilisateur $id créé avec succès!")
 
-      // Attendre la fin de l'opération
-      val result = Await.ready(users.insertOne(newUser).toFuture(), 5.seconds)
+      createUserRealWallet(id, 10000.0)
+      createUserVirtualWallet(id, 0)
 
-      createUserRealWallet(id,10000.0)
-      createUserVirtualWallet(id,0)
-      User(id,firstName,lastName,dateOfBirth,email,password)
+      Some(User(id, firstName, lastName, dateOfBirth, email, password))
+    } catch {
+      case e: Exception =>
+        println(s"Erreur lors de la création de l'utilisateur : ${e.getMessage}")
+        None
     }
   }
+}
 
   def generateID(): Long = {
     val futureMaxID = users
@@ -114,7 +113,7 @@ object AkkaData {
     }
   }
 
-  def getUserByEmail(email:String): Option[User] = {
+  def getUserByEmail(email:String): Future[Option[User]] = {
     val filter = equal("email",email)
     val userFuture : Future[Document] = users.find(filter).first().toFuture()
 
@@ -146,7 +145,6 @@ object AkkaData {
         (e: Throwable) => println(s"Erreur lors de la création du porte-monnaie réel: ${e.getMessage}"),
         () => println("Défault : Création de l'utilisateur avec succès!")
       )
-
 
       // Attendre la fin de l'opération
       Await.ready(wallets.insertOne(newWallet).toFuture(), 5.seconds)
@@ -201,29 +199,56 @@ object AkkaData {
       None    
     }
 
+    def purchaseAsset(assetId:Long,email:String,category:AssetType,symbol:String,quantity:Double,price:Double):Option[Asset] = {
+      val currentAsset:Option[Asset] = getAsset(assetId)
+      if(currentAsset.isDefined){
+        var updater = set("quantity",quantity + currentAsset.get.quantity)
+
+        assets.updateOne(equal("id",assetId),updater)
+        // Attendre la fin de l'opération
+        Await.ready(assets.updateOne(equal("id",assetId), updater).toFuture(), 5.seconds)
+      }
+      else{
+        None
+      }
+    }
+
     // --------------------- Assets Data methods ----------------------
 
 
-    def createAsset(id: Long, symbol:String, quantity: Double, obtentionDate: String, invested: Double, assetType: AssetType) = {
-      val newWallet = Document("userId" -> userId, "userRawMoney" -> userRawMoney, "assets" -> assets, "isVirtual" -> true)
 
-      wallets.insertOne(newWallet).subscribe(
+    def createAsset(id: Long, symbol:String, quantity: Double, obtentionDate: String, invested: Double, assetType: AssetType, isVirtual:Boolean) = {
+      val newAsset = Document("id" -> id, "symbol" -> symbol, "quantity" -> quantity, "obtentionDate" -> obtentionDate, 
+      "invested" -> invested, "assetType" -> assetType, "isVirtual" -> isVirtual)
+
+      assets.insertOne(newAsset).subscribe(
         (_: Completed) => println(s"Nouveau porte-monnaie réel de user$id crée!"),
         (e: Throwable) => println(s"Erreur lors de la création du porte-monnaie réel: ${e.getMessage}"),
         () => println("Défault : Création de l'utilisateur avec succès!")
       )
-
-
       // Attendre la fin de l'opération
-      Await.ready(wallets.insertOne(newWallet).toFuture(), 5.seconds)
+      Await.ready(assets.insertOne(newAsset).toFuture(), 5.seconds)
     }
     // Simulation d'une fonction de récupération d'un asset depuis une base de données
-    def getAssetFromDB(id: Int): Future[Option[Asset]] = {
-      // Pour l'exemple, on retourne un Asset fictif si l'ID est 1, sinon None
-      Future.successful {
-        if (id == 1) Some(Asset(0L, 0L, "AAPL", 2.5, "2024-03-10", 1500.0, AssetType.Share))
-        else None
+    def getAsset(id: Long): Option[Asset] = {
+      val filter = equal("id",id)
+
+      val futureAsset : Future[Document] = assets.find(filter).first().toFuture() 
+      val docAsset = Await.result(futureAsset, 5.seconds)
+
+      if(docAsset != null){
+        val asset:Asset = Asset(
+            docAsset.get("id").map(_.asInt64().longValue()).getOrElse(0L),
+            docAsset.get("symbol").map(_.asString().getValue()).getOrElse("NULL"),
+            docAsset.get("quantity").toList.map(_.asDouble().doubleValue()),
+            docAsset.get("obtentionDate").map(_.asString().getValue()).getOrElse("01/01/75"),
+            docAsset.get("invested").toList.map(_.asDouble().doubleValue()),
+            AssetType.Share,
+            docAsset.get("isVirtual").map(_.asBoolean().getValue()).getOrElse(false)
+          )
+        Some(asset)
       }
+      None  
     }
 
     def getAssetPrice(date: String): Future[Option[Double]] = {

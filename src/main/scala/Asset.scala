@@ -28,7 +28,7 @@ import AssetType._
 
 // ------------------------------------------------- Asset Class
 
-case class Asset(id: Long, symbol:String, var quantity: Double, obtentionDate: String, var invested: Double, assetType: AssetType) {
+case class Asset(id: Long, symbol:String, var quantity: Double, obtentionDate: String, var invested: Double, assetType: AssetType, isVirtual:Boolean) {
 
   implicit val timeout: Timeout = Timeout(5.seconds)
   implicit val ec : ExecutionContext = Global.system.dispatcher

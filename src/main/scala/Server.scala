@@ -20,6 +20,7 @@ import akka.http.scaladsl.model.headers._
 
 import ch.megard.akka.http.cors.scaladsl.CorsDirectives._
 import AkkaData.createUser
+import netscape.javascript.JSObject
 
 
 // --------------------------------------------------- Usable routes for frontend
@@ -71,7 +72,9 @@ object Routes {
           val newUser:Option[User] = AkkaData.createUser(id,firstName,lastName,dateOfBirth,email,password)
 
           if(newUser.isDefined){
-            complete("""{"status": 0}""")
+            var userJson:JSObject = newUser.toJson
+            userJson.setMember("status",0)
+            complete(userJson)
           }
           else{
             complete("""{"status": -2}""")
@@ -89,8 +92,8 @@ object Routes {
             val token = tokenHeader.replace("Bearer ", "")
             AuthService.extractEmailFromToken(token) match {
               case Some(email) =>
-                onComplete(AkkaData.getUserByEmail(email)) {
-                  case Success(Some(user:User)) => 
+                AkkaData.getUserByEmail(email) match {
+                  case Some(user:User) => 
                   complete(s"""{
                     "status": 0,
                     "firstName": "${user.firstName}",
@@ -98,14 +101,12 @@ object Routes {
                     "dateOfBirth": "${user.dateOfBirth}",
                     "email": "${user.email}"
                   }""")
-                  case Success(None)       => 
+                  case None => 
                     complete("""{"status": -1}""")
-                  case Failure(ex)         => 
-                    complete("""{"status": -2}""")
                 }
               case None => complete("""{"status": -3}""")
             }
-          case _ => complete("""{"status": -4}""")
+            case _ => complete("""{"status": -4}""")
         }
       }
     }
@@ -174,13 +175,11 @@ object Routes {
     // Exemple : http://localhost:8080/asset/7777
     path("asset" / Segment) { id =>
       get {
-        onComplete(AkkaData.getAssetFromDB(id.toInt)) {
-          case scala.util.Success(Some(asset)) =>
+        AkkaData.getAsset(id.toLong) match {
+          case Some(asset) =>
             complete(asset.toJson)
-          case scala.util.Success(None) =>
+          case None =>
             complete(s"Asset avec ID $id non trouvé.")
-          case scala.util.Failure(exception) =>
-            complete(s"Erreur serveur: ${exception.getMessage}")
         }
       }
     }
