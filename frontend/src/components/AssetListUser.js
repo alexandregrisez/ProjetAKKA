@@ -1,22 +1,47 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import "../styles/AssetListUser.css"
-const AssetList = ({ userId }) => {
+import "../styles/AssetListUser.css";
+
+const AssetList = () => {
   const [assets, setAssets] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-  const navigate = useNavigate(); // Hook pour la navigation
+  const [userId, setUserId] = useState(null);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch(`http://localhost:8080/assets/${userId}`);
-        const data = await response.json();
+        // 1. Obtenir l'identité de l'utilisateur
+        const token = localStorage.getItem("token");
+        const response1 = await fetch("http://localhost:8080/userinfo", {
+          method: "GET",
+          headers: { Authorization: `Bearer ${token}` },
+        });
 
-        if (data) {
-          setAssets(data);
+        const data1 = await response1.json();
+
+        console.log(data1.status);
+        if (data1.status === 0) {
+          setUserId(data1.email);
+          console.log("Utilisateur connecté pour la vente.");
         } else {
-          throw new Error("Données manquantes ou invalides.");
+          alert("Erreur d'authentification. Veuillez vous reconnecter.");
+          localStorage.removeItem("token");
+          navigate("/signin");
+          return;
+        }
+
+        // 2. Récupérer les actifs en utilisant l'email comme userId
+        if (userId) {
+          const response = await fetch(`http://localhost:8080/assets/${userId}`);
+          const data = await response.json();
+
+          if (data) {
+            setAssets(data);
+          } else {
+            throw new Error("Données manquantes ou invalides.");
+          }
         }
       } catch (err) {
         console.error("Erreur lors du chargement des données :", err);
@@ -27,12 +52,14 @@ const AssetList = ({ userId }) => {
     };
 
     fetchData();
-  }, [userId]);
+  }, [userId, navigate]);
 
   if (loading) {
     return (
-      <div className="loading-container">
-        <p>Chargement des actifs...</p>
+      <div className="asset-list-container">
+        <div className="loading-container">
+          <p>Chargement des actifs...</p>
+        </div>
       </div>
     );
   }

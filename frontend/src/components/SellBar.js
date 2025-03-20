@@ -103,24 +103,26 @@ const SellBar = ({ symbol, price, maxQuantity }) => {
 
     return (
         <>
-            <h3>Vendre {symbol}</h3>
             <div className="purchase-container">
-                <div className="purchase-controls">
-                    <button onClick={handleDecrease}>-</button>
-                    <input
-                        type="number"
-                        value={quantity}
-                        onChange={handleQuantityChange}
-                        min={1}
-                        max={maxQuantity}
-                    />
-                    <button onClick={handleIncrease}>+</button>
-                    <button onClick={handleAll}>Tout</button>
+                <h2 className="box-title">Vendre {symbol}</h2>
+                <div className="purchase-container">
+                    <div className="purchase-controls">
+                        <button onClick={handleDecrease}>-</button>
+                        <input
+                            type="number"
+                            value={quantity}
+                            onChange={handleQuantityChange}
+                            min={1}
+                            max={maxQuantity}
+                        />
+                        <button onClick={handleIncrease}>+</button>
+                        <button onClick={handleAll}>Tout</button>
+                    </div>
+                    <p>Total : ${totalPrice}</p>
+                    <button className="buy-button" onClick={handleSell}>
+                        Vendre
+                    </button>
                 </div>
-                <p>Total : ${totalPrice}</p>
-                <button className="buy-button" onClick={handleSell}>
-                    Vendre
-                </button>
             </div>
         </>
     );

@@ -1,28 +1,79 @@
 import React, { useEffect, useState } from "react";
 import { PieChart, Pie, Cell } from "recharts";
 
-const PieChartUser = ({ userId }) => {
+const PieChartUser = () => {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const [userId, setUserId] = useState(null);
 
-  const fetchWaletCaterogies = async () => {
+  const fetchWalletCategories = async () => {
     try {
-        const response = await fetch(`http://localhost:8080/pie/${userId}`);
-        const data = await response.json();
-
-        if (data) {
-          setData(data);
-        } else {
-          throw new Error("Données manquantes ou invalides.");
-        }
-      } catch (err) {
-        console.error("Erreur lors du chargement des données :", err);
-        setError("Erreur lors du chargement des données");
-      } finally {
-        setLoading(false);
+      // 1. Obtenir l'identité de l'utilisateur
+      const token = localStorage.getItem("token");
+      if (!token) {
+        throw new Error("Token manquant, veuillez vous reconnecter.");
       }
-  }
+      const response = await fetch("http://localhost:8080/userinfo", {
+        method: "GET",
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      });
+
+      const userData = await response.json();
+
+      if (userData) {
+        setUserId(userData.email);
+        console.log("ID utilisateur récupéré:", userData.email);
+      } else {
+        throw new Error("Impossible de récupérer les informations de l'utilisateur.");
+      }
+    } catch (err) {
+      console.error("Erreur lors du chargement des données utilisateur :", err);
+      setError("Erreur lors du chargement des données utilisateur");
+    }
+  };
+
+  // Fonction pour récupérer les données du graphique après récupération de l'ID utilisateur
+  const fetchPieData = async (userId) => {
+    try {
+      const token = localStorage.getItem("token");
+      if (!token) {
+        throw new Error("Token manquant, veuillez vous reconnecter.");
+      }
+
+      // Récupérer les données du graphique
+      const pieResponse = await fetch(`http://localhost:8080/pie/${userId}`, {
+        method: "GET",
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      });
+
+      const pieData = await pieResponse.json();
+      if (pieData) {
+        setData(pieData);
+      } else {
+        throw new Error("Données manquantes ou invalides pour le graphique.");
+      }
+    } catch (err) {
+      console.error("Erreur lors du chargement des données pour le graphique :", err);
+      setError("Erreur lors du chargement des données du graphique");
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  useEffect(() => {
+    fetchWalletCategories();
+  }, []);
+
+  useEffect(() => {
+    if (userId) {
+      fetchPieData(userId);
+    }
+  }, [userId]);
 
   // Somme des actifs
   const total = data.reduce((acc, item) => acc + item.value, 0);
@@ -41,9 +92,8 @@ const PieChartUser = ({ userId }) => {
 
   if (error) {
     return (
-      <div>
+      <div className="box2">
         <h2 className="box-title">Répartition de vos Actifs</h2>
-        <h2>Erreur de chargement</h2>
         <p style={{ color: "red" }}>{error}</p>
       </div>
     );
