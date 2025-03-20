@@ -4,6 +4,7 @@ import HomePage from './pages/HomePage';
 import SigninPage from "./pages/SigninPage";  
 import SignupPage from "./pages/SignupPage"; 
 import SignedInPage from "./pages/SignedInPage"; 
+import AssetsPage from './pages/AssetsPage';
 
 function App() {
   return(
@@ -13,6 +14,7 @@ function App() {
         <Route path='/signin' element={<SigninPage/>}/>
         <Route path='/signup' element={<SignupPage/>}/>
         <Route path="/signed-in" element={<SignedInPage />} />
+        <Route path='/assets' element={<AssetsPage/>}/>
         <Route path='/asset/:symbol' element={<StockPage/>}/>
       </Routes>
     </Router>
