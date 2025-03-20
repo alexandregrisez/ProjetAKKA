@@ -19,6 +19,7 @@ import akka.http.scaladsl.model.HttpMethods._
 import akka.http.scaladsl.model.headers._
 
 import ch.megard.akka.http.cors.scaladsl.CorsDirectives._
+import AkkaData.createUser
 
 
 // --------------------------------------------------- Usable routes for frontend
@@ -35,10 +36,10 @@ object Routes {
           val fields = formData.fields.toMap
           val email = fields.getOrElse("email", "") 
           val password = fields.getOrElse("password", "")
-          val user = UsersDB.signin(email,password)
+          val user:Option[User] = AkkaData.getUser(email,password)
           if(user.isDefined){
             val token = user match {
-              case Some(u) => AuthService.generateJWT(u.email)
+              case Some(u) => AuthService.generateJWT(u.getEmail)
               case None => ""
             }
             complete(s"""{"token": "$token"}""")
@@ -62,21 +63,14 @@ object Routes {
           val lastName = fields.getOrElse("lastName","")
           val dateOfBirth = fields.getOrElse("dateOfBirth","")  
 
-          if(UsersDB.emailExists(email)){
+          if(AkkaData.emailExists(email)){
             complete("""{"status": -1}""")
           }
 
-          val id = UsersDB.generateID()
+          val id = AkkaData.generateID()
+          val newUser:Option[User] = AkkaData.createUser(id,firstName,lastName,dateOfBirth,email,password)
 
-          val realWallet=Wallet.generateWalletID()
-          val virtualWallet=realWallet+1
-
-          Wallet.addWallet(realWallet,1000,List.empty[String],false)
-          Wallet.addWallet(virtualWallet,1000,List.empty[String],true)
-
-          val user=new User(id, firstName, lastName, dateOfBirth, email, password, realWallet, virtualWallet)
-
-          if(UsersDB.signup(user)){
+          if(newUser.isDefined){
             complete("""{"status": 0}""")
           }
           else{
@@ -95,7 +89,7 @@ object Routes {
             val token = tokenHeader.replace("Bearer ", "")
             AuthService.extractEmailFromToken(token) match {
               case Some(email) =>
-                onComplete(UsersDB.getUserByEmail(email)) {
+                onComplete(AkkaData.getUserByEmail(email)) {
                   case Success(Some(user:User)) => 
                   complete(s"""{
                     "status": 0,
@@ -129,7 +123,7 @@ object Routes {
           val quantityInt = Try(quantity.toInt).getOrElse(0)
           val price = Try(fields.getOrElse("totalPrice", "").toDouble).getOrElse(0.0)
 
-          if(UsersDB.emailExists(email)){
+          if(AkkaData.emailExists(email)){
             complete("""{"status": -2}""")
           }
 
@@ -150,7 +144,7 @@ object Routes {
           val quantity = fields.getOrElse("quantity","")
           val price = fields.getOrElse("totalPrice","") 
 
-          if(UsersDB.emailExists(email)){
+          if(AkkaData.emailExists(email)){
             complete("""{"status": -2}""")
           }
 
@@ -180,7 +174,7 @@ object Routes {
     // Exemple : http://localhost:8080/asset/7777
     path("asset" / Segment) { id =>
       get {
-        onComplete(DB.getAssetFromDB(id.toInt)) {
+        onComplete(AkkaData.getAssetFromDB(id.toInt)) {
           case scala.util.Success(Some(asset)) =>
             complete(asset.toJson)
           case scala.util.Success(None) =>
@@ -244,32 +238,6 @@ object Routes {
       }  
     }
 
-  def pieRoute : Route = {
-   path("pie" / Segment) { email => {
-      Wallet.getWalletCategories(email) match {
-        case Some(data) =>
-          //complete(data)
-        case None =>
-          complete("""{"status": "error", message : "Aucune donnée trouvée"}""")
-      }
-    }  
-   }
-  }
-
-  def assetsRoute : Route = {
-    path("assets" / Segment) { email =>{
-      get {
-        if(!UsersDB.emailExists(email)) {
-          complete(StatusCodes.NotFound, """{"erreur"; "Utilisateur non trouvé"}""")
-        } else {
-          val assets = Wallet.getUserAssets(email)
-          complete(assets)
-        }
-      }
-    }
-  }
-  }
-
   // Route combinée
   def allRoutes(finnhub: ActorRef): Route = ch.megard.akka.http.cors.scaladsl.CorsDirectives.cors() {
     signinRoute ~
@@ -281,9 +249,7 @@ object Routes {
     stockRoute(finnhub) ~
     companyRoute(finnhub) ~
     detailsRoute(finnhub) ~
-    suggestionsRoute(finnhub) ~
-    pieRoute ~
-    assetsRoute
+    suggestionsRoute(finnhub)
   }
 }
 

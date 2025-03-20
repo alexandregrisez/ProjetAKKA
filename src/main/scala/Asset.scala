@@ -123,25 +123,3 @@ case class Asset(id: Long, symbol:String, var quantity: Double, obtentionDate: S
     this.asJson.noSpaces
   }
 }
-
-object DB{
-
-  // Simulation d'une fonction de récupération d'un asset depuis une base de données
-  def getAssetFromDB(id: Int): Future[Option[Asset]] = {
-    // Pour l'exemple, on retourne un Asset fictif si l'ID est 1, sinon None
-    Future.successful {
-      if (id == 1) Some(Asset(-1, "AAPL", 2.5, "2024-03-10", 1500.0, AssetType.Share))
-      else None
-    }
-  }
-
-  def getAssetPrice(date: String): Future[Option[Double]] = {
-    // Simulation d'un appel API pour récupérer le prix de l'asset
-    Future.successful {
-      // Prix aléatoire entre 100 et 150
-      Some(100.0 + Random.nextDouble() * 50) 
-    }
-  }
-  
-
-}

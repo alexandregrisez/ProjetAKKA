@@ -12,13 +12,13 @@ import scala.concurrent.duration._
 
 case class Wallet(val userId:Long,var userRawMoney:Double,var assets:List[Long],val isVirtual:Boolean){
 
-    implicit val ec : ExecutionContext = Global.system.dispatcher    
-  
+    implicit val ec : ExecutionContext = Global.system.dispatcher
+
 }
 
 object Wallet{
 
-    implicit val ec : ExecutionContext = Global.system.dispatcher  
+    implicit val ec : ExecutionContext = Global.system.dispatcher
 
     // Connexion à MongoDB
     val mongoClient: MongoClient = MongoClient("mongodb://localhost:27017")
@@ -52,7 +52,7 @@ object Wallet{
 
             println(s"Nouveau wallet : $walletId (isVirtual=$virtual) avec un solde de $money.")
             true
-            
+
         } 
         match {
             case Success(result) => result
@@ -65,7 +65,7 @@ object Wallet{
     def generateAssetID(): Long = {
         val futureMaxID = assets
             .find()
-            .sort(descending("id")) 
+            .sort(descending("id"))
             .limit(1)
             .first()
             .toFuture()
@@ -186,16 +186,6 @@ object Wallet{
                 false
             }
     }
-
-    def findRealWalletID(email: String): Long = {
-        val futureWalletId = UsersDB.getUserByEmail(email).map {
-            case Some(user) => user.realWallet
-            case None => -1L // Retourne une valeur par défaut si l'utilisateur n'est pas trouvé
-        }
-
-        Await.result(futureWalletId, 10.seconds) 
-    }
-
 
     def purchase(email:String, category:String, symbol: String, quantity: Int,price:Double): Int = {
         // Utilisé au cas où l'utilisateur n'a pas encore d'asset avec ce symbole

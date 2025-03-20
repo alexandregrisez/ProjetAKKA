@@ -1,13 +1,10 @@
 
-/*
 // ---------------------------------------------- Imports
 import org.mongodb.scala._
-import org.mongodb.scala.SingleObservable
 import org.mongodb.scala.model.Filters._
 import org.mongodb.scala.model.Updates._
 import org.mongodb.scala.model.Aggregates._
 import org.mongodb.scala.model.Sorts._
-import org.mongodb.scala.bson.BsonDocument
 
 import scala.concurrent.Await
 import scala.concurrent.duration._
@@ -39,149 +36,187 @@ object AkkaData {
 
   // --------------------- User Data methods ----------------------
 
+  def createUser(id:Long, firstName:String, lastName:String, dateOfBirth:String, email:String, password:String):Option[User] = {
+    if(emailExists(email)){
+      None
+    }
+    else{
+      val newUser = Document("id" -> id, "firstName" -> firstName, "dateOfBirth" -> dateOfBirth, "email" -> email, 
+      "password" -> password)
+
+      users.insertOne(newUser).subscribe(
+        (_: Completed) => println(s"Nouvel utilisateur $id crée!") User(id,firstName,lastName,dateOfBirth,email,password),
+        (e: Throwable) => println(s"Erreur lors de la création de l'utilisateur: ${e.getMessage}") None,
+        () => println("Défault : Création de l'utilisateur avec succès (ou pas)!") None
+      )
+
+      // Attendre la fin de l'opération
+      val result = Await.ready(users.insertOne(newUser).toFuture(), 5.seconds)
+
+      createUserRealWallet(id,10000.0)
+      createUserVirtualWallet(id,0)
+      User(id,firstName,lastName,dateOfBirth,email,password)
+    }
+  }
+
   def generateID(): Long = {
-        val futureMaxID = users
-            .find()
-            .sort(descending("id")) 
-            .limit(1)
-            .first()
-            .toFuture()
+    val futureMaxID = users
+        .find()
+        .sort(descending("id")) 
+        .limit(1)
+        .first()
+        .toFuture()
 
-        val maxUser = Await.result(futureMaxID, 5.seconds)
+    val maxUser = Await.result(futureMaxID, 5.seconds)
 
-        if (maxUser != null && !maxUser.isEmpty) {
-            maxUser.get("id").map(_.asInt64().longValue()).getOrElse(1L)
-        } 
-        else {
-            1
-        }
+    if (maxUser != null && !maxUser.isEmpty) {
+      maxUser.get("id").map(_.asInt64().longValue()).getOrElse(1L)
+    } 
+    else {
+      1L
     }
+  }
 
-    def emailExists(email:String):Boolean={
-        val result = Try {
-            val futureResult = users.find(equal("email", email)).first().toFuture()
-            Await.result(futureResult, 10.seconds)
-        }
-        result match {
-            case Success(doc) if doc != null => true      
-            case Success(_) => false
-            case Failure(exception) =>
-                println(s"Erreur lors de l'inscription (emailExists) : ${exception.getMessage}")
-                false
-        }
+  def emailExists(email:String):Boolean={
+      val result = Try {
+          val futureResult = users.find(equal("email", email)).first().toFuture()
+          Await.result(futureResult, 10.seconds)
+      }
+      result match {
+          case Success(doc) if doc != null => true      
+          case Success(_) => false
+          case Failure(exception) =>
+              println(s"Erreur lors de l'inscription (emailExists) : ${exception.getMessage}")
+              false
+      }
+  }
+
+  // Connexion 
+  def getUser(email: String,password:String): Option[User] = {
+    val filter = and(equal("email",email), equal("password",password))
+    val userFuture : Future[Document] = users.find(filter).first().toFuture()
+
+    val userDoc = Await.result(userFuture, 5.seconds)
+
+    if(userDoc != null){
+      val user:User = User(
+        userDoc.get("id").map(_.asInt64().longValue()).getOrElse(0L),
+        userDoc.get("firstName").map(_.asString().getValue()).getOrElse("Null"),
+        userDoc.get("lastName").map(_.asString().getValue()).getOrElse("Null"),
+        userDoc.get("dateOfBirth").map(_.asString().getValue()).getOrElse("Null"),
+        userDoc.get("email").map(_.asString().getValue()).getOrElse("Null"),
+        userDoc.get("password").map(_.asString().getValue()).getOrElse("Null"),
+      )
+      Some(user)
     }
-
-    def getUserByEmail(email: String): Future[Option[User]] = {
-        val futureResult = users.find(equal("email", email)).first().toFuture()
-
-        futureResult.map { doc =>
-            if (doc != null) {
-                val id = doc.get("id").map(_.asInt64().longValue()).getOrElse(0L)
-                Some(User(
-                    id,
-                    doc.get("firstName").map(_.asString().getValue).getOrElse(""),
-                    doc.get("lastName").map(_.asString().getValue).getOrElse(""),
-                    doc.get("dateOfBirth").map(_.asString().getValue).getOrElse(""),
-                    doc.get("email").map(_.asString().getValue).getOrElse(""),
-                    doc.get("password").map(_.asString().getValue).getOrElse(""),
-                    new Wallet(id, 0L, 0d, List.empty[Asset], false), // Initialisation d'un wallet fictif
-                    new Wallet(id, 0L, 0d, List.empty[Asset], true)   // Initialisation d'un wallet fictif
-                ))
-            } 
-            else {
-                None
-            }
-        }.recover {
-            case ex: Throwable =>
-                println(s"Erreur lors de la récupération de l'utilisateur : ${ex.getMessage}")
-                None
-        }
+    else{
+      None
     }
+  }
 
-    // Inscription
-    def signup(user: User): Boolean = {
+  def getUserByEmail(email:String): Option[User] = {
+    val filter = equal("email",email)
+    val userFuture : Future[Document] = users.find(filter).first().toFuture()
 
-        if (!user.isValid) {
-            println("Utilisateur invalide.")
-            return false
-        }
+    val userDoc = Await.result(userFuture, 5.seconds)
 
-        val userDoc = Document(
-            "id" -> user.id,
-            "firstName" -> user.firstName,
-            "lastName" -> user.lastName,
-            "dateOfBirth" -> user.dateOfBirth,
-            "email" -> user.email,
-            "password" -> user.password,
-            "realWallet" -> Document("userID" -> user.id,"userRawMoney" -> user.realWallet.userRawMoney, "isVirtual" -> user.realWallet.isVirtual),
-            "virtualWallet" -> Document("userID" -> user.id,"userRawMoney" -> user.virtualWallet.userRawMoney, "isVirtual" -> user.virtualWallet.isVirtual)
-        )
-
-        Try {
-            val result = users.insertOne(userDoc).toFuture()
-            Await.result(result, 10.seconds)
-            true
-        } 
-        match {
-            case Success(_) => 
-                println("Utilisateur inscrit avec succès.")
-                true
-            case Failure(exception) => 
-                println(s"Erreur lors de l'inscription : ${exception.getMessage}")
-                false
-        }
+    if(userDoc != null){
+      val user:User = User(
+        userDoc.get("id").map(_.asInt64().longValue()).getOrElse(0L),
+        userDoc.get("firstName").map(_.asString().getValue()).getOrElse("Null"),
+        userDoc.get("lastName").map(_.asString().getValue()).getOrElse("Null"),
+        userDoc.get("dateOfBirth").map(_.asString().getValue()).getOrElse("Null"),
+        email,
+        userDoc.get("password").map(_.asString().getValue()).getOrElse("Null"),
+      )
+      Some(user)
     }
-
-    // Connexion 
-    def signin(email: String,password:String): Option[User] = {
-
-        val result = Try {
-            val futureResult = users.find(and(
-                equal("email", email),        
-                equal("password", password) 
-            )).first().toFuture()
-            Await.result(futureResult, 10.seconds)
-        }
-
-        result match {
-            case Success(doc) if doc != null =>
-                val id = doc.get("id").map(_.asInt64().longValue()).getOrElse(0L)
-                println("Connexion réussie.")
-                Some(User(
-                    id,
-                    doc.get("firstName").map(_.asString().getValue).getOrElse(""),
-                    doc.get("lastName").map(_.asString().getValue).getOrElse(""),
-                    doc.get("dateOfBirth").map(_.asString().getValue).getOrElse(""),
-                    doc.get("email").map(_.asString().getValue).getOrElse(""),
-                    doc.get("password").map(_.asString().getValue).getOrElse(""),
-                    doc.get("realWallet").map(_.asDocument()).map(Wallet.fromBson).getOrElse(Wallet(id,0L, 0d, List.empty[Asset], false)),
-                    doc.get("virtualWallet").map(_.asDocument()).map(Wallet.fromBson).getOrElse(Wallet(id,0L, 0d, List.empty[Asset], true))
-                ))
-      
-            case Success(_) =>
-                println("Aucun utilisateur trouvé.")
-                None
-
-            case Failure(exception) =>
-                println(s"Erreur lors de la connexion : ${exception.getMessage}")
-                None
-        }
+    else{
+      None
     }
+  }
 
     // --------------------- Wallet Data methods ----------------------
 
-    def fromBson(doc: BsonDocument): Wallet = {
-        Wallet(
-            doc.get("userID").asInt64().longValue(),
-            0L,
-            doc.get("userRawMoney").asDouble().doubleValue(),
-            List.empty[Asset],
-            doc.get("isVirtual").asBoolean().getValue
-        )
+    def createUserRealWallet(userId:Long, userRawMoney:Double, assets:List[Long] = List.empty[Long]) = {
+      val newWallet = Document("userId" -> userId, "userRawMoney" -> userRawMoney, "assets" -> assets, "isVirtual" -> true)
+
+      wallets.insertOne(newWallet).subscribe(
+        (_: Completed) => println(s"Nouveau porte-monnaie réel de user$userId crée!"),
+        (e: Throwable) => println(s"Erreur lors de la création du porte-monnaie réel: ${e.getMessage}"),
+        () => println("Défault : Création de l'utilisateur avec succès!")
+      )
+
+
+      // Attendre la fin de l'opération
+      Await.ready(wallets.insertOne(newWallet).toFuture(), 5.seconds)
+    }
+
+    def createUserVirtualWallet(userId:Long, userRawMoney:Double, assets:List[Long] = List.empty[Long]) = {
+      val newWallet = Document("userId" -> userId, "userRawMoney" -> userRawMoney, "assets" -> assets, "isVirtual" -> false)
+
+      wallets.insertOne(newWallet).subscribe(
+        (_: Completed) => println(s"Nouveau porte-monnaie virtuel de user$userId crée!"),
+        (e: Throwable) => println(s"Erreur lors de la création du porte-monnaie virtuel: ${e.getMessage}"),
+        () => println("Défault : Création de l'utilisateur avec succès!")
+      )
+
+      // Attendre la fin de l'opération
+      Await.ready(wallets.insertOne(newWallet).toFuture(), 5.seconds)
+    }
+
+    def getRealWallet(userId:Long) : Option[Wallet] = {
+      val filter = and(equal("userId",userId), equal("isVirtual",false))
+
+      val docWallet : Future[Document] = wallets.find(filter).first().toFuture() 
+      val wallet = Await.result(docWallet, 5.seconds)
+
+      if(wallet != null){
+        val realWallet:Wallet = Wallet(
+            wallet.get("userId").map(_.asInt64().longValue()).getOrElse(0L),
+            wallet.get("userRawMoney").map(_.asDouble().doubleValue()).getOrElse(0.0),
+            wallet.get("assets").toList.map(_.asInt64().longValue()),
+            wallet.get("isVirtual").map(_.asBoolean().getValue()).getOrElse(false)
+          )
+        Some(realWallet)
+      }
+      None    
+    }
+
+    def getVirtualWallet(userId:Long) : Option[Wallet] = {
+      val filter = and(equal("userId",userId), equal("isVirtual",true))
+
+      val docWallet : Future[Document] = wallets.find(filter).first().toFuture() 
+      val wallet = Await.result(docWallet, 5.seconds)
+
+      if(wallet != null){
+        val virtualWallet:Wallet = Wallet(
+            wallet.get("userId").map(_.asInt64().longValue()).getOrElse(0L),
+            wallet.get("userRawMoney").map(_.asDouble().doubleValue()).getOrElse(0.0),
+            wallet.get("assets").toList.map(_.asInt64().longValue()),
+            wallet.get("isVirtual").map(_.asBoolean().getValue()).getOrElse(true)
+          )
+        Some(virtualWallet)
+      }
+      None    
     }
 
     // --------------------- Assets Data methods ----------------------
 
+
+    def createAsset(id: Long, symbol:String, quantity: Double, obtentionDate: String, invested: Double, assetType: AssetType) = {
+      val newWallet = Document("userId" -> userId, "userRawMoney" -> userRawMoney, "assets" -> assets, "isVirtual" -> true)
+
+      wallets.insertOne(newWallet).subscribe(
+        (_: Completed) => println(s"Nouveau porte-monnaie réel de user$id crée!"),
+        (e: Throwable) => println(s"Erreur lors de la création du porte-monnaie réel: ${e.getMessage}"),
+        () => println("Défault : Création de l'utilisateur avec succès!")
+      )
+
+
+      // Attendre la fin de l'opération
+      Await.ready(wallets.insertOne(newWallet).toFuture(), 5.seconds)
+    }
     // Simulation d'une fonction de récupération d'un asset depuis une base de données
     def getAssetFromDB(id: Int): Future[Option[Asset]] = {
       // Pour l'exemple, on retourne un Asset fictif si l'ID est 1, sinon None
@@ -248,4 +283,3 @@ object DataExample {
     wallets
   }
 }
-  */
