@@ -1,10 +1,17 @@
 # Programmation Fonctionelle - Projet AKKA
 
+Célian Mignot  
+Clément Delamotte  
+Alexandre Grisez  
+Olivier Compagnon--Minarro  
+Lyz Piam  
+
+ING2 GSI  
 
 ## Prérequis
 - ### Scala :
 
-Vous devez avoir coursier d'installé pour installer Scala sur votre machine, si je n'est pas le cas, taper les commandes suivantes dans un terminal :
+Vous devez avoir coursier d'installé pour installer Scala sur votre machine, si je n'est pas le cas, tapez les commandes suivantes dans un terminal :
 ```bash
 curl -fL https://github.com/coursier/coursier/releases/latest/download/cs-x86_64-pc-linux.gz | gzip -d > cs && chmod +x cs && ./
 
@@ -15,7 +22,7 @@ Si vous ne disposez pas de ```curl``` sur votre ordinateur :
 sudo apt-get install curl
 ```
 
-Pour terminer, taper la commande ci-dessous pour installer scala :
+Pour terminer, tapez la commande ci-dessous pour installer scala :
 ```bash
 cs install scala:2.13.15
 ```
@@ -25,7 +32,7 @@ cs install sbt
 ```
 - ### Node.js :
 
-Commencer par taper la commande dans un terminal :
+Commencez par taper la commande dans un terminal :
 ```bash
 sudo apt update
 ```
@@ -39,21 +46,22 @@ Vous avez terminé, si vous souhaite vérifier si ```Node.js``` à bien été in
 node -v
 ```
 - ### npm : 
-Taper la commande suivante :
+Tapez les commandes suivantes :
 ```bash
 sudo apt install npm
+npm install recharts
 ```
 - ### MongoBD :  
-Depuis un terminal, installer ```gnupg``` et ```curl``` si vous ne les avez pas sur votre machine
+Depuis un terminal, installez ```gnupg``` et ```curl``` si vous ne les avez pas sur votre machine
 
-Ensuite vous devez importer la clé public MongoDB, avec cette commande :
+Ensuite vous devez importer la clé publique MongoDB avec cette commande :
 ```bash
 curl -fsSL https://www.mongodb.org/static/pgp/server-8.0.asc | \
    sudo gpg -o /usr/share/keyrings/mongodb-server-8.0.gpg \
    --dearmor
 ```
 
-Ensuite, selon la version de votre système, taper la commande suivante :
+Ensuite, selon la version de votre système, tapez la commande suivante :
 - Ubuntu 24.04 (Noble) :
 ```bash
 echo "deb [ arch=amd64,arm64 signed-by=/usr/share/keyrings/mongodb-server-8.0.gpg ] https://repo.mongodb.org/apt/ubuntu noble/mongodb-org/8.0 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-8.0.list
@@ -72,7 +80,7 @@ Pour vérifier sous quelle version tourne votre machine, vous pouvez taper la co
 cat /etc/lsb-release
 ```
 
-Continuer en tapant la commande :
+Continuez en tapant la commande :
 ```bash
 sudo apt-get update
 ```
@@ -83,17 +91,17 @@ sudo apt-get install -y mongodb-org
 
 ## Premier utilisation
 
-Vous devez créer la base de données qui servira pour stocker les utilisateurs et leur portefeuilles. Pour cela dans un terminal, taper :
+Vous devez créer la base de données qui servira pour stocker les utilisateurs et leurs portefeuilles. Pour cela dans un terminal, tapez :
 ```bash
 mongosh
 ```
-Une fois dans l'interface créée par mongosh, taper la commande suivante :
+Une fois dans l'interface créée par mongosh, tapez la commande suivante :
 
 ```bash
 use AkkaData
 ```
 
-Vous avez terminer la création de la base de données, vous pouvez quitter l'interface avec la commande :
+Vous avez terminé la création de la base de données, vous pouvez quitter l'interface avec la commande :
 ```bash
 exit
 ```
@@ -117,11 +125,11 @@ Dans un nouveau terminal, rendez vous dans le dossier frontend :
 cd frontend
 ```
 
-Taper la commande suivante pour démarrer le serveur frontend :
+Tapez la commande suivante pour démarrer le serveur frontend :
 ```bash
 npm start
 ```
 
-Normalement, une page navigateur va automatiquement s'ouvrir sur la page d'accueil. Si ce n'est pas le cas, dans un navigateur internet, taper le lien url: http://localhost:3000/
+Normalement, une page navigateur va automatiquement s'ouvrir sur la page d'accueil. Si ce n'est pas le cas, dans un navigateur internet, tapez le lien url: http://localhost:3000/
 
-vous pouvez maintenant profiter de l'application
+Vous pouvez maintenant profiter de l'application
