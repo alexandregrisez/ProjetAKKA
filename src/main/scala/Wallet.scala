@@ -73,7 +73,7 @@ object Wallet{
         val maxAsset = Await.result(futureMaxID, 5.seconds)
 
         if (maxAsset != null && !maxAsset.isEmpty) {
-            maxAsset.get("id").map(_.asInt64().longValue()).getOrElse(1L)
+            maxAsset.get("id").map(_.asInt64().longValue()).getOrElse(1L) + 1
         } 
         else {
             1

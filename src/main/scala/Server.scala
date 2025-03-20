@@ -243,7 +243,7 @@ object Routes {
         }
       }  
     }
-
+/*
   def pieRoute : Route = {
    path("pie" / Segment) { email => {
       Wallet.getWalletCategories(email) match {
@@ -262,14 +262,14 @@ object Routes {
         if(!UsersDB.emailExists(email)) {
           complete(StatusCodes.NotFound, """{"erreur"; "Utilisateur non trouvé"}""")
         } else {
-          val assets = Wallet.getUserAssets(email)
+          //val assets = Wallet.getUserAssets(email)
           complete(assets)
         }
       }
     }
   }
   }
-
+*/
   // Route combinée
   def allRoutes(finnhub: ActorRef): Route = ch.megard.akka.http.cors.scaladsl.CorsDirectives.cors() {
     signinRoute ~
@@ -281,9 +281,9 @@ object Routes {
     stockRoute(finnhub) ~
     companyRoute(finnhub) ~
     detailsRoute(finnhub) ~
-    suggestionsRoute(finnhub) ~
-    pieRoute ~
-    assetsRoute
+    suggestionsRoute(finnhub) //~
+    //pieRoute ~
+    //assetsRoute
   }
 }
 
