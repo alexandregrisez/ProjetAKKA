@@ -30,7 +30,6 @@ const StockPage = () => {
             const url = `http://localhost:8080/stock/${symbol}`;
             try {
                 const response = await fetch(url);
-                console.log(response)
                 if (!response.ok) {
                     // Si le serveur retourne une erreur HTTP, récupérez le message
                     const errorData = await response.json();

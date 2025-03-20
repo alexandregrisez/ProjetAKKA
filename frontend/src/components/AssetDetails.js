@@ -17,10 +17,10 @@ function AssetDetails({ symbol }) {
             setError(null);
     
             try {
-                // Récupérer les cotations (prix actuel, etc.)
+                // Récupérer les cotations
                 const quoteResponse = await fetch(`http://localhost:8080/details/${symbol}`);
                 const quoteData = await quoteResponse.json()
-                // Récupérer les informations de l'entreprise (nom, etc.)
+                // Récupérer les informations de l'entreprise
                 const profileResponse = await fetch(`http://localhost:8080/company/${symbol}`);
                 const profileData = await profileResponse.json();
     

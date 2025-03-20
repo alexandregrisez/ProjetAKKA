@@ -9,7 +9,6 @@ const StockChart = ({ symbol }) => {
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState(null);
 
-    const API_KEY = "cv4nc6hr01qn2gab5ju0cv4nc6hr01qn2gab5jug";
     const HISTORY_DURATION = 15;
 
     useEffect(() => {
@@ -19,13 +18,13 @@ const StockChart = ({ symbol }) => {
             setLoading(true);
             setError(null);
 
-            const url = `https://finnhub.io/api/v1/quote?symbol=${symbol}&token=${API_KEY}`;
+            const url = `http://localhost:8080/details/${symbol}`;
 
             try {
                 const response = await fetch(url);
-                const data = await response.json();
-
-                if (data.c) {
+                const details = await response.json();
+                const data = details.details
+                if (data.current) {
                     const labels = () => {
                         const dates = [];
                         for (let i = 0; i < HISTORY_DURATION; i++) {
@@ -40,7 +39,7 @@ const StockChart = ({ symbol }) => {
                     const pricesClose = () => {
                         const prices = [];
                         for (let i = 0; i < HISTORY_DURATION; i++) {
-                            const price = (data.o + (data.c - data.o) * (i / (HISTORY_DURATION - 1))).toFixed(2);
+                            const price = (data.open + (data.current - data.open) * (i / (HISTORY_DURATION - 1))).toFixed(2);
                             prices.push(price);
                         }
                         return prices;
@@ -50,7 +49,7 @@ const StockChart = ({ symbol }) => {
                     const pricesHigh = () => {
                         const prices = [];
                         for (let i = 0; i < HISTORY_DURATION; i++) {
-                            const price = (data.o + (data.h - data.o) * (i / (HISTORY_DURATION - 1))).toFixed(2);
+                            const price = (data.open + (data.high - data.open) * (i / (HISTORY_DURATION - 1))).toFixed(2);
                             prices.push(price);
                         }
                         return prices;
@@ -60,7 +59,7 @@ const StockChart = ({ symbol }) => {
                     const pricesLow = () => {
                         const prices = [];
                         for (let i = 0; i < HISTORY_DURATION; i++) {
-                            const price = (data.o + (data.l - data.o) * (i / (HISTORY_DURATION - 1))).toFixed(2);
+                            const price = (data.open + (data.low - data.open) * (i / (HISTORY_DURATION - 1))).toFixed(2);
                             prices.push(price);
                         }
                         return prices;
