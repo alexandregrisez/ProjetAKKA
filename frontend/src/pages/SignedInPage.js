@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import Footer from "../components/Footer";
 import Header from "../components/Header";
 import '../styles/SignedInPage.css';
+import AssetList from "../components/AssetListUser";
 
 const SignedInPage = () => {
     const [user, setUser] = useState(null);
@@ -98,6 +99,7 @@ const SignedInPage = () => {
                     ) : null}
                 </div>
             </div>
+            <AssetList userId={localStorage.getItem("token")}/>
         </div>
         
         <Footer/>
