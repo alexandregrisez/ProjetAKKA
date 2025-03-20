@@ -13,7 +13,7 @@ import io.circe.parser._
 import io.circe.generic.auto._
 
 
-case class User(val id:Long, val firstName:String, val lastName:String, val dateOfBirth:String, val email:String, val password:String, val realWallet:Wallet, val virtualWallet:Wallet){
+case class User(val id:Long, val firstName:String, val lastName:String, val dateOfBirth:String, val email:String, val password:String, val realWallet:Long, val virtualWallet:Long){
     
     def getEmail():String = {email}
 
@@ -25,7 +25,8 @@ case class User(val id:Long, val firstName:String, val lastName:String, val date
         dateOfBirth.nonEmpty &&
         email.contains("@") &&
         password.nonEmpty &&
-        !realWallet.isVirtual && virtualWallet.isVirtual
+        realWallet > 0 &&
+        virtualWallet > 0
     }
 }
 
@@ -83,8 +84,8 @@ object UsersDB{
                     doc.get("dateOfBirth").map(_.asString().getValue).getOrElse(""),
                     doc.get("email").map(_.asString().getValue).getOrElse(""),
                     doc.get("password").map(_.asString().getValue).getOrElse(""),
-                    new Wallet(id, 0L, List.empty[Asset], false), // Initialisation d'un wallet fictif
-                    new Wallet(id, 0L, List.empty[Asset], true)   // Initialisation d'un wallet fictif
+                    doc.get("realWallet").map(_.asInt64().getValue).getOrElse(0L),
+                    doc.get("virtualWallet").map(_.asInt64().getValue).getOrElse(0L)
                 ))
             } 
             else {
@@ -113,8 +114,8 @@ object UsersDB{
             "dateOfBirth" -> user.dateOfBirth,
             "email" -> user.email,
             "password" -> user.password,
-            "realWallet" -> Document("userID" -> user.id,"userRawMoney" -> user.realWallet.userRawMoney, "isVirtual" -> user.realWallet.isVirtual),
-            "virtualWallet" -> Document("userID" -> user.id,"userRawMoney" -> user.virtualWallet.userRawMoney, "isVirtual" -> user.virtualWallet.isVirtual)
+            "realWallet" -> user.realWallet,
+            "virtualWallet" -> user.virtualWallet
         )
 
         Try {
@@ -154,8 +155,10 @@ object UsersDB{
                     doc.get("dateOfBirth").map(_.asString().getValue).getOrElse(""),
                     doc.get("email").map(_.asString().getValue).getOrElse(""),
                     doc.get("password").map(_.asString().getValue).getOrElse(""),
-                    doc.get("realWallet").map(_.asDocument()).map(Wallet.fromBson).getOrElse(Wallet(id,0L,List.empty[Asset], false)),
-                    doc.get("virtualWallet").map(_.asDocument()).map(Wallet.fromBson).getOrElse(Wallet(id,0L,List.empty[Asset], true))
+                    doc.get("realWallet").map(_.asInt64().getValue).getOrElse(0L),
+                    doc.get("virtualWallet").map(_.asInt64().getValue).getOrElse(0L)
+
+
                 ))
       
             case Success(_) =>
@@ -188,7 +191,7 @@ object AuthService {
   def verifyJWT(token: String): Try[JwtClaim] = {
     Jwt.decode(token, secretKey, Seq(JwtAlgorithm.HS256)) match {
       case Success(claim) => 
-        println("VerifyJWT : Valid token")
+        //println("VerifyJWT : Valid token")
         Success(claim)
       case Failure(_) => 
         println("VerifyJWT : Invalid token")

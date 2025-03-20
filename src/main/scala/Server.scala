@@ -68,7 +68,13 @@ object Routes {
 
           val id = UsersDB.generateID()
 
-          val user=new User(id, firstName, lastName, dateOfBirth, email, password, new Wallet(id,1000,List.empty[Asset],false), new Wallet(id,1000,List.empty[Asset],true))
+          val realWallet=Wallet.generateWalletID()
+          val virtualWallet=realWallet+1
+
+          Wallet.addWallet(realWallet,1000,List.empty[String],false)
+          Wallet.addWallet(virtualWallet,1000,List.empty[String],true)
+
+          val user=new User(id, firstName, lastName, dateOfBirth, email, password, realWallet, virtualWallet)
 
           if(UsersDB.signup(user)){
             complete("""{"status": 0}""")
@@ -106,6 +112,50 @@ object Routes {
               case None => complete("""{"status": -3}""")
             }
           case _ => complete("""{"status": -4}""")
+        }
+      }
+    }
+  }
+
+  def purchaseRoute: Route = {
+    path("purchase") {
+      post {
+        entity(as[FormData]) { formData =>
+          val fields = formData.fields.toMap
+          val email = fields.getOrElse("email", "") 
+          val symbol = fields.getOrElse("symbol", "")
+          val category = fields.getOrElse("category", "")
+          val quantity = fields.getOrElse("quantity","")
+          val quantityInt = Try(quantity.toInt).getOrElse(0)
+          val price = Try(fields.getOrElse("totalPrice", "").toDouble).getOrElse(0.0)
+
+          if(UsersDB.emailExists(email)){
+            complete("""{"status": -2}""")
+          }
+
+          val answer = Wallet.purchase(email,category,symbol,quantityInt,price)
+          complete(s"""{"status": "$answer"}""")
+        }
+      }
+    }
+  }
+
+  def sellRoute: Route = {
+    path("sell") {
+      post {
+        entity(as[FormData]) { formData =>
+          val fields = formData.fields.toMap
+          val email = fields.getOrElse("email", "") 
+          val symbol = fields.getOrElse("symbol", "")
+          val quantity = fields.getOrElse("quantity","")
+          val price = fields.getOrElse("totalPrice","") 
+
+          if(UsersDB.emailExists(email)){
+            complete("""{"status": -2}""")
+          }
+
+          // En attente de BDD
+          complete("""{"status": -2}""")
         }
       }
     }
@@ -200,6 +250,8 @@ object Routes {
     signupRoute ~
     userinfoRoute ~
     assetRoute ~
+    purchaseRoute ~
+    sellRoute ~
     stockRoute(finnhub) ~
     companyRoute(finnhub) ~
     detailsRoute(finnhub) ~

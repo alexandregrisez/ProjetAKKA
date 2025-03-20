@@ -28,12 +28,12 @@ import AssetType._
 
 // ------------------------------------------------- Asset Class
 
-case class Asset(id: String, symbol:String, var quantity: Double, obtentionDate: String, var invested: Double, assetType: AssetType) {
+case class Asset(id: Long, symbol:String, var quantity: Double, obtentionDate: String, var invested: Double, assetType: AssetType) {
 
   implicit val timeout: Timeout = Timeout(5.seconds)
   implicit val ec : ExecutionContext = Global.system.dispatcher
   
-  def getId: String = {
+  def getId: Long = {
     id
   }
 
@@ -130,7 +130,7 @@ object DB{
   def getAssetFromDB(id: Int): Future[Option[Asset]] = {
     // Pour l'exemple, on retourne un Asset fictif si l'ID est 1, sinon None
     Future.successful {
-      if (id == 1) Some(Asset("ID1", "AAPL", 2.5, "2024-03-10", 1500.0, AssetType.Share))
+      if (id == 1) Some(Asset(-1, "AAPL", 2.5, "2024-03-10", 1500.0, AssetType.Share))
       else None
     }
   }

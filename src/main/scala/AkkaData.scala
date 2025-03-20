@@ -1,3 +1,5 @@
+
+/*
 // ---------------------------------------------- Imports
 import org.mongodb.scala._
 import org.mongodb.scala.SingleObservable
@@ -246,3 +248,4 @@ object DataExample {
     wallets
   }
 }
+  */
