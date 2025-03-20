@@ -3,6 +3,8 @@ import { useNavigate } from "react-router-dom";
 import Footer from "../components/Footer";
 import Header from "../components/Header";
 import '../styles/SignedInPage.css';
+import AssetList from "../components/AssetListUser";
+import PieChart from "../components/PieChartUser";
 
 const SignedInPage = () => {
     const [user, setUser] = useState(null);
@@ -84,20 +86,10 @@ const SignedInPage = () => {
                 </div>
             </div>
             <div className="main-content">
-                <div className="box2">
-                    {loading ? (
-                        <p>Chargement des informations...</p>
-                    ) : error ? (
-                        <p className="error-message">{error}</p>
-                    ) : user ? (
-                        <div>
-                        <div className="user-info">
-                            <h2 className="box-title">Visuel du portefeuille camembert</h2>
-                        </div>
-                        </div>
-                    ) : null}
-                </div>
+                <PieChart userId={localStorage.getItem("token")}/>
+                <AssetList userId={localStorage.getItem("token")}/>
             </div>
+            
         </div>
         
         <Footer/>

@@ -244,6 +244,32 @@ object Routes {
       }  
     }
 
+  def pieRoute : Route = {
+   path("pie" / Segment) { email => {
+      Wallet.getWalletCategories(email) match {
+        case Some(data) =>
+          //complete(data)
+        case None =>
+          complete("""{"status": "error", message : "Aucune donnée trouvée"}""")
+      }
+    }  
+   }
+  }
+
+  def assetsRoute : Route = {
+    path("assets" / Segment) { email =>{
+      get {
+        if(!UsersDB.emailExists(email)) {
+          complete(StatusCodes.NotFound, """{"erreur"; "Utilisateur non trouvé"}""")
+        } else {
+          val assets = Wallet.getUserAssets(email)
+          complete(assets)
+        }
+      }
+    }
+  }
+  }
+
   // Route combinée
   def allRoutes(finnhub: ActorRef): Route = ch.megard.akka.http.cors.scaladsl.CorsDirectives.cors() {
     signinRoute ~
@@ -255,7 +281,9 @@ object Routes {
     stockRoute(finnhub) ~
     companyRoute(finnhub) ~
     detailsRoute(finnhub) ~
-    suggestionsRoute(finnhub)
+    suggestionsRoute(finnhub) ~
+    pieRoute ~
+    assetsRoute
   }
 }
 
