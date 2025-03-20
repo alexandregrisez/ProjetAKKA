@@ -282,7 +282,8 @@ object Routes {
     companyRoute(finnhub) ~
     detailsRoute(finnhub) ~
     suggestionsRoute(finnhub) ~
-    pieRoute
+    pieRoute ~
+    assetsRoute
   }
 }
 
